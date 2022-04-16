@@ -44,7 +44,7 @@ jobs:
         run: cpplint --extensions=c,h --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting project/src/* project/include/* && cpplint --extensions=cpp --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting tests/*
 
       - name: Tests
-        run: cd tests && cmake .. && make  && ./run_tests && cmake -Dparallel=ON .. && make && ./run_tests && cd .. && lcov -t "hw2" -o hw2.info -c -d . && lcov --remove hw2.info "/usr/include/*" "./include/*" "/usr/local/*" > coverage.info && genhtml -o report coverage.info
+        run: cd .//build/tests && rm -r ./Musicial_test
 
       - name: Valgrind 
         run: mkdir valgrind_tests && cd valgrind_tests && cmake .. && make && valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s -q ./run_tests &&  cmake -Dparallel=ON .. && make &&  valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s -q ./run_tests
