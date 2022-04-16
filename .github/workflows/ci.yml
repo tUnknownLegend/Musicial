@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install GTest
+      - name: Install
         run: bash init.sh
 
       - name: Install GTest
@@ -35,7 +35,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y valgrind 
         
       - name: scan-build  clang-tidy
-        run: mkdir build && cd build && scan-build cmake .. && scan-build make
+        run: mkdir build && cd build && cmake .. && cmake --build .
         
       - name: cppcheck
         run: cppcheck src tests  --enable=all --error-exitcode=1 -I project/include --suppress=missingIncludeSystem
