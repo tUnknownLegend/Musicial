@@ -12,9 +12,6 @@ jobs:
 
       - name: Install
         run: bash init.sh
-
-      - name: Install GTest
-        run: sudo apt-get install libgtest-dev -y 
         
       - name: Install Clang-tidy
         run: sudo apt-get install -y clang-tidy
