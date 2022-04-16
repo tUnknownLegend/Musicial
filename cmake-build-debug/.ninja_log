@@ -1,0 +1,6 @@
+# ninja log v5
+279	354	1650066412076400526	Musicial	109a9a9c9d3be7e0
+0	24	1650084509100639199	build.ninja	9cfa0c7f5d7c2569
+1	278	1650066412000403337	CMakeFiles/Musicial.dir/project/src/main.cpp.o	ae288a2a320ffeb0
+0	15	1650066411732413255	CMakeFiles/Network.dir/project/src/Network.cpp.o	2976d415f8f8e14e
+15	22	1650066411744412811	libNetwork.a	c7ad599e29285f1f

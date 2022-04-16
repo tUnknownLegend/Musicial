@@ -1,0 +1,5 @@
+/home/al/CLionProjects/Musicial/cmake-build-debug/CMakeFiles/Network.dir
+/home/al/CLionProjects/Musicial/cmake-build-debug/CMakeFiles/Musicial.dir
+/home/al/CLionProjects/Musicial/cmake-build-debug/CMakeFiles/run_tests.dir
+/home/al/CLionProjects/Musicial/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/al/CLionProjects/Musicial/cmake-build-debug/CMakeFiles/rebuild_cache.dir
