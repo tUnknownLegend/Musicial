@@ -10,6 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: init
+        run: bash init.sh
+
       - name: Install GTest
         run: sudo apt-get install libgtest-dev -y 
         
