@@ -25,8 +25,8 @@ jobs:
       - name: install fbinfer
         run: VERSION=1.1.0; curl -sSL "https://github.com/facebook/infer/releases/download/v$VERSION/infer-linux64-v$VERSION.tar.xz" | sudo tar -C /opt -xJ && sudo ln -s "/opt/infer-linux64-v$VERSION/bin/infer" /usr/local/bin/infer
         
-      - name: scan-build  clang-tidy
-        run: mkdir build && cmake .. && cmake --build .
+      - name: build
+        run: bash build.sh
         
       - name: cppcheck
         run: cppcheck src tests  --enable=all --error-exitcode=1 -I project/include --suppress=missingIncludeSystem
