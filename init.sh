@@ -12,6 +12,8 @@ sudo apt-get install lcov
 sudo apt-get install genhtml
 sudo apt-get install valgrind
 sudo apt-get install -y cppcheck
+apt remove cmake
+pip install cmake --upgrade
 #sudo apt-get install python-pip  
 #sudo pip install cpplint
 #python -m cpplint --recursive --exclude=source/catch.hpp --filter=-legal/copyright,-build/include_subdir source/* 
