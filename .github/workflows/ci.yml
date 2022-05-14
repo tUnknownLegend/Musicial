@@ -32,7 +32,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y valgrind 
         
       - name: cppcheck
-        run: cppcheck src tests  --enable=all --error-exitcode=1 -I project/include --suppress=missingIncludeSystem
+        run: cppcheck src tests  --enable=all --error-exitcode=1 -I ./lib/ --suppress=missingIncludeSystem
         
       - name: Cpplint
         run: cpplint --extensions=cpp,h --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting project/src/* project/include/* && cpplint --extensions=cpp --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting tests/*
