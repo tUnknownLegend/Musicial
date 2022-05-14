@@ -9,10 +9,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Install
-        run: bash ./lib/init.sh
-        
+    
       - name: Install Clang-tidy
         run: sudo apt-get install -y clang-tidy
 
@@ -25,12 +22,6 @@ jobs:
       - name: Install Cpplint
         run: sudo apt-get install python3-pip && pip install --user cpplint
 
-      - name: install fbinfer
-        run: VERSION=1.1.0; curl -sSL "https://github.com/facebook/infer/releases/download/v$VERSION/infer-linux64-v$VERSION.tar.xz" | sudo tar -C /opt -xJ && sudo ln -s "/opt/infer-linux64-v$VERSION/bin/infer" /usr/local/bin/infer
-        
-      - name: Valgrind install
-        run: sudo apt-get update && sudo apt-get install -y valgrind 
-        
       - name: cppcheck
         run: cppcheck src tests  --enable=all --error-exitcode=1 -I ./lib/ --suppress=missingIncludeSystem
         
