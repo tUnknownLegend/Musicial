@@ -1,8 +1,25 @@
 #include <gtest/gtest.h>
 
-#include "Network.h"
 
+#include "../project/server/include/net_tools.h"
 
+/*
+TEST(parseMessage, CorrectData) {
+    net_tools::Message message = {1, 2, "test 0", {"test 1", "test 2"}};
+    std::string strMessage = net_tools::Message2String(message);
+
+    EXPECT_TRUE(message == net_tools::String2Message(strMessage));
+}
+
+TEST(parseString, CorrectData) {
+    net_tools::Message message = {1, 2, "test 0", {"test 1", "test 2"}};
+    std::string stringMessage = "1\r\n2\r\ntest 0\r\ntest 1\r\ntest 2\r\n\r\n";
+
+    EXPECT_EQ(stringMessage, net_tools::Message2String(message));
+}
+*/
+
+/*
 TEST(getMessageFromDB, IncorrectData) {
     Server server = {};
     Message defaultMessage;
@@ -34,3 +51,4 @@ TEST(getMessageGroupFromDB, IncorrectData) {
 
     EXPECT_EQ(getting_result, defaultGroup);
 }
+*/
