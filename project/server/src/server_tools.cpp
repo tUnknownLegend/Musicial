@@ -4,16 +4,47 @@
 #include <vector>
 #include <iostream>
 // #include <thread>
-
-
-
+#include <string>
+#include <boost/asio.hpp>
 #include <boost/bind/bind.hpp>
+#include <boost/lexical_cast.hpp>
 #include <boost/shared_ptr.hpp>
-
 
 #include "request.h"
 #include "net_tools.h"
 
+namespace server_tools {
+int startServer() {
+    std::cout << "Info: 'hostname -I' to get local ip" << std::endl;
+    try {
+        // Check command line arguments.
+
+
+        std::string ip, port;
+        std::cout << "Enter IP: ";
+        std::cin >> ip;
+
+        std::cout << "Enter port: ";
+        std::cin >> port;
+
+        // Initialise the server.
+
+        // std::size_t num_threads = boost::lexical_cast<std::size_t>(argv[3]);
+        std::size_t num_threads = 2 * (std::size_t) sysconf(_SC_NPROCESSORS_ONLN);
+        http::server3::server s(ip, port, num_threads);
+
+        // Run the server until stopped.
+        s.run();
+    }
+
+
+    catch (std::exception &e) {
+        std::cerr << "exception: " << e.what() << "\n";
+    }
+
+    return 0;
+}
+}  // namespace server_tools
 
 Response HandlerConvertPlaylist(const Request &request) {
     net_tools::Message ans = net_tools::getAnswer(request.body);
@@ -27,6 +58,20 @@ Response HandlerConvertPlaylist(const Request &request) {
     response.body = ans;
     return response;
 }
+
+Response HandlerTest(const Request &request) {
+
+
+    Response response;
+
+    response.status_code = 200;
+    response.status_message = "OK";
+    response.http_version = "HTTP/1.1";
+
+
+    return response;
+}
+
 /*
 Response HandlerGetPost(const Request &request) {
     // use data from request
@@ -67,6 +112,7 @@ server::server(const std::string &address, const std::string &port,
 
 
     request_router.addHandler("/convert_playlist", HandlerConvertPlaylist);
+    request_router.addHandler("/test", HandlerConvertPlaylist);
 
     // request_router.addHandler("/posts", HandlerGetPost);
     // request_router.addHandler("/user", HandlerGetUser);

@@ -13,17 +13,18 @@
 using boost::asio::ip::tcp;
 
 
+
 class Client {
- public:
+public:
     Client(boost::asio::io_context& io_context,
-           const std::string& server, const std::string& port, const std::string& path)
+           const std::string& server, const std::string& port, const std::string& path, const net_tools::Message &message)
             : resolver_(io_context),
               socket_(io_context) {
         request_.method = "GET";
         request_.path = path;
         request_.http_version = "HTTP/1.0";
         request_.host = server;
-        request_.body = get_request();
+        request_.body = message;
 
 
         // Start an asynchronous resolve to translate the server and service names
@@ -34,7 +35,7 @@ class Client {
                                             boost::asio::placeholders::results));
     }
 
- private:
+private:
     net_tools::Message get_request() {
         net_tools::Message req;
 
@@ -140,12 +141,13 @@ class Client {
             response_.body = net_tools::String2Message(std::string(
                     std::istreambuf_iterator<char>(response_stream), std::istreambuf_iterator<char>()));
             std::cout << response_;
+            // pushResponse(response_.body);
         } else {
             std::cout << "Error: " << err << "\n";
         }
     }
 
- private:
+private:
     tcp::resolver resolver_;
     tcp::socket socket_;
 
@@ -155,23 +157,25 @@ class Client {
     Response response_;
 };
 
-int main(int argc, char* argv[]) {
-    try {
-        if (argc != 4) {
-            std::cout << "Usage: async_client <server> <port> <path>\n";
-            std::cout << "Example:\n";
-            std::cout << "  async_client www.boost.org /LICENSE_1_0.txt\n";
-            return 1;
+namespace client_tools {
+    int send(const std::string &ip, const std::string &port, const std::string &path,
+                    const net_tools::Message &message) {
+        try {
+            boost::asio::io_context io_context;
+            std::cout << "client is working" << std::endl;
+            Client c(io_context, ip, port, path, message);
+            io_context.run();
+        }
+        catch (std::exception &e) {
+            std::cout << "Exception: " << e.what() << "\n";
         }
 
-        boost::asio::io_context io_context;
-
-        Client c(io_context, argv[1], argv[2], argv[3]);
-        io_context.run();
-    }
-    catch (std::exception& e) {
-        std::cout << "Exception: " << e.what() << "\n";
+        return 0;
     }
 
-    return 0;
+    void pushResponse(const net_tools::Message &message) {
+        // do something on client side
+    }
 }
+
+

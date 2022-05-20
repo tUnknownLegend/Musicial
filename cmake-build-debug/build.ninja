@@ -110,45 +110,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target client
-
-
-#############################################
-# Order-only phony target for client
-
-build cmake_object_order_depends_target_client: phony || project/server/CMakeFiles/client.dir
-
-build project/server/CMakeFiles/client.dir/src/client.cpp.o: CXX_COMPILER__client_Debug /home/al/CLionProjects/Musicial/project/server/src/client.cpp || cmake_object_order_depends_target_client
-  DEP_FILE = project/server/CMakeFiles/client.dir/src/client.cpp.o.d
-  FLAGS = -pthread -g -std=gnu++2a
-  INCLUDES = -I/home/al/CLionProjects/Musicial/project/server/include
-  OBJECT_DIR = project/server/CMakeFiles/client.dir
-  OBJECT_FILE_DIR = project/server/CMakeFiles/client.dir/src
-
-build project/server/CMakeFiles/client.dir/src/net_tools.cpp.o: CXX_COMPILER__client_Debug /home/al/CLionProjects/Musicial/project/server/src/net_tools.cpp || cmake_object_order_depends_target_client
-  DEP_FILE = project/server/CMakeFiles/client.dir/src/net_tools.cpp.o.d
-  FLAGS = -pthread -g -std=gnu++2a
-  INCLUDES = -I/home/al/CLionProjects/Musicial/project/server/include
-  OBJECT_DIR = project/server/CMakeFiles/client.dir
-  OBJECT_FILE_DIR = project/server/CMakeFiles/client.dir/src
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target client
-
-
-#############################################
-# Link the executable project/server/client
-
-build project/server/client: CXX_EXECUTABLE_LINKER__client_Debug project/server/CMakeFiles/client.dir/src/client.cpp.o project/server/CMakeFiles/client.dir/src/net_tools.cpp.o
-  FLAGS = -pthread -g
-  OBJECT_DIR = project/server/CMakeFiles/client.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = project/server/client
-  TARGET_PDB = client.dbg
-
-# =============================================================================
 # Object build statements for EXECUTABLE target server
 
 
@@ -228,8 +189,6 @@ build project/server/rebuild_cache: phony project/server/CMakeFiles/rebuild_cach
 # =============================================================================
 # Target aliases.
 
-build client: phony project/server/client
-
 build server: phony project/server/server
 
 # =============================================================================
@@ -247,7 +206,7 @@ build all: phony run_tests project/server/all
 #############################################
 # Folder: /home/al/CLionProjects/Musicial/cmake-build-debug/project/server
 
-build project/server/all: phony project/server/client project/server/server
+build project/server/all: phony project/server/server
 
 # =============================================================================
 # Built-in targets

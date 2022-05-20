@@ -14,6 +14,10 @@
 #include "router.h"
 
 
+namespace server_tools {
+    int startServer();
+}
+
 namespace http {
 namespace server3 {
 

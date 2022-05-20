@@ -9,8 +9,8 @@ find_package(Boost)
 
 
 # Async Client
-add_executable(client src/client.cpp include/response.h include/server_tools.h include/net_tools.h src/net_tools.cpp)
-target_link_libraries(client  ${Boost_LIBRARIES})
+#add_executable(client src/client.cpp include/response.h include/server_tools.h include/net_tools.h src/net_tools.cpp include/client_tools.h)
+#target_link_libraries(client  ${Boost_LIBRARIES})
 
 
 # Multithread Async Server
@@ -22,6 +22,7 @@ add_executable(server
         include/router.h
         src/server_tools.cpp
         include/net_tools.h
-        src/net_tools.cpp)
+        src/net_tools.cpp
+        include/client.h)
 target_link_libraries(server ${Boost_LIBRARIES})
 
