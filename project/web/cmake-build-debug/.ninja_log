@@ -1,0 +1,26 @@
+# ninja log v5
+0	2991	1652308107574978388	project/server/CMakeFiles/server_tools.dir/src/connection.cpp.o	badc348c7265750a
+279	354	1650066412076400526	Musicial	109a9a9c9d3be7e0
+4	4770	1652485626948368193	project/server/CMakeFiles/client.dir/src/client.cpp.o	fec554bbb0431d8b
+0	48	1652633601479656732	build.ninja	9fa5e6b4eb77b0bc
+19	27	1652293996895800479	project/server/libserver.a	c5def3b2f73a4171
+6	2896	1652556497092864030	project/server/CMakeFiles/server.dir/src/connection.cpp.o	1c449a4dd589d1a2
+3	3288	1652625688866720350	project/server/CMakeFiles/server.dir/src/client.cpp.o	28726c2cfa8864b2
+3	3560	1652625689138716759	project/server/CMakeFiles/server.dir/src/server_tools.cpp.o	e109ecb936cb9034
+5	1992	1652308063746867138	project/server/CMakeFiles/Musicial.dir/src/server.cpp.o	cc44fd25204aceaf
+3	3534	1652308540931986903	project/server/CMakeFiles/server_tools.dir/src/server_tools.cpp.o	1fc149e5e19bfc29
+7	591	1652556494792858699	project/server/CMakeFiles/server.dir/src/net_tools.cpp.o	ab9f95a5276e74e9
+2	1636	1652486680529529303	CMakeFiles/run_tests.dir/tests/run_tests.cpp.o	5ad8bfcd3a1436fa
+2863	3056	1652626176064196513	project/server/server	d48ec7d5bed817d0
+2	1685	1652488901661230209	CMakeFiles/run_tests.dir/tests/network_tests.cpp.o	a341329b9771dc8c
+5	795	1652485667843170545	project/server/CMakeFiles/client.dir/src/net_tools.cpp.o	e5d44d9406fcf58b
+1685	1865	1652488901841234701	run_tests	3a458118ac1b1d7
+3534	3720	1652308541123987323	project/server/server_tools	89752ecf242e922f
+6	2863	1652626175868199165	project/server/CMakeFiles/server.dir/src/server.cpp.o	bf1c436b8324f658
+796	1025	1652485668075163937	project/server/client	4b3065c53a22d202
+5	4445	1652651053277018996	project/server/CMakeFiles/server.dir/src/server.cpp.o	bf1c436b8324f658
+4446	4732	1652651053569019540	project/server/server	d48ec7d5bed817d0
+7	4466	1652651071105052190	project/server/CMakeFiles/server.dir/src/server.cpp.o	bf1c436b8324f658
+4466	4697	1652651071341052629	project/server/server	d48ec7d5bed817d0
+7	2908	1652651413425683147	project/server/CMakeFiles/server.dir/src/server.cpp.o	bf1c436b8324f658
+2908	3101	1652651413621683506	project/server/server	d48ec7d5bed817d0

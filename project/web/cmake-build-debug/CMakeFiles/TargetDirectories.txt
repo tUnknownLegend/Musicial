@@ -1,0 +1,6 @@
+/home/al/CLionProjects/Musicial/cmake-build-debug/CMakeFiles/run_tests.dir
+/home/al/CLionProjects/Musicial/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/al/CLionProjects/Musicial/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/al/CLionProjects/Musicial/cmake-build-debug/project/server/CMakeFiles/server.dir
+/home/al/CLionProjects/Musicial/cmake-build-debug/project/server/CMakeFiles/edit_cache.dir
+/home/al/CLionProjects/Musicial/cmake-build-debug/project/server/CMakeFiles/rebuild_cache.dir

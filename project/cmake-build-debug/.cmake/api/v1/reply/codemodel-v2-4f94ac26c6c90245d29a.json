@@ -1,0 +1,317 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3,
+						5,
+						7
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "web",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-web-Debug-01e88eaec3c1a6607050.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "web",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "web/project/server",
+					"jsonFile" : "directory-web.project.server-Debug-e3a58350e09ff42b1b9e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "web/project/server",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "qt/lib",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-qt.lib-Debug-ef4267c57ae46a038ada.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "qt/lib",
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				},
+				{
+					"build" : "qt/lib/src",
+					"jsonFile" : "directory-qt.lib.src-Debug-96e1529f963b98ce58dc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 2,
+					"source" : "qt/lib/src",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "api",
+					"childIndexes" : 
+					[
+						6
+					],
+					"jsonFile" : "directory-api-Debug-2a9c8334f4ffbf0de720.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "api",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "api/src",
+					"jsonFile" : "directory-api.src-Debug-e6c43960ebaac56f3e45.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.0"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 4,
+					"source" : "api/src",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "db",
+					"jsonFile" : "directory-db-Debug-1a1d36c2bb120b4d29b2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "db",
+					"targetIndexes" : 
+					[
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						3,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "Musicial",
+					"targetIndexes" : 
+					[
+						7,
+						8
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "QT_test",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "QT_SRC",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "Musicial_API",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "Musicial_SRC",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "musicial",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "Musicial_API::@10fae538ba4e8521554e",
+					"jsonFile" : "target-Musicial_API-Debug-6f211fffc31022f5b7da.json",
+					"name" : "Musicial_API",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "Musicial_API_LIB::@10fae538ba4e8521554e",
+					"jsonFile" : "target-Musicial_API_LIB-Debug-fe8fc628e35b5f6255bb.json",
+					"name" : "Musicial_API_LIB",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "Musicial_SRC::@dd0ad6abbd580b1eb76b",
+					"jsonFile" : "target-Musicial_SRC-Debug-3c2fe3963e0353b4e54d.json",
+					"name" : "Musicial_SRC",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "QT_SRC::@9396cf51bec88ab42b48",
+					"jsonFile" : "target-QT_SRC-Debug-dfbead9fe5578b3937e5.json",
+					"name" : "QT_SRC",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "QT_test::@919599124c9d6fd00627",
+					"jsonFile" : "target-QT_test-Debug-fadd12bdcfde93c196aa.json",
+					"name" : "QT_test",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "client::@919599124c9d6fd00627",
+					"jsonFile" : "target-client-Debug-88d8a2b9ce686812ac85.json",
+					"name" : "client",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "musicial::@1f4cdc73c39a66049a93",
+					"jsonFile" : "target-musicial-Debug-d4f309b94456b9a7ee50.json",
+					"name" : "musicial",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "run_tests::@6a31816d04deed5f5bcd",
+					"jsonFile" : "target-run_tests-Debug-2dbde884e57dc03a01f3.json",
+					"name" : "run_tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "server::@ded16e5c30bffea6828d",
+					"jsonFile" : "target-server-Debug-77fef4ef541eb4c8acc9.json",
+					"name" : "server",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/aint/park/msc/cmake-build-debug",
+		"source" : "/home/aint/park/msc"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
