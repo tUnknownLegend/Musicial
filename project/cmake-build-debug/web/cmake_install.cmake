@@ -1,4 +1,4 @@
-# Install script for directory: /home/aint/park/msc/web
+# Install script for directory: /home/aint/park/Musicial/project/web
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/aint/park/msc/cmake-build-debug/web/project/server/cmake_install.cmake")
+  include("/home/aint/park/Musicial/project/cmake-build-debug/web/project/server/cmake_install.cmake")
 endif()
 

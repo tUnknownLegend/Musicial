@@ -1,2 +1,0 @@
-/usr/bin/ar qc libMusicial_SRC.a CMakeFiles/Musicial_SRC.dir/api.cpp.o CMakeFiles/Musicial_SRC.dir/mainnn.cpp.o CMakeFiles/Musicial_SRC.dir/tests.cpp.o
-/usr/bin/ranlib libMusicial_SRC.a

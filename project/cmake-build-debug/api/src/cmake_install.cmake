@@ -1,4 +1,4 @@
-# Install script for directory: /home/aint/park/msc/api/src
+# Install script for directory: /home/aint/park/Musicial/project/api/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

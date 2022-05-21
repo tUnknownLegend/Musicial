@@ -57,10 +57,10 @@ RM = /home/aint/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aint/park/msc/api
+CMAKE_SOURCE_DIR = /home/aint/park/Musicial/project/api
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aint/park/msc/api/build
+CMAKE_BINARY_DIR = /home/aint/park/Musicial/project/api/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/msc/api/build/CMakeFiles /home/aint/park/msc/api/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/api/build/CMakeFiles /home/aint/park/Musicial/project/api/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/msc/api/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/api/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,39 +129,12 @@ Musicial_API_LIB/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/build
 .PHONY : Musicial_API_LIB/fast
 
-#=============================================================================
-# Target rules for targets named Musicial_API
-
-# Build rule for target.
-Musicial_API: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Musicial_API
-.PHONY : Musicial_API
-
-# fast build rule for target.
-Musicial_API/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API.dir/build.make CMakeFiles/Musicial_API.dir/build
-.PHONY : Musicial_API/fast
-
-#=============================================================================
-# Target rules for targets named Musicial_SRC
-
-# Build rule for target.
-Musicial_SRC: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Musicial_SRC
-.PHONY : Musicial_SRC
-
-# fast build rule for target.
-Musicial_SRC/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/Musicial_SRC.dir/build.make src/CMakeFiles/Musicial_SRC.dir/build
-.PHONY : Musicial_SRC/fast
-
 src/api.o: src/api.cpp.o
 .PHONY : src/api.o
 
 # target to build an object file
 src/api.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API.dir/build.make CMakeFiles/Musicial_API.dir/src/api.cpp.o
 .PHONY : src/api.cpp.o
 
 src/api.i: src/api.cpp.i
@@ -170,7 +143,6 @@ src/api.i: src/api.cpp.i
 # target to preprocess a source file
 src/api.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API.dir/build.make CMakeFiles/Musicial_API.dir/src/api.cpp.i
 .PHONY : src/api.cpp.i
 
 src/api.s: src/api.cpp.s
@@ -179,35 +151,31 @@ src/api.s: src/api.cpp.s
 # target to generate assembly for a file
 src/api.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API.dir/build.make CMakeFiles/Musicial_API.dir/src/api.cpp.s
 .PHONY : src/api.cpp.s
 
-src/mainnn.o: src/mainnn.cpp.o
-.PHONY : src/mainnn.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/mainnn.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/mainnn.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API.dir/build.make CMakeFiles/Musicial_API.dir/src/mainnn.cpp.o
-.PHONY : src/mainnn.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/mainnn.i: src/mainnn.cpp.i
-.PHONY : src/mainnn.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/mainnn.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/mainnn.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API.dir/build.make CMakeFiles/Musicial_API.dir/src/mainnn.cpp.i
-.PHONY : src/mainnn.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/mainnn.s: src/mainnn.cpp.s
-.PHONY : src/mainnn.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/mainnn.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/mainnn.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API.dir/build.make CMakeFiles/Musicial_API.dir/src/mainnn.cpp.s
-.PHONY : src/mainnn.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -217,15 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Musicial_API"
 	@echo "... Musicial_API_LIB"
-	@echo "... Musicial_SRC"
 	@echo "... src/api.o"
 	@echo "... src/api.i"
 	@echo "... src/api.s"
-	@echo "... src/mainnn.o"
-	@echo "... src/mainnn.i"
-	@echo "... src/mainnn.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

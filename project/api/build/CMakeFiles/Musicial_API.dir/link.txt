@@ -1,1 +1,0 @@
-/usr/bin/c++   -I -lcurl -Wall CMakeFiles/Musicial_API.dir/src/api.cpp.o CMakeFiles/Musicial_API.dir/src/mainnn.cpp.o -o Musicial_API 

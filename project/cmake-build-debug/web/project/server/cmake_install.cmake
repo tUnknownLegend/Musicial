@@ -1,4 +1,4 @@
-# Install script for directory: /home/aint/park/msc/web/project/server
+# Install script for directory: /home/aint/park/Musicial/project/web/project/server
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

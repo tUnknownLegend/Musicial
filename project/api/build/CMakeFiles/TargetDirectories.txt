@@ -1,7 +1,3 @@
-/home/aint/park/msc/api/build/CMakeFiles/Musicial_API_LIB.dir
-/home/aint/park/msc/api/build/CMakeFiles/Musicial_API.dir
-/home/aint/park/msc/api/build/CMakeFiles/edit_cache.dir
-/home/aint/park/msc/api/build/CMakeFiles/rebuild_cache.dir
-/home/aint/park/msc/api/build/src/CMakeFiles/Musicial_SRC.dir
-/home/aint/park/msc/api/build/src/CMakeFiles/edit_cache.dir
-/home/aint/park/msc/api/build/src/CMakeFiles/rebuild_cache.dir
+/home/aint/park/Musicial/project/api/build/CMakeFiles/Musicial_API_LIB.dir
+/home/aint/park/Musicial/project/api/build/CMakeFiles/edit_cache.dir
+/home/aint/park/Musicial/project/api/build/CMakeFiles/rebuild_cache.dir

@@ -1,4 +1,4 @@
-# Install script for directory: /home/aint/park/msc/db
+# Install script for directory: /home/aint/park/Musicial/project/db
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

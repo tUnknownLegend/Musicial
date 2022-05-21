@@ -3,6 +3,8 @@ project(musicial)
 
 set(CMAKE_CXX_STANDARD 14)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -std=c++14 -Wall")
+
 find_package(PostgreSQL REQUIRED)
 #target_include_directories(musicial PRIVATE ${PostgreSQL_INCLUDE_DIRS})
 #target_link_libraries(musicial PRIVATE ${PostgreSQL_LIBRARIES})

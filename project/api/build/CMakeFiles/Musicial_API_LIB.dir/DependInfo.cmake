@@ -8,13 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/aint/park/msc/api/src/api.cpp" "CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o" "gcc" "CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o.d"
-  "/home/aint/park/msc/api/src/mainnn.cpp" "CMakeFiles/Musicial_API_LIB.dir/src/mainnn.cpp.o" "gcc" "CMakeFiles/Musicial_API_LIB.dir/src/mainnn.cpp.o.d"
+  "/home/aint/park/Musicial/project/api/src/api.cpp" "CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o" "gcc" "CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o.d"
+  "/home/aint/park/Musicial/project/api/src/main.cpp" "CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o" "gcc" "CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/aint/park/msc/api/build/src/CMakeFiles/Musicial_SRC.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

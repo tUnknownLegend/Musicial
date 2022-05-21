@@ -54,60 +54,41 @@ RM = /home/aint/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aint/park/msc/api
+CMAKE_SOURCE_DIR = /home/aint/park/Musicial/project/api
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aint/park/msc/api/build
+CMAKE_BINARY_DIR = /home/aint/park/Musicial/project/api/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
 all: CMakeFiles/Musicial_API_LIB.dir/all
-all: CMakeFiles/Musicial_API.dir/all
-all: src/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: src/preinstall
+preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Musicial_API_LIB.dir/clean
-clean: CMakeFiles/Musicial_API.dir/clean
-clean: src/clean
 .PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory src
-
-# Recursive "all" directory target.
-src/all: src/CMakeFiles/Musicial_SRC.dir/all
-.PHONY : src/all
-
-# Recursive "preinstall" directory target.
-src/preinstall:
-.PHONY : src/preinstall
-
-# Recursive "clean" directory target.
-src/clean: src/CMakeFiles/Musicial_SRC.dir/clean
-.PHONY : src/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Musicial_API_LIB.dir
 
 # All Build rule for target.
-CMakeFiles/Musicial_API_LIB.dir/all: src/CMakeFiles/Musicial_SRC.dir/all
+CMakeFiles/Musicial_API_LIB.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aint/park/msc/api/build/CMakeFiles --progress-num=4,5,6 "Built target Musicial_API_LIB"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aint/park/Musicial/project/api/build/CMakeFiles --progress-num=1,2,3 "Built target Musicial_API_LIB"
 .PHONY : CMakeFiles/Musicial_API_LIB.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Musicial_API_LIB.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/msc/api/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/api/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Musicial_API_LIB.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/msc/api/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/api/build/CMakeFiles 0
 .PHONY : CMakeFiles/Musicial_API_LIB.dir/rule
 
 # Convenience name for target.
@@ -118,58 +99,6 @@ Musicial_API_LIB: CMakeFiles/Musicial_API_LIB.dir/rule
 CMakeFiles/Musicial_API_LIB.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/clean
 .PHONY : CMakeFiles/Musicial_API_LIB.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/Musicial_API.dir
-
-# All Build rule for target.
-CMakeFiles/Musicial_API.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API.dir/build.make CMakeFiles/Musicial_API.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API.dir/build.make CMakeFiles/Musicial_API.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aint/park/msc/api/build/CMakeFiles --progress-num=1,2,3 "Built target Musicial_API"
-.PHONY : CMakeFiles/Musicial_API.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/Musicial_API.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/msc/api/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Musicial_API.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/msc/api/build/CMakeFiles 0
-.PHONY : CMakeFiles/Musicial_API.dir/rule
-
-# Convenience name for target.
-Musicial_API: CMakeFiles/Musicial_API.dir/rule
-.PHONY : Musicial_API
-
-# clean rule for target.
-CMakeFiles/Musicial_API.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API.dir/build.make CMakeFiles/Musicial_API.dir/clean
-.PHONY : CMakeFiles/Musicial_API.dir/clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/Musicial_SRC.dir
-
-# All Build rule for target.
-src/CMakeFiles/Musicial_SRC.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/Musicial_SRC.dir/build.make src/CMakeFiles/Musicial_SRC.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/Musicial_SRC.dir/build.make src/CMakeFiles/Musicial_SRC.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aint/park/msc/api/build/CMakeFiles --progress-num=7,8,9,10 "Built target Musicial_SRC"
-.PHONY : src/CMakeFiles/Musicial_SRC.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/Musicial_SRC.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/msc/api/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/Musicial_SRC.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/msc/api/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/Musicial_SRC.dir/rule
-
-# Convenience name for target.
-Musicial_SRC: src/CMakeFiles/Musicial_SRC.dir/rule
-.PHONY : Musicial_SRC
-
-# clean rule for target.
-src/CMakeFiles/Musicial_SRC.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/Musicial_SRC.dir/build.make src/CMakeFiles/Musicial_SRC.dir/clean
-.PHONY : src/CMakeFiles/Musicial_SRC.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

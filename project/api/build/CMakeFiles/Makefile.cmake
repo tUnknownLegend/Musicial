@@ -113,7 +113,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.3/CMakeSystem.cmake"
-  "../src/CMakeLists.txt"
   "/usr/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake"
   "/usr/lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake"
   "/usr/lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake"
@@ -137,12 +136,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.22.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Musicial_API_LIB.dir/DependInfo.cmake"
-  "CMakeFiles/Musicial_API.dir/DependInfo.cmake"
-  "src/CMakeFiles/Musicial_SRC.dir/DependInfo.cmake"
   )
