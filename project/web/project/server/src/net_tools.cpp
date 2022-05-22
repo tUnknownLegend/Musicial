@@ -1,6 +1,24 @@
 #include "net_tools.h"
 
 namespace net_tools {
+
+    std::ostream &operator<<(std::ostream &os, const net_tools::URL &url) {
+        os << url.link;
+        return os;
+    }
+
+    std::istream &operator>>(std::istream &is, net_tools::URL &url) {
+        is >> url.link;
+        return is;
+    }
+
+    bool operator==(const net_tools::URL &lURL, const net_tools::URL &rURL) {
+        if (lURL.link == rURL.link) {
+            return true;
+        }
+        return false;
+    }
+
     std::ostream &operator<<(std::ostream &os, const net_tools::playlistPlatformsRefs &refs) {
         os << "Spotify ref: " << refs.spRef << std::endl;
         os << "YouTube ref: " << refs.ytRef << std::endl;
@@ -15,7 +33,7 @@ namespace net_tools {
     }
 
     bool isRefEmpty(const playlistPlatformsRefs &refs) {
-        if (refs.ytRef.empty() && refs.spRef.empty()) {
+        if (refs.ytRef.link.empty() && refs.spRef.link.empty()) {
             return true;
         }
         return false;
@@ -85,10 +103,10 @@ namespace net_tools {
         result += message.text;
         result += "\r\n";
 
-        result += message.playlists.ytRef;
+        result += message.playlists.ytRef.link;
         result += "\r\n";
 
-        result += message.playlists.spRef;
+        result += message.playlists.spRef.link;
 
         return result;
     }
@@ -112,8 +130,8 @@ namespace net_tools {
         result.ownerID = (uint64_t) std::stoi(blocks[0]);
         result.chatID = (uint64_t) std::stoi(blocks[1]);
         result.text = blocks[2];
-        result.playlists.ytRef = blocks[3];
-        result.playlists.spRef = blocks[4];
+        result.playlists.ytRef.link = blocks[3];
+        result.playlists.spRef.link = blocks[4];
 
 
         return result;

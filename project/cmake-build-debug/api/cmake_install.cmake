@@ -1,4 +1,4 @@
-# Install script for directory: /home/aint/park/Musicial/project/api
+# Install script for directory: /home/al/CLionProjects/Musicial/project/api
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

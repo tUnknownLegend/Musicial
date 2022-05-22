@@ -14,9 +14,13 @@ namespace net_tools {
 struct Database {
 };
 
+struct URL {
+    std::string link;
+};
+
 struct playlistPlatformsRefs {
-    std::string ytRef;
-    std::string spRef;
+    URL ytRef;
+    URL spRef;
 };
 
 struct User {
@@ -34,6 +38,23 @@ struct Playlist {
 };
 
 struct Message {
+    Message(uint64_t ownerID_, uint64_t chatID_, std::string &text_, URL &spRef_, URL &ytRef_) :
+    ownerID(ownerID_),
+    chatID(chatID_),
+    text(text_),
+    playlists({ytRef_, spRef_})
+    {}
+
+    Message() {
+        ownerID = 0;
+        chatID = 0;
+        text = "test";
+        playlists = {"", ""};
+    };
+
+
+
+
     uint64_t ownerID;
     uint64_t chatID;
     std::string text;

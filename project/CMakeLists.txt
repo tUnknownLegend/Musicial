@@ -6,14 +6,18 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++14 -Wall -ggdb3 -pthread")
 #set(CMAKE_C_CLANG_TIDY clang-tidy; -checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus*)
 set(INCLUDE_DIRS "${CMAKE_SOURCE_DIR}")
+set(CMAKE_EXE_LINKER_FLAGS " ${CMAKE_EXE_LINKER_FLAGS} -lcurl")
+
 
 find_package(GTest REQUIRED)
 find_package(Boost COMPONENTS system)
 
+find_package(CURL REQUIRED)
+
 add_subdirectory(web)
-add_subdirectory(qt/lib)
+#add_subdirectory(qt/lib)
 add_subdirectory(api)
-add_subdirectory(db)
+#add_subdirectory(db)
 
 
 set(SOURCES tests/run_tests.cpp tests/network_tests.cpp)

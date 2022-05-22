@@ -1,0 +1,11 @@
+/home/al/CLionProjects/Musicial/project/build/CMakeFiles/rebuild_cache.dir
+/home/al/CLionProjects/Musicial/project/build/CMakeFiles/edit_cache.dir
+/home/al/CLionProjects/Musicial/project/build/web/CMakeFiles/rebuild_cache.dir
+/home/al/CLionProjects/Musicial/project/build/web/CMakeFiles/edit_cache.dir
+/home/al/CLionProjects/Musicial/project/build/web/CMakeFiles/run_tests.dir
+/home/al/CLionProjects/Musicial/project/build/web/project/server/CMakeFiles/rebuild_cache.dir
+/home/al/CLionProjects/Musicial/project/build/web/project/server/CMakeFiles/edit_cache.dir
+/home/al/CLionProjects/Musicial/project/build/web/project/server/CMakeFiles/server.dir
+/home/al/CLionProjects/Musicial/project/build/api/CMakeFiles/rebuild_cache.dir
+/home/al/CLionProjects/Musicial/project/build/api/CMakeFiles/edit_cache.dir
+/home/al/CLionProjects/Musicial/project/build/api/CMakeFiles/Musicial_API_LIB.dir

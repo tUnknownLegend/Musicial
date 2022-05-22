@@ -1,0 +1,1 @@
+/usr/bin/c++   -pthread  -rdynamic CMakeFiles/server.dir/src/server.o CMakeFiles/server.dir/src/connection.o CMakeFiles/server.dir/src/server_tools.o CMakeFiles/server.dir/src/net_tools.o  -o server 

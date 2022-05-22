@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/al/CLionProjects/Musicial/project/api/include/api.h
+iostream
+-
+vector
+-
+string
+-
+curl/curl.h
+/home/al/CLionProjects/Musicial/project/api/include/curl/curl.h
+nlohmann/json.hpp
+/home/al/CLionProjects/Musicial/project/api/include/nlohmann/json.hpp
+
+/home/al/CLionProjects/Musicial/project/api/src/main.cpp
+fstream
+-
+../include/api.h
+/home/al/CLionProjects/Musicial/project/api/include/api.h
+
