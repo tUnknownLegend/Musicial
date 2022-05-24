@@ -1,10 +1,9 @@
 #include "connection.h"
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
 #include <boost/bind/bind.hpp>
+#include <iostream>
+#include <string>
+#include <vector>
 
 
 std::vector<std::string> split(const std::string &s, char delim) {
@@ -30,6 +29,10 @@ Request parse(const std::string &req_data) {
     request.method = data[0];
     request.path = data[1];
     request.http_version = data[2];
+
+    int beginPos = req_data.find("\r\n\r\n");
+    std::string msg = req_data.substr(beginPos+4);
+    request.body = net_tools::String2Message(msg);
 
     return request;
 }
@@ -69,6 +72,8 @@ void Connection::handle_read(const boost::system::error_code &e,
         boost::asio::async_write(socket_, boost::asio::buffer(buffer.data(), buffer.size()),
                                  boost::bind(&Connection::handle_write, shared_from_this(),
                                              boost::asio::placeholders::error));
+
+
     }
 }
 

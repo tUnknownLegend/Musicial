@@ -43,45 +43,45 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/al/CLionProjects/Musicial/project/web
+CMAKE_SOURCE_DIR = /home/al/CLionProjects/Musicial/project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/al/CLionProjects/Musicial/project/web
+CMAKE_BINARY_DIR = /home/al/CLionProjects/Musicial/project
 
 # Include any dependencies generated for this target.
-include CMakeFiles/run_tests.dir/depend.make
+include web/CMakeFiles/run_tests.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/run_tests.dir/progress.make
+include web/CMakeFiles/run_tests.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/run_tests.dir/flags.make
+include web/CMakeFiles/run_tests.dir/flags.make
 
-CMakeFiles/run_tests.dir/tests/run_tests.cpp.o: CMakeFiles/run_tests.dir/flags.make
-CMakeFiles/run_tests.dir/tests/run_tests.cpp.o: tests/run_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/run_tests.dir/tests/run_tests.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/run_tests.dir/tests/run_tests.cpp.o -c /home/al/CLionProjects/Musicial/project/web/tests/run_tests.cpp
+web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o: web/CMakeFiles/run_tests.dir/flags.make
+web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o: web/tests/run_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o"
+	cd /home/al/CLionProjects/Musicial/project/web && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/run_tests.dir/tests/run_tests.cpp.o -c /home/al/CLionProjects/Musicial/project/web/tests/run_tests.cpp
 
-CMakeFiles/run_tests.dir/tests/run_tests.cpp.i: cmake_force
+web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/tests/run_tests.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/al/CLionProjects/Musicial/project/web/tests/run_tests.cpp > CMakeFiles/run_tests.dir/tests/run_tests.cpp.i
+	cd /home/al/CLionProjects/Musicial/project/web && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/al/CLionProjects/Musicial/project/web/tests/run_tests.cpp > CMakeFiles/run_tests.dir/tests/run_tests.cpp.i
 
-CMakeFiles/run_tests.dir/tests/run_tests.cpp.s: cmake_force
+web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/run_tests.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/al/CLionProjects/Musicial/project/web/tests/run_tests.cpp -o CMakeFiles/run_tests.dir/tests/run_tests.cpp.s
+	cd /home/al/CLionProjects/Musicial/project/web && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/al/CLionProjects/Musicial/project/web/tests/run_tests.cpp -o CMakeFiles/run_tests.dir/tests/run_tests.cpp.s
 
-CMakeFiles/run_tests.dir/tests/network_tests.cpp.o: CMakeFiles/run_tests.dir/flags.make
-CMakeFiles/run_tests.dir/tests/network_tests.cpp.o: tests/network_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/run_tests.dir/tests/network_tests.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/run_tests.dir/tests/network_tests.cpp.o -c /home/al/CLionProjects/Musicial/project/web/tests/network_tests.cpp
+web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o: web/CMakeFiles/run_tests.dir/flags.make
+web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o: web/tests/network_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o"
+	cd /home/al/CLionProjects/Musicial/project/web && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/run_tests.dir/tests/network_tests.cpp.o -c /home/al/CLionProjects/Musicial/project/web/tests/network_tests.cpp
 
-CMakeFiles/run_tests.dir/tests/network_tests.cpp.i: cmake_force
+web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/tests/network_tests.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/al/CLionProjects/Musicial/project/web/tests/network_tests.cpp > CMakeFiles/run_tests.dir/tests/network_tests.cpp.i
+	cd /home/al/CLionProjects/Musicial/project/web && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/al/CLionProjects/Musicial/project/web/tests/network_tests.cpp > CMakeFiles/run_tests.dir/tests/network_tests.cpp.i
 
-CMakeFiles/run_tests.dir/tests/network_tests.cpp.s: cmake_force
+web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/network_tests.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/al/CLionProjects/Musicial/project/web/tests/network_tests.cpp -o CMakeFiles/run_tests.dir/tests/network_tests.cpp.s
+	cd /home/al/CLionProjects/Musicial/project/web && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/al/CLionProjects/Musicial/project/web/tests/network_tests.cpp -o CMakeFiles/run_tests.dir/tests/network_tests.cpp.s
 
 # Object files for target run_tests
 run_tests_OBJECTS = \
@@ -91,25 +91,32 @@ run_tests_OBJECTS = \
 # External object files for target run_tests
 run_tests_EXTERNAL_OBJECTS =
 
-run_tests: CMakeFiles/run_tests.dir/tests/run_tests.cpp.o
-run_tests: CMakeFiles/run_tests.dir/tests/network_tests.cpp.o
-run_tests: CMakeFiles/run_tests.dir/build.make
-run_tests: /usr/local/lib/libgtest.a
-run_tests: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
-run_tests: CMakeFiles/run_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/al/CLionProjects/Musicial/project/web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable run_tests"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/run_tests.dir/link.txt --verbose=$(VERBOSE)
+web/run_tests: web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o
+web/run_tests: web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o
+web/run_tests: web/CMakeFiles/run_tests.dir/build.make
+web/run_tests: /usr/local/lib/libgtest.a
+web/run_tests: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+web/run_tests: api/libMusicial_API_LIB.a
+web/run_tests: /usr/local/lib/libgtest.a
+web/run_tests: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+web/run_tests: /usr/local/lib/libcurl.so
+web/run_tests: /usr/local/lib/libgtest_main.a
+web/run_tests: /usr/local/lib/libgtest.a
+web/run_tests: /usr/local/lib/libcurl.so
+web/run_tests: web/CMakeFiles/run_tests.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/al/CLionProjects/Musicial/project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable run_tests"
+	cd /home/al/CLionProjects/Musicial/project/web && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/run_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/run_tests.dir/build: run_tests
+web/CMakeFiles/run_tests.dir/build: web/run_tests
 
-.PHONY : CMakeFiles/run_tests.dir/build
+.PHONY : web/CMakeFiles/run_tests.dir/build
 
-CMakeFiles/run_tests.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/run_tests.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/run_tests.dir/clean
+web/CMakeFiles/run_tests.dir/clean:
+	cd /home/al/CLionProjects/Musicial/project/web && $(CMAKE_COMMAND) -P CMakeFiles/run_tests.dir/cmake_clean.cmake
+.PHONY : web/CMakeFiles/run_tests.dir/clean
 
-CMakeFiles/run_tests.dir/depend:
-	cd /home/al/CLionProjects/Musicial/project/web && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/al/CLionProjects/Musicial/project/web /home/al/CLionProjects/Musicial/project/web /home/al/CLionProjects/Musicial/project/web /home/al/CLionProjects/Musicial/project/web /home/al/CLionProjects/Musicial/project/web/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/run_tests.dir/depend
+web/CMakeFiles/run_tests.dir/depend:
+	cd /home/al/CLionProjects/Musicial/project && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/al/CLionProjects/Musicial/project /home/al/CLionProjects/Musicial/project/web /home/al/CLionProjects/Musicial/project /home/al/CLionProjects/Musicial/project/web /home/al/CLionProjects/Musicial/project/web/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : web/CMakeFiles/run_tests.dir/depend
 

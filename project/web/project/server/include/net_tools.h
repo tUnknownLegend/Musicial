@@ -1,14 +1,15 @@
 #ifndef PROJECT_SERVER_INCLUDE_NET_TOOLS_H_
 #define PROJECT_SERVER_INCLUDE_NET_TOOLS_H_
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdint.h>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
+#include <vector>
 
+enum Platform {YouTube, Spotify};
 
 namespace net_tools {
 struct Database {
@@ -16,6 +17,16 @@ struct Database {
 
 struct URL {
     std::string link;
+};
+
+struct Playlist {
+    URL ref;
+    Platform platform;
+};
+
+struct Song {
+    URL ref;
+    Platform platform;
 };
 
 struct playlistPlatformsRefs {
@@ -33,51 +44,24 @@ struct User {
     std::string avatarRef;
 };
 
-struct Playlist {
-    int someData;
-};
 
 struct Message {
-    Message(uint64_t ownerID_, uint64_t chatID_, std::string &text_, URL &spRef_, URL &ytRef_) :
-    ownerID(ownerID_),
-    chatID(chatID_),
-    text(text_),
-    playlists({ytRef_, spRef_})
-    {}
-
     Message() {
         ownerID = 0;
         chatID = 0;
         text = "test";
-        playlists = {"", ""};
     };
-
-
-
 
     uint64_t ownerID;
     uint64_t chatID;
     std::string text;
-    playlistPlatformsRefs playlists;
+    std::vector<Playlist> playlists;
+    uint64_t playlistNumber;
+    std::vector<Song> songs;
+    uint64_t songsNumber;
 };
 
-/*
-class Server {
-public:
-    Message getMessageFromDB() {}
 
-    Playlist getPlaylistFromDB() {}
-
-    User getUserFromDB() {}
-
-    bool updateFromServer() {}
-
-    MessageGroup getMessageGroupFromDB(uint64_t ownerID) {}
-
-private:
-    Database DB;
-};
-*/
 std::ostream &operator<<(std::ostream &os, const net_tools::Message &message);
 
 bool operator==(const net_tools::Message &lMessage, const net_tools::Message &rMessage);

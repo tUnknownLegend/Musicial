@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/al/CLionProjects/Musicial/project/web
+CMAKE_SOURCE_DIR = /home/al/CLionProjects/Musicial/project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/al/CLionProjects/Musicial/project/web
+CMAKE_BINARY_DIR = /home/al/CLionProjects/Musicial/project
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/al/CLionProjects/Musicial/project/web/CMakeFiles /home/al/CLionProjects/Musicial/project/web/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/al/CLionProjects/Musicial/project/web/CMakeFiles 0
+	cd /home/al/CLionProjects/Musicial/project && $(CMAKE_COMMAND) -E cmake_progress_start /home/al/CLionProjects/Musicial/project/CMakeFiles /home/al/CLionProjects/Musicial/project/web/CMakeFiles/progress.marks
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f CMakeFiles/Makefile2 web/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/al/CLionProjects/Musicial/project/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f CMakeFiles/Makefile2 web/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,44 +97,33 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f CMakeFiles/Makefile2 web/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f CMakeFiles/Makefile2 web/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/al/CLionProjects/Musicial/project && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named run_tests
+# Convenience name for target.
+web/CMakeFiles/run_tests.dir/rule:
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f CMakeFiles/Makefile2 web/CMakeFiles/run_tests.dir/rule
+.PHONY : web/CMakeFiles/run_tests.dir/rule
 
-# Build rule for target.
-run_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests
+# Convenience name for target.
+run_tests: web/CMakeFiles/run_tests.dir/rule
+
 .PHONY : run_tests
 
 # fast build rule for target.
 run_tests/fast:
-	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/CMakeFiles/run_tests.dir/build.make web/CMakeFiles/run_tests.dir/build
 .PHONY : run_tests/fast
-
-#=============================================================================
-# Target rules for targets named server
-
-# Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 server
-.PHONY : server
-
-# fast build rule for target.
-server/fast:
-	$(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/build
-.PHONY : server/fast
 
 tests/network_tests.o: tests/network_tests.cpp.o
 
@@ -142,7 +131,7 @@ tests/network_tests.o: tests/network_tests.cpp.o
 
 # target to build an object file
 tests/network_tests.cpp.o:
-	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/network_tests.cpp.o
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/CMakeFiles/run_tests.dir/build.make web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o
 .PHONY : tests/network_tests.cpp.o
 
 tests/network_tests.i: tests/network_tests.cpp.i
@@ -151,7 +140,7 @@ tests/network_tests.i: tests/network_tests.cpp.i
 
 # target to preprocess a source file
 tests/network_tests.cpp.i:
-	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/network_tests.cpp.i
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/CMakeFiles/run_tests.dir/build.make web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.i
 .PHONY : tests/network_tests.cpp.i
 
 tests/network_tests.s: tests/network_tests.cpp.s
@@ -160,7 +149,7 @@ tests/network_tests.s: tests/network_tests.cpp.s
 
 # target to generate assembly for a file
 tests/network_tests.cpp.s:
-	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/network_tests.cpp.s
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/CMakeFiles/run_tests.dir/build.make web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.s
 .PHONY : tests/network_tests.cpp.s
 
 tests/run_tests.o: tests/run_tests.cpp.o
@@ -169,7 +158,7 @@ tests/run_tests.o: tests/run_tests.cpp.o
 
 # target to build an object file
 tests/run_tests.cpp.o:
-	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/run_tests.cpp.o
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/CMakeFiles/run_tests.dir/build.make web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o
 .PHONY : tests/run_tests.cpp.o
 
 tests/run_tests.i: tests/run_tests.cpp.i
@@ -178,7 +167,7 @@ tests/run_tests.i: tests/run_tests.cpp.i
 
 # target to preprocess a source file
 tests/run_tests.cpp.i:
-	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/run_tests.cpp.i
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/CMakeFiles/run_tests.dir/build.make web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.i
 .PHONY : tests/run_tests.cpp.i
 
 tests/run_tests.s: tests/run_tests.cpp.s
@@ -187,7 +176,7 @@ tests/run_tests.s: tests/run_tests.cpp.s
 
 # target to generate assembly for a file
 tests/run_tests.cpp.s:
-	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/run_tests.cpp.s
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/CMakeFiles/run_tests.dir/build.make web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.s
 .PHONY : tests/run_tests.cpp.s
 
 # Help Target
@@ -199,7 +188,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... run_tests"
-	@echo "... server"
 	@echo "... tests/network_tests.o"
 	@echo "... tests/network_tests.i"
 	@echo "... tests/network_tests.s"
@@ -217,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/al/CLionProjects/Musicial/project && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,8 +1,8 @@
 #ifndef PROJECT_SERVER_INCLUDE_REQUEST_H_
 #define PROJECT_SERVER_INCLUDE_REQUEST_H_
 
-#include <vector>
 #include <string>
+#include <vector>
 
 #include "net_tools.h"
 
@@ -19,12 +19,6 @@ struct Request {
 };
 
 inline std::ostream &operator<<(std::ostream &os, const Request &request) {
-    /*
-    os << request.method << std::endl;
-    os << request.http_version << std::endl;
-    for (int i = 0; i < (int) request.headers.size(); i++)
-        os << request.headers[i] << std::endl;
-    */
     os << "Request:\n" << request.body << "\n\n";
 
     return os;
@@ -42,8 +36,9 @@ inline std::string Request2String(const Request &request) {
 
     ss << "\r\n";
 
-    if (!net_tools::isMessageEmpty(request.body))
+    if (!(request.body.text.empty() && request.body.playlists.empty() && request.body.songs.empty())) {
         ss << net_tools::Message2String(request.body) << "\r\n\r\n";
+    }
 
     return ss.str();
 }

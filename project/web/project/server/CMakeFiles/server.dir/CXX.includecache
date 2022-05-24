@@ -70,11 +70,11 @@ request.h
 net_tools.h
 /home/al/CLionProjects/Musicial/project/web/project/server/src/net_tools.h
 
-project/server/include/client.h
+web/project/server/include/client.h
 client_tools.h
-project/server/include/client_tools.h
+web/project/server/include/client_tools.h
 
-project/server/include/client_tools.h
+web/project/server/include/client_tools.h
 iostream
 -
 istream
@@ -88,21 +88,21 @@ boost/asio.hpp
 boost/bind/bind.hpp
 -
 response.h
-project/server/include/response.h
+web/project/server/include/response.h
 request.h
-project/server/include/request.h
+web/project/server/include/request.h
 net_tools.h
-project/server/include/net_tools.h
+web/project/server/include/net_tools.h
 
-project/server/include/connection.h
+web/project/server/include/connection.h
 memory
 -
 response.h
-project/server/include/response.h
+web/project/server/include/response.h
 request.h
-project/server/include/request.h
+web/project/server/include/request.h
 router.h
-project/server/include/router.h
+web/project/server/include/router.h
 boost/asio.hpp
 -
 boost/array.hpp
@@ -114,7 +114,7 @@ boost/shared_ptr.hpp
 boost/enable_shared_from_this.hpp
 -
 
-project/server/include/net_tools.h
+web/project/server/include/net_tools.h
 stdlib.h
 -
 stdio.h
@@ -130,29 +130,29 @@ string
 sstream
 -
 
-project/server/include/request.h
+web/project/server/include/request.h
 vector
 -
 string
 -
 net_tools.h
-project/server/include/net_tools.h
+web/project/server/include/net_tools.h
 
-project/server/include/response.h
+web/project/server/include/response.h
 vector
 -
 string
 -
 net_tools.h
-project/server/include/net_tools.h
+web/project/server/include/net_tools.h
 
-project/server/include/router.h
+web/project/server/include/router.h
 map
 -
 string
 -
 
-project/server/include/server_tools.h
+web/project/server/include/server_tools.h
 string
 -
 vector
@@ -164,11 +164,11 @@ boost/noncopyable.hpp
 boost/shared_ptr.hpp
 -
 connection.h
-project/server/include/connection.h
+web/project/server/include/connection.h
 request.h
-project/server/include/request.h
+web/project/server/include/request.h
 response.h
-project/server/include/response.h
+web/project/server/include/response.h
 router.h
-project/server/include/router.h
+web/project/server/include/router.h
 

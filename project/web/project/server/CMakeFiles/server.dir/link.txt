@@ -1,1 +1,1 @@
-/usr/bin/c++   -pthread   CMakeFiles/server.dir/src/server.cpp.o CMakeFiles/server.dir/src/connection.cpp.o CMakeFiles/server.dir/src/server_tools.cpp.o CMakeFiles/server.dir/src/net_tools.cpp.o  -o server 
+/usr/bin/c++   -pthread     -lcurl -lcurl CMakeFiles/server.dir/src/server.cpp.o CMakeFiles/server.dir/src/connection.cpp.o CMakeFiles/server.dir/src/server_tools.cpp.o CMakeFiles/server.dir/src/net_tools.cpp.o  -o server  -Wl,-rpath,/usr/local/lib /usr/local/lib/libcurl.so /usr/local/lib/libgtest_main.a -lcurl /usr/local/lib/libgtest.a 

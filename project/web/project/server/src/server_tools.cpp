@@ -1,17 +1,16 @@
-#include "server_tools.h"
-
-#include <sys/wait.h>
-#include <vector>
-#include <iostream>
-// #include <thread>
-#include <string>
 #include <boost/asio.hpp>
 #include <boost/bind/bind.hpp>
-#include <boost/lexical_cast.hpp>
 #include <boost/shared_ptr.hpp>
+#include <iostream>
+#include <string>
+#include <sys/wait.h>
+#include <thread>
+#include <vector>
 
-#include "request.h"
 #include "net_tools.h"
+#include "request.h"
+#include "server_tools.h"
+
 
 namespace server_tools {
 int startServer() {
@@ -30,7 +29,7 @@ int startServer() {
         // Initialise the server.
 
         // std::size_t num_threads = boost::lexical_cast<std::size_t>(argv[3]);
-        std::size_t num_threads = 2 * (std::size_t) sysconf(_SC_NPROCESSORS_ONLN);
+        std::size_t num_threads = (std::size_t) sysconf(_SC_NPROCESSORS_ONLN);
         http::server3::server s(ip, port, num_threads);
 
         // Run the server until stopped.
@@ -59,43 +58,31 @@ Response HandlerConvertPlaylist(const Request &request) {
     return response;
 }
 
+Response HandlerEcho(const Request &request) {
+    Response response;
+
+
+    response.status_code = 200;
+    response.status_message = "OK";
+    response.http_version = "HTTP/1.1";
+
+    response.body = request.body;
+
+    return response;
+}
+
 Response HandlerTest(const Request &request) {
-
-
     Response response;
 
     response.status_code = 200;
     response.status_message = "OK";
     response.http_version = "HTTP/1.1";
 
+    response.body = net_tools::getMessage();
 
     return response;
 }
 
-/*
-Response HandlerGetPost(const Request &request) {
-    // use data from request
-
-    Response response;
-
-    response.status_code = 200;
-    response.status_message = "OK";
-    response.http_version = "HTTP/1.1";
-    response.body = "[{\"userId\": 2, \"nickname\" : \"Vinograduss\" }, {\"userId\": 3, \"nickname\" : \"lambda\" }]";
-    return response;
-}
-
-Response HandlerGetUser(const Request &request) {
-    // use data from request
-
-    Response response;
-    response.status_code = 200;
-    response.status_message = "OK";
-    response.http_version = "HTTP/1.0";
-    response.body = "{\"userId\": 2, \"nickname\" : \"Vinograduss\" }";
-    return response;
-}
-*/
 
 namespace http {
 namespace server3 {
@@ -111,11 +98,10 @@ server::server(const std::string &address, const std::string &port,
     signals_.async_wait(boost::bind(&server::handle_stop, this));
 
 
-    request_router.addHandler("/convert_playlist", HandlerConvertPlaylist);
-    request_router.addHandler("/test", HandlerConvertPlaylist);
+    request_router.addHandler("convert_playlist", HandlerConvertPlaylist);
+    request_router.addHandler("echo", HandlerEcho);
+    request_router.addHandler("test", HandlerTest);
 
-    // request_router.addHandler("/posts", HandlerGetPost);
-    // request_router.addHandler("/user", HandlerGetUser);
 
 
 
@@ -134,6 +120,7 @@ void server::run() {
     std::cout << "Server is running with " << thread_pool_size_ << " threads" << std::endl;
     // Create a pool of threads to run all of the io_contexts.
     std::vector<boost::shared_ptr<std::thread> > threads;
+
     for (std::size_t i = 0; i < thread_pool_size_; ++i) {
         boost::shared_ptr<std::thread> thread(new std::thread(
                 boost::bind(&boost::asio::io_context::run, &io_context_)));
@@ -146,6 +133,7 @@ void server::run() {
 }
 
 void server::start_accept() {
+
     new_connection_.reset(new Connection(io_context_, request_router));
     acceptor_.async_accept(new_connection_->socket(),
                            boost::bind(&server::handle_accept, this,

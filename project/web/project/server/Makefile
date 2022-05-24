@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/al/CLionProjects/Musicial/project/web
+CMAKE_SOURCE_DIR = /home/al/CLionProjects/Musicial/project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/al/CLionProjects/Musicial/project/web
+CMAKE_BINARY_DIR = /home/al/CLionProjects/Musicial/project
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/al/CLionProjects/Musicial/project/web && $(CMAKE_COMMAND) -E cmake_progress_start /home/al/CLionProjects/Musicial/project/web/CMakeFiles /home/al/CLionProjects/Musicial/project/web/project/server/CMakeFiles/progress.marks
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f CMakeFiles/Makefile2 project/server/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/al/CLionProjects/Musicial/project/web/CMakeFiles 0
+	cd /home/al/CLionProjects/Musicial/project && $(CMAKE_COMMAND) -E cmake_progress_start /home/al/CLionProjects/Musicial/project/CMakeFiles /home/al/CLionProjects/Musicial/project/web/project/server/CMakeFiles/progress.marks
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f CMakeFiles/Makefile2 web/project/server/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/al/CLionProjects/Musicial/project/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f CMakeFiles/Makefile2 project/server/clean
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f CMakeFiles/Makefile2 web/project/server/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,33 +97,75 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f CMakeFiles/Makefile2 project/server/preinstall
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f CMakeFiles/Makefile2 web/project/server/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f CMakeFiles/Makefile2 project/server/preinstall
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f CMakeFiles/Makefile2 web/project/server/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/al/CLionProjects/Musicial/project/web && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/al/CLionProjects/Musicial/project && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-project/server/CMakeFiles/server.dir/rule:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f CMakeFiles/Makefile2 project/server/CMakeFiles/server.dir/rule
-.PHONY : project/server/CMakeFiles/server.dir/rule
+web/project/server/CMakeFiles/server.dir/rule:
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f CMakeFiles/Makefile2 web/project/server/CMakeFiles/server.dir/rule
+.PHONY : web/project/server/CMakeFiles/server.dir/rule
 
 # Convenience name for target.
-server: project/server/CMakeFiles/server.dir/rule
+server: web/project/server/CMakeFiles/server.dir/rule
 
 .PHONY : server
 
 # fast build rule for target.
 server/fast:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/build
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/build
 .PHONY : server/fast
+
+# Convenience name for target.
+web/project/server/CMakeFiles/client.dir/rule:
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f CMakeFiles/Makefile2 web/project/server/CMakeFiles/client.dir/rule
+.PHONY : web/project/server/CMakeFiles/client.dir/rule
+
+# Convenience name for target.
+client: web/project/server/CMakeFiles/client.dir/rule
+
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/client.dir/build.make web/project/server/CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+src/client.o: src/client.cpp.o
+
+.PHONY : src/client.o
+
+# target to build an object file
+src/client.cpp.o:
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/client.dir/build.make web/project/server/CMakeFiles/client.dir/src/client.cpp.o
+.PHONY : src/client.cpp.o
+
+src/client.i: src/client.cpp.i
+
+.PHONY : src/client.i
+
+# target to preprocess a source file
+src/client.cpp.i:
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/client.dir/build.make web/project/server/CMakeFiles/client.dir/src/client.cpp.i
+.PHONY : src/client.cpp.i
+
+src/client.s: src/client.cpp.s
+
+.PHONY : src/client.s
+
+# target to generate assembly for a file
+src/client.cpp.s:
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/client.dir/build.make web/project/server/CMakeFiles/client.dir/src/client.cpp.s
+.PHONY : src/client.cpp.s
 
 src/connection.o: src/connection.cpp.o
 
@@ -131,7 +173,7 @@ src/connection.o: src/connection.cpp.o
 
 # target to build an object file
 src/connection.cpp.o:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/connection.cpp.o
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/connection.cpp.o
 .PHONY : src/connection.cpp.o
 
 src/connection.i: src/connection.cpp.i
@@ -140,7 +182,7 @@ src/connection.i: src/connection.cpp.i
 
 # target to preprocess a source file
 src/connection.cpp.i:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/connection.cpp.i
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/connection.cpp.i
 .PHONY : src/connection.cpp.i
 
 src/connection.s: src/connection.cpp.s
@@ -149,7 +191,7 @@ src/connection.s: src/connection.cpp.s
 
 # target to generate assembly for a file
 src/connection.cpp.s:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/connection.cpp.s
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/connection.cpp.s
 .PHONY : src/connection.cpp.s
 
 src/net_tools.o: src/net_tools.cpp.o
@@ -158,7 +200,8 @@ src/net_tools.o: src/net_tools.cpp.o
 
 # target to build an object file
 src/net_tools.cpp.o:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/net_tools.cpp.o
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/client.dir/build.make web/project/server/CMakeFiles/client.dir/src/net_tools.cpp.o
 .PHONY : src/net_tools.cpp.o
 
 src/net_tools.i: src/net_tools.cpp.i
@@ -167,7 +210,8 @@ src/net_tools.i: src/net_tools.cpp.i
 
 # target to preprocess a source file
 src/net_tools.cpp.i:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/net_tools.cpp.i
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.i
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/client.dir/build.make web/project/server/CMakeFiles/client.dir/src/net_tools.cpp.i
 .PHONY : src/net_tools.cpp.i
 
 src/net_tools.s: src/net_tools.cpp.s
@@ -176,7 +220,8 @@ src/net_tools.s: src/net_tools.cpp.s
 
 # target to generate assembly for a file
 src/net_tools.cpp.s:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/net_tools.cpp.s
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.s
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/client.dir/build.make web/project/server/CMakeFiles/client.dir/src/net_tools.cpp.s
 .PHONY : src/net_tools.cpp.s
 
 src/server.o: src/server.cpp.o
@@ -185,7 +230,7 @@ src/server.o: src/server.cpp.o
 
 # target to build an object file
 src/server.cpp.o:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/server.cpp.o
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/server.cpp.o
 .PHONY : src/server.cpp.o
 
 src/server.i: src/server.cpp.i
@@ -194,7 +239,7 @@ src/server.i: src/server.cpp.i
 
 # target to preprocess a source file
 src/server.cpp.i:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/server.cpp.i
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/server.cpp.i
 .PHONY : src/server.cpp.i
 
 src/server.s: src/server.cpp.s
@@ -203,7 +248,7 @@ src/server.s: src/server.cpp.s
 
 # target to generate assembly for a file
 src/server.cpp.s:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/server.cpp.s
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/server.cpp.s
 .PHONY : src/server.cpp.s
 
 src/server_tools.o: src/server_tools.cpp.o
@@ -212,7 +257,7 @@ src/server_tools.o: src/server_tools.cpp.o
 
 # target to build an object file
 src/server_tools.cpp.o:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/server_tools.cpp.o
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o
 .PHONY : src/server_tools.cpp.o
 
 src/server_tools.i: src/server_tools.cpp.i
@@ -221,7 +266,7 @@ src/server_tools.i: src/server_tools.cpp.i
 
 # target to preprocess a source file
 src/server_tools.cpp.i:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/server_tools.cpp.i
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.i
 .PHONY : src/server_tools.cpp.i
 
 src/server_tools.s: src/server_tools.cpp.s
@@ -230,7 +275,7 @@ src/server_tools.s: src/server_tools.cpp.s
 
 # target to generate assembly for a file
 src/server_tools.cpp.s:
-	cd /home/al/CLionProjects/Musicial/project/web && $(MAKE) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/src/server_tools.cpp.s
+	cd /home/al/CLionProjects/Musicial/project && $(MAKE) -f web/project/server/CMakeFiles/server.dir/build.make web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.s
 .PHONY : src/server_tools.cpp.s
 
 # Help Target
@@ -242,6 +287,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... server"
+	@echo "... client"
+	@echo "... src/client.o"
+	@echo "... src/client.i"
+	@echo "... src/client.s"
 	@echo "... src/connection.o"
 	@echo "... src/connection.i"
 	@echo "... src/connection.s"
@@ -265,6 +314,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/al/CLionProjects/Musicial/project/web && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/al/CLionProjects/Musicial/project && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

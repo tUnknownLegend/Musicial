@@ -43,69 +43,69 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/al/CLionProjects/Musicial/project/web
+CMAKE_SOURCE_DIR = /home/al/CLionProjects/Musicial/project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/al/CLionProjects/Musicial/project/web
+CMAKE_BINARY_DIR = /home/al/CLionProjects/Musicial/project
 
 # Include any dependencies generated for this target.
-include project/server/CMakeFiles/server.dir/depend.make
+include web/project/server/CMakeFiles/server.dir/depend.make
 
 # Include the progress variables for this target.
-include project/server/CMakeFiles/server.dir/progress.make
+include web/project/server/CMakeFiles/server.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include project/server/CMakeFiles/server.dir/flags.make
+include web/project/server/CMakeFiles/server.dir/flags.make
 
-project/server/CMakeFiles/server.dir/src/server.cpp.o: project/server/CMakeFiles/server.dir/flags.make
-project/server/CMakeFiles/server.dir/src/server.cpp.o: project/server/src/server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object project/server/CMakeFiles/server.dir/src/server.cpp.o"
+web/project/server/CMakeFiles/server.dir/src/server.cpp.o: web/project/server/CMakeFiles/server.dir/flags.make
+web/project/server/CMakeFiles/server.dir/src/server.cpp.o: web/project/server/src/server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object web/project/server/CMakeFiles/server.dir/src/server.cpp.o"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/server.cpp.o -c /home/al/CLionProjects/Musicial/project/web/project/server/src/server.cpp
 
-project/server/CMakeFiles/server.dir/src/server.cpp.i: cmake_force
+web/project/server/CMakeFiles/server.dir/src/server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/server.cpp.i"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/al/CLionProjects/Musicial/project/web/project/server/src/server.cpp > CMakeFiles/server.dir/src/server.cpp.i
 
-project/server/CMakeFiles/server.dir/src/server.cpp.s: cmake_force
+web/project/server/CMakeFiles/server.dir/src/server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/server.cpp.s"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/al/CLionProjects/Musicial/project/web/project/server/src/server.cpp -o CMakeFiles/server.dir/src/server.cpp.s
 
-project/server/CMakeFiles/server.dir/src/connection.cpp.o: project/server/CMakeFiles/server.dir/flags.make
-project/server/CMakeFiles/server.dir/src/connection.cpp.o: project/server/src/connection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object project/server/CMakeFiles/server.dir/src/connection.cpp.o"
+web/project/server/CMakeFiles/server.dir/src/connection.cpp.o: web/project/server/CMakeFiles/server.dir/flags.make
+web/project/server/CMakeFiles/server.dir/src/connection.cpp.o: web/project/server/src/connection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object web/project/server/CMakeFiles/server.dir/src/connection.cpp.o"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/connection.cpp.o -c /home/al/CLionProjects/Musicial/project/web/project/server/src/connection.cpp
 
-project/server/CMakeFiles/server.dir/src/connection.cpp.i: cmake_force
+web/project/server/CMakeFiles/server.dir/src/connection.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/connection.cpp.i"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/al/CLionProjects/Musicial/project/web/project/server/src/connection.cpp > CMakeFiles/server.dir/src/connection.cpp.i
 
-project/server/CMakeFiles/server.dir/src/connection.cpp.s: cmake_force
+web/project/server/CMakeFiles/server.dir/src/connection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/connection.cpp.s"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/al/CLionProjects/Musicial/project/web/project/server/src/connection.cpp -o CMakeFiles/server.dir/src/connection.cpp.s
 
-project/server/CMakeFiles/server.dir/src/server_tools.cpp.o: project/server/CMakeFiles/server.dir/flags.make
-project/server/CMakeFiles/server.dir/src/server_tools.cpp.o: project/server/src/server_tools.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object project/server/CMakeFiles/server.dir/src/server_tools.cpp.o"
+web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o: web/project/server/CMakeFiles/server.dir/flags.make
+web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o: web/project/server/src/server_tools.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/server_tools.cpp.o -c /home/al/CLionProjects/Musicial/project/web/project/server/src/server_tools.cpp
 
-project/server/CMakeFiles/server.dir/src/server_tools.cpp.i: cmake_force
+web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/server_tools.cpp.i"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/al/CLionProjects/Musicial/project/web/project/server/src/server_tools.cpp > CMakeFiles/server.dir/src/server_tools.cpp.i
 
-project/server/CMakeFiles/server.dir/src/server_tools.cpp.s: cmake_force
+web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/server_tools.cpp.s"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/al/CLionProjects/Musicial/project/web/project/server/src/server_tools.cpp -o CMakeFiles/server.dir/src/server_tools.cpp.s
 
-project/server/CMakeFiles/server.dir/src/net_tools.cpp.o: project/server/CMakeFiles/server.dir/flags.make
-project/server/CMakeFiles/server.dir/src/net_tools.cpp.o: project/server/src/net_tools.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object project/server/CMakeFiles/server.dir/src/net_tools.cpp.o"
+web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o: web/project/server/CMakeFiles/server.dir/flags.make
+web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o: web/project/server/src/net_tools.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/al/CLionProjects/Musicial/project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/net_tools.cpp.o -c /home/al/CLionProjects/Musicial/project/web/project/server/src/net_tools.cpp
 
-project/server/CMakeFiles/server.dir/src/net_tools.cpp.i: cmake_force
+web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/net_tools.cpp.i"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/al/CLionProjects/Musicial/project/web/project/server/src/net_tools.cpp > CMakeFiles/server.dir/src/net_tools.cpp.i
 
-project/server/CMakeFiles/server.dir/src/net_tools.cpp.s: cmake_force
+web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/net_tools.cpp.s"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/al/CLionProjects/Musicial/project/web/project/server/src/net_tools.cpp -o CMakeFiles/server.dir/src/net_tools.cpp.s
 
@@ -119,25 +119,28 @@ server_OBJECTS = \
 # External object files for target server
 server_EXTERNAL_OBJECTS =
 
-project/server/server: project/server/CMakeFiles/server.dir/src/server.cpp.o
-project/server/server: project/server/CMakeFiles/server.dir/src/connection.cpp.o
-project/server/server: project/server/CMakeFiles/server.dir/src/server_tools.cpp.o
-project/server/server: project/server/CMakeFiles/server.dir/src/net_tools.cpp.o
-project/server/server: project/server/CMakeFiles/server.dir/build.make
-project/server/server: project/server/CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/al/CLionProjects/Musicial/project/web/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable server"
+web/project/server/server: web/project/server/CMakeFiles/server.dir/src/server.cpp.o
+web/project/server/server: web/project/server/CMakeFiles/server.dir/src/connection.cpp.o
+web/project/server/server: web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o
+web/project/server/server: web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o
+web/project/server/server: web/project/server/CMakeFiles/server.dir/build.make
+web/project/server/server: /usr/local/lib/libcurl.so
+web/project/server/server: /usr/local/lib/libgtest_main.a
+web/project/server/server: /usr/local/lib/libgtest.a
+web/project/server/server: web/project/server/CMakeFiles/server.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/al/CLionProjects/Musicial/project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable server"
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-project/server/CMakeFiles/server.dir/build: project/server/server
+web/project/server/CMakeFiles/server.dir/build: web/project/server/server
 
-.PHONY : project/server/CMakeFiles/server.dir/build
+.PHONY : web/project/server/CMakeFiles/server.dir/build
 
-project/server/CMakeFiles/server.dir/clean:
+web/project/server/CMakeFiles/server.dir/clean:
 	cd /home/al/CLionProjects/Musicial/project/web/project/server && $(CMAKE_COMMAND) -P CMakeFiles/server.dir/cmake_clean.cmake
-.PHONY : project/server/CMakeFiles/server.dir/clean
+.PHONY : web/project/server/CMakeFiles/server.dir/clean
 
-project/server/CMakeFiles/server.dir/depend:
-	cd /home/al/CLionProjects/Musicial/project/web && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/al/CLionProjects/Musicial/project/web /home/al/CLionProjects/Musicial/project/web/project/server /home/al/CLionProjects/Musicial/project/web /home/al/CLionProjects/Musicial/project/web/project/server /home/al/CLionProjects/Musicial/project/web/project/server/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : project/server/CMakeFiles/server.dir/depend
+web/project/server/CMakeFiles/server.dir/depend:
+	cd /home/al/CLionProjects/Musicial/project && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/al/CLionProjects/Musicial/project /home/al/CLionProjects/Musicial/project/web/project/server /home/al/CLionProjects/Musicial/project /home/al/CLionProjects/Musicial/project/web/project/server /home/al/CLionProjects/Musicial/project/web/project/server/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : web/project/server/CMakeFiles/server.dir/depend
 

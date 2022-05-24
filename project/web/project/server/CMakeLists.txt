@@ -14,8 +14,8 @@ include_directories(${CURL_INCLUDE_DIR})
 include_directories(${nlohmann_json_INCDIR})
 
 # Async Client
-#add_executable(client src/client.cpp include/response.h include/server_tools.h include/net_tools.h src/net_tools.cpp include/client_tools.h)
-#target_link_libraries(client  ${Boost_LIBRARIES})
+add_executable(client src/client.cpp include/response.h include/server_tools.h include/net_tools.h src/net_tools.cpp include/client_tools.h src/client.cpp)
+target_link_libraries(client  ${Boost_LIBRARIES})
 
 
 # Multithread Async Server

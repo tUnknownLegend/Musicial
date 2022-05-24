@@ -1,17 +1,17 @@
 #ifndef PROJECT_SERVER_INCLUDE_CONNECTION_H_
 #define PROJECT_SERVER_INCLUDE_CONNECTION_H_
 
-#include <memory>
-
-#include "response.h"
-#include "request.h"
-#include "router.h"
-
-#include <boost/asio.hpp>
 #include <boost/array.hpp>
+#include <boost/asio.hpp>
+#include <boost/enable_shared_from_this.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/enable_shared_from_this.hpp>
+#include <memory>
+
+#include "net_tools.h"
+#include "request.h"
+#include "response.h"
+#include "router.h"
 
 
 namespace http {

@@ -1,17 +1,15 @@
-
+#include <boost/asio.hpp>
+#include <boost/bind/bind.hpp>
 #include <iostream>
 #include <istream>
 #include <ostream>
 #include <string>
-#include <boost/asio.hpp>
-#include <boost/bind/bind.hpp>
 
-#include "response.h"
-#include "request.h"
 #include "net_tools.h"
+#include "request.h"
+#include "response.h"
 
 using boost::asio::ip::tcp;
-
 
 
 class Client {
@@ -27,8 +25,6 @@ public:
         request_.body = message;
 
 
-        // Start an asynchronous resolve to translate the server and service names
-        // into a list of endpoints.
         resolver_.async_resolve(server, port,
                                 boost::bind(&Client::handle_resolve, this,
                                             boost::asio::placeholders::error,
@@ -47,8 +43,6 @@ private:
     void handle_resolve(const boost::system::error_code& err,
                         const tcp::resolver::results_type& endpoints) {
         if (!err) {
-            // Attempt a connection to each endpoint in the list until we
-            // successfully establish a connection.
             boost::asio::async_connect(socket_, endpoints,
                                        boost::bind(&Client::handle_connect, this,
                                                    boost::asio::placeholders::error));
@@ -61,7 +55,6 @@ private:
         if (!err) {
             std::string buffer = Request2String(request_);
 
-            // The connection was successful. Send the request.
             boost::asio::async_write(socket_, boost::asio::buffer(buffer.data(), buffer.size()),
                                      boost::bind(&Client::handle_write_request, this,
                                                  boost::asio::placeholders::error));
@@ -72,9 +65,6 @@ private:
 
     void handle_write_request(const boost::system::error_code& err) {
         if (!err) {
-            // Read the response status line. The response_ streambuf will
-            // automatically grow to accommodate the entire line. The growth may be
-            // limited by passing a maximum size to the streambuf constructor.
             boost::asio::async_read_until(socket_, response_buf_, "\r\n",
                                           boost::bind(&Client::handle_read_status_line, this,
                                                       boost::asio::placeholders::error));
@@ -98,7 +88,6 @@ private:
                 return;
             }
 
-            // Read the response headers, which are terminated by a blank line.
             boost::asio::async_read_until(socket_, response_buf_, "\r\n\r\n",
                                           boost::bind(&Client::handle_read_headers, this,
                                                       boost::asio::placeholders::error));
@@ -109,14 +98,12 @@ private:
 
     void handle_read_headers(const boost::system::error_code& err) {
         if (!err) {
-            // Process the response headers.
             std::istream response_stream(&response_buf_);
 
             std::string header;
             while (std::getline(response_stream, header) && header != "\r")
                 response_.headers.push_back(header);
 
-            // Start reading remaining data until EOF.
             boost::asio::async_read(socket_, response_buf_,
                                     boost::asio::transfer_at_least(1),
                                     boost::bind(&Client::handle_read_content, this,
@@ -128,7 +115,7 @@ private:
 
     void handle_read_content(const boost::system::error_code& err) {
         if (!err) {
-            // Continue reading remaining data until EOF.
+
             boost::asio::async_read(socket_, response_buf_,
                                     boost::asio::transfer_at_least(1),
                                     boost::bind(&Client::handle_read_content, this,
@@ -136,15 +123,18 @@ private:
 
         } else if (err == boost::asio::error::eof) {
             std::istream response_stream(&response_buf_);
+            std::cout << std::endl << std::endl << "pasasi" << std::endl << std::endl;
 
-            // response_.body = std::string(std::istreambuf_iterator<char>(response_stream), std::istreambuf_iterator<char>()); //////////////////////
+
             response_.body = net_tools::String2Message(std::string(
                     std::istreambuf_iterator<char>(response_stream), std::istreambuf_iterator<char>()));
             std::cout << response_;
+
             // pushResponse(response_.body);
         } else {
             std::cout << "Error: " << err << "\n";
         }
+
     }
 
 private:

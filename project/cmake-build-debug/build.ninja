@@ -140,6 +140,46 @@ build web/rebuild_cache: phony web/CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 # =============================================================================
+# Object build statements for EXECUTABLE target client
+
+
+#############################################
+# Order-only phony target for client
+
+build cmake_object_order_depends_target_client: phony || web/project/server/CMakeFiles/client.dir
+
+build web/project/server/CMakeFiles/client.dir/src/client.cpp.o: CXX_COMPILER__client_Debug /home/al/CLionProjects/Musicial/project/web/project/server/src/client.cpp || cmake_object_order_depends_target_client
+  DEP_FILE = web/project/server/CMakeFiles/client.dir/src/client.cpp.o.d
+  FLAGS = -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/al/CLionProjects/Musicial/project/web/project/server/include
+  OBJECT_DIR = web/project/server/CMakeFiles/client.dir
+  OBJECT_FILE_DIR = web/project/server/CMakeFiles/client.dir/src
+
+build web/project/server/CMakeFiles/client.dir/src/net_tools.cpp.o: CXX_COMPILER__client_Debug /home/al/CLionProjects/Musicial/project/web/project/server/src/net_tools.cpp || cmake_object_order_depends_target_client
+  DEP_FILE = web/project/server/CMakeFiles/client.dir/src/net_tools.cpp.o.d
+  FLAGS = -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/al/CLionProjects/Musicial/project/web/project/server/include
+  OBJECT_DIR = web/project/server/CMakeFiles/client.dir
+  OBJECT_FILE_DIR = web/project/server/CMakeFiles/client.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target client
+
+
+#############################################
+# Link the executable web/project/server/client
+
+build web/project/server/client: CXX_EXECUTABLE_LINKER__client_Debug web/project/server/CMakeFiles/client.dir/src/client.cpp.o web/project/server/CMakeFiles/client.dir/src/net_tools.cpp.o
+  FLAGS = -pthread -g
+  LINK_FLAGS = -lcurl -lcurl
+  OBJECT_DIR = web/project/server/CMakeFiles/client.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = web/project/server/client
+  TARGET_PDB = client.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target server
 
 
@@ -291,6 +331,8 @@ build api/rebuild_cache: phony api/CMakeFiles/rebuild_cache.util
 
 build Musicial_API_LIB: phony api/libMusicial_API_LIB.a
 
+build client: phony web/project/server/client
+
 build libMusicial_API_LIB.a: phony api/libMusicial_API_LIB.a
 
 build run_tests: phony web/run_tests
@@ -326,7 +368,7 @@ build web/all: phony web/run_tests web/project/server/all
 #############################################
 # Folder: /home/al/CLionProjects/Musicial/project/cmake-build-debug/web/project/server
 
-build web/project/server/all: phony web/project/server/server
+build web/project/server/all: phony web/project/server/client web/project/server/server
 
 # =============================================================================
 # Built-in targets

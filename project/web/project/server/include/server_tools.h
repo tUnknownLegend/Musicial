@@ -1,12 +1,11 @@
 #ifndef PROJECT_SERVER_INCLUDE_SERVER_TOOLS_H_
 #define PROJECT_SERVER_INCLUDE_SERVER_TOOLS_H_
 
-#include <string>
-#include <vector>
-
 #include <boost/asio.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/shared_ptr.hpp>
+#include <string>
+#include <vector>
 
 #include "connection.h"
 #include "request.h"

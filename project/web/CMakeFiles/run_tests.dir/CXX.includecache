@@ -28,7 +28,3 @@ gtest/gtest.h
 ../project/server/include/net_tools.h
 /home/al/CLionProjects/Musicial/project/web/project/server/include/net_tools.h
 
-/home/al/CLionProjects/Musicial/project/web/tests/run_tests.cpp
-gtest/gtest.h
--
-
