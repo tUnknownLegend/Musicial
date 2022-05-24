@@ -286,6 +286,9 @@ QT_SRC_BINARY_DIR:STATIC=/home/aint/park/Musicial/project/cmake-build-debug/qt/l
 //Value Computed by CMake
 QT_SRC_IS_TOP_LEVEL:STATIC=OFF
 
+//Dependencies for the target
+QT_SRC_LIB_DEPENDS:STATIC=general;/home/aint/park/Musicial/project/../../builtLibs/libserverLib.a;
+
 //Value Computed by CMake
 QT_SRC_SOURCE_DIR:STATIC=/home/aint/park/Musicial/project/qt/lib/src
 

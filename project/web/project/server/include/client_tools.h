@@ -5,6 +5,7 @@
 #include <string>
 #include <boost/asio.hpp>
 #include <boost/bind/bind.hpp>
+#include <utility>
 
 #include "response.h"
 #include "request.h"
@@ -13,13 +14,14 @@
 using boost::asio::ip::tcp;
 
 
-
 class Client {
 public:
-    Client(boost::asio::io_context& io_context,
-           const std::string& server, const std::string& port, const std::string& path, const net_tools::Message &message)
+    Client(boost::asio::io_context &io_context,
+           const std::string &server, const std::string &port, const std::string &path,
+           const net_tools::Message &message, std::function<void(const net_tools::Message &Message)> a)
             : resolver_(io_context),
-              socket_(io_context) {
+              socket_(io_context), sendResponse(std::move(a))
+              {
         request_.method = "GET";
         request_.path = path;
         request_.http_version = "HTTP/1.0";
@@ -44,8 +46,8 @@ private:
         return req;
     }
 
-    void handle_resolve(const boost::system::error_code& err,
-                        const tcp::resolver::results_type& endpoints) {
+    void handle_resolve(const boost::system::error_code &err,
+                        const tcp::resolver::results_type &endpoints) {
         if (!err) {
             // Attempt a connection to each endpoint in the list until we
             // successfully establish a connection.
@@ -57,7 +59,7 @@ private:
         }
     }
 
-    void handle_connect(const boost::system::error_code& err) {
+    void handle_connect(const boost::system::error_code &err) {
         if (!err) {
             std::string buffer = Request2String(request_);
 
@@ -70,7 +72,7 @@ private:
         }
     }
 
-    void handle_write_request(const boost::system::error_code& err) {
+    void handle_write_request(const boost::system::error_code &err) {
         if (!err) {
             // Read the response status line. The response_ streambuf will
             // automatically grow to accommodate the entire line. The growth may be
@@ -83,7 +85,7 @@ private:
         }
     }
 
-    void handle_read_status_line(const boost::system::error_code& err) {
+    void handle_read_status_line(const boost::system::error_code &err) {
         if (!err) {
             // Check that response is OK.
             std::istream response_stream(&response_buf_);
@@ -107,7 +109,7 @@ private:
         }
     }
 
-    void handle_read_headers(const boost::system::error_code& err) {
+    void handle_read_headers(const boost::system::error_code &err) {
         if (!err) {
             // Process the response headers.
             std::istream response_stream(&response_buf_);
@@ -126,7 +128,7 @@ private:
         }
     }
 
-    void handle_read_content(const boost::system::error_code& err) {
+    void handle_read_content(const boost::system::error_code &err) {
         if (!err) {
             // Continue reading remaining data until EOF.
             boost::asio::async_read(socket_, response_buf_,
@@ -141,13 +143,20 @@ private:
             response_.body = net_tools::String2Message(std::string(
                     std::istreambuf_iterator<char>(response_stream), std::istreambuf_iterator<char>()));
             std::cout << response_;
-            // pushResponse(response_.body);
+
+            //pushResponse(response_.body); // fix
+            //messageGroup.receiveNet(response_.body);
+            sendResponse(response_.body);
+
         } else {
             std::cout << "Error: " << err << "\n";
         }
     }
 
 private:
+
+    std::function<void(const net_tools::Message &Message)> sendResponse;
+
     tcp::resolver resolver_;
     tcp::socket socket_;
 
@@ -159,11 +168,11 @@ private:
 
 namespace client_tools {
     int send(const std::string &ip, const std::string &port, const std::string &path,
-                    const net_tools::Message &message) {
+             const net_tools::Message &message, std::function<void(const net_tools::Message &Message)> a) {
         try {
             boost::asio::io_context io_context;
             std::cout << "client is working" << std::endl;
-            Client c(io_context, ip, port, path, message);
+            Client c(io_context, ip, port, path, message, std::move(a));
             io_context.run();
         }
         catch (std::exception &e) {

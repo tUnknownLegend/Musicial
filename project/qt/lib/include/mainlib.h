@@ -1,12 +1,27 @@
 #include <string>
 #include <vector>
 #include "tem.h"
+#include <functional>
+#include "../../../web/project/server/include/net_tools.h" //fix
 
 #ifndef MUSICIAL_BUILD_H
 #define MUSICIAL_BUILD_H
 
 namespace client {
+/*
+    class RecieveMessageNet {
+    public:
+        std::vector<net_tools::Message> messages = {};
 
+
+        void addToVec(const net_tools::Message &message) {messages.push_back(message);};
+        friend void receiveMessage(const net_tools::Message &message) {
+            //addToVec(message);
+            //messages.push_back(message); };
+
+    };
+
+*/
     struct Size {
         unsigned short height;
         unsigned short width;
@@ -43,7 +58,7 @@ namespace client {
 
     class ButtonSendMessage : public Button {
     public:
-        bool action(mutualH::Message &message) {
+        bool action(net_tools::Message &message) {
             // getData()
             // sendToServer()
             // sendToDB()
@@ -72,7 +87,7 @@ namespace client {
         User user;
         /* + analytics */
     };
-
+/*
     struct Post {
         // struct of channel post
     };
@@ -80,27 +95,28 @@ namespace client {
     class Channel : public Post {
 
     };
-
+*/
     class Group {
     public:
         unsigned short amount;
 
         virtual bool getDB() = 0;
 
-        virtual bool receiveNet() = 0;
+        //virtual bool receiveNet() = 0;
 
         virtual bool sendDB() = 0;
 
         virtual bool sendNet() = 0;
     };
 
+
     class SongGroup : public Group {
     public:
-        std::vector<mutualH::Song> song;
+        std::vector<templib::Song> song;
 
         bool getDB() override { return false; };
 
-        bool receiveNet() override { return false; };
+        //bool receiveNet() override { return false; };
 
         bool sendDB() override { return false; };
 
@@ -110,16 +126,16 @@ namespace client {
 
     class MessageGroup : public Group {
     public:
-        std::vector<mutualH::Message> Messages;
+        std::vector<net_tools::Message> Messages = {};
 
-        MessageGroup(mutualH::Message _message);
+        explicit MessageGroup(net_tools::Message _message);
 
         MessageGroup(std::string text, uint64_t id, bool isUrl);
         //MessageGroup(vector<Message> Messages);
 
         bool getDB() override { return false; };
 
-        bool receiveNet() override;
+        bool receiveNet(const net_tools::Message &message);
 
         bool sendDB() override;
 
@@ -129,10 +145,17 @@ namespace client {
 
         bool send();
 
+        bool send(std::function<void(const std::vector<net_tools::Message>::iterator &, const std::vector<net_tools::Message>::iterator &)> _QtDraw);
+
     private:
+
+        std::function<void(const std::vector<net_tools::Message>::iterator &, const std::vector<net_tools::Message>::iterator &)> QtDraw;
+
         bool sendText();
 
         bool sendPlaylist();
+
+        bool receiveMessage(const net_tools::Message &message);
     };
 
     class ButtonCreatePlaylist : public Button {
@@ -147,11 +170,11 @@ namespace client {
 
     class ButtonGetDialog : public Button {
     public:
-        std::vector<mutualH::Message> Messages;
+        std::vector<net_tools::Message> Messages;
 
         bool action();
     };
-
+/*
     struct Chat {
         uint64_t id;
         std::vector<MessageGroup> myMessages;
@@ -162,6 +185,7 @@ namespace client {
         Picture dialogPic;
         TextField lastMessage;
     };
+
 
     class DialogGroup : public Group {
         std::vector<Dialog> Dialogs;
@@ -174,7 +198,8 @@ namespace client {
 
         bool sendNet() override { return false; };
     };
-
+*/
 }
+
 
 #endif //MUSICIAL_BUILD_H

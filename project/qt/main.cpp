@@ -1,6 +1,7 @@
 #include <QApplication>
 //#include <QPushButton>
 #include "MainWindow.h"
+#include "net_tools.h"
 
 int main(int argc, char **argv) {
     QApplication app(argc, argv);

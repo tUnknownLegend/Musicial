@@ -1,0 +1,11 @@
+# ninja log v5
+4	4794	1653344560719425509	web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o	933b57eb863ff7b8
+0	118	1653396842812747832	build.ninja	f21942fd001432a7
+3	4725	1653344560647430590	web/project/server/CMakeFiles/server.dir/src/server.cpp.o	46e4eba05b2bac35
+3	4318	1653344560239459381	web/project/server/CMakeFiles/server.dir/src/connection.cpp.o	73587cc83491a6e0
+8	666	1653341567473384098	web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o	961104dbef1be21c
+4794	5093	1653344561023404057	web/project/server/server	311cea9f4b75decf
+6	5758	1653397422345112273	web/project/server/CMakeFiles/server.dir/src/server.cpp.o	46e4eba05b2bac35
+5759	6159	1653397422753152501	web/project/server/server	311cea9f4b75decf
+5	5629	1653398109804505456	web/project/server/CMakeFiles/server.dir/src/server.cpp.o	46e4eba05b2bac35
+5629	5975	1653398110156556947	web/project/server/server	311cea9f4b75decf

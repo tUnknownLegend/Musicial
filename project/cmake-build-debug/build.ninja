@@ -160,6 +160,52 @@ build web/project/server/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
 build web/project/server/edit_cache: phony web/project/server/CMakeFiles/edit_cache.util
 
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target serverLib
+
+
+#############################################
+# Order-only phony target for serverLib
+
+build cmake_object_order_depends_target_serverLib: phony || web/project/server/CMakeFiles/serverLib.dir
+
+build web/project/server/CMakeFiles/serverLib.dir/src/connection.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/project/server/src/connection.cpp || cmake_object_order_depends_target_serverLib
+  DEP_FILE = web/project/server/CMakeFiles/serverLib.dir/src/connection.cpp.o.d
+  FLAGS = -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/project/server/include
+  OBJECT_DIR = web/project/server/CMakeFiles/serverLib.dir
+  OBJECT_FILE_DIR = web/project/server/CMakeFiles/serverLib.dir/src
+
+build web/project/server/CMakeFiles/serverLib.dir/src/server_tools.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/project/server/src/server_tools.cpp || cmake_object_order_depends_target_serverLib
+  DEP_FILE = web/project/server/CMakeFiles/serverLib.dir/src/server_tools.cpp.o.d
+  FLAGS = -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/project/server/include
+  OBJECT_DIR = web/project/server/CMakeFiles/serverLib.dir
+  OBJECT_FILE_DIR = web/project/server/CMakeFiles/serverLib.dir/src
+
+build web/project/server/CMakeFiles/serverLib.dir/src/net_tools.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/project/server/src/net_tools.cpp || cmake_object_order_depends_target_serverLib
+  DEP_FILE = web/project/server/CMakeFiles/serverLib.dir/src/net_tools.cpp.o.d
+  FLAGS = -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/project/server/include
+  OBJECT_DIR = web/project/server/CMakeFiles/serverLib.dir
+  OBJECT_FILE_DIR = web/project/server/CMakeFiles/serverLib.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target serverLib
+
+
+#############################################
+# Link the static library web/project/server/libserverLib.a
+
+build web/project/server/libserverLib.a: CXX_STATIC_LIBRARY_LINKER__serverLib_Debug web/project/server/CMakeFiles/serverLib.dir/src/connection.cpp.o web/project/server/CMakeFiles/serverLib.dir/src/server_tools.cpp.o web/project/server/CMakeFiles/serverLib.dir/src/net_tools.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -pthread -g
+  OBJECT_DIR = web/project/server/CMakeFiles/serverLib.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = web/project/server/libserverLib.a
+  TARGET_PDB = serverLib.a.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target server
 
 
@@ -345,7 +391,7 @@ build cmake_object_order_depends_target_QT_SRC: phony || qt/lib/src/CMakeFiles/Q
 build qt/lib/src/CMakeFiles/QT_SRC.dir/mainlib.cpp.o: CXX_COMPILER__QT_SRC_Debug /home/aint/park/Musicial/project/qt/lib/src/mainlib.cpp || cmake_object_order_depends_target_QT_SRC
   DEP_FILE = qt/lib/src/CMakeFiles/QT_SRC.dir/mainlib.cpp.o.d
   FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g -std=gnu++11
-  INCLUDES = -I/home/aint/park/Musicial/project/qt/lib/include -I/home/aint/park/Musicial/project/qt/lib/src -I/home/aint/park/Musicial/project/qt/lib/tests -I/home/aint/park/Musicial/project/qt/lib/src/include
+  INCLUDES = -I/home/aint/park/Musicial/project/qt/lib/include -I/home/aint/park/Musicial/project/qt/lib/src -I/home/aint/park/Musicial/project/qt/lib/tests -I/home/aint/park/Musicial/project/qt/lib/src/include -I/home/aint/park/Musicial/project/qt/lib/src/../../../web/project/server/include
   OBJECT_DIR = qt/lib/src/CMakeFiles/QT_SRC.dir
   OBJECT_FILE_DIR = qt/lib/src/CMakeFiles/QT_SRC.dir
 
@@ -514,11 +560,15 @@ build libMusicial_API_LIB.a: phony api/libMusicial_API_LIB.a
 
 build libQT_SRC.a: phony qt/lib/src/libQT_SRC.a
 
+build libserverLib.a: phony web/project/server/libserverLib.a
+
 build musicial: phony db/musicial
 
 build run_tests: phony web/run_tests
 
 build server: phony web/project/server/server
+
+build serverLib: phony web/project/server/libserverLib.a
 
 # =============================================================================
 # Folder targets.
@@ -570,7 +620,7 @@ build web/all: phony web/run_tests web/project/server/all
 #############################################
 # Folder: /home/aint/park/Musicial/project/cmake-build-debug/web/project/server
 
-build web/project/server/all: phony web/project/server/server
+build web/project/server/all: phony web/project/server/libserverLib.a web/project/server/server
 
 # =============================================================================
 # Built-in targets

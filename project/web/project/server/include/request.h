@@ -6,7 +6,6 @@
 
 #include "net_tools.h"
 
-
 struct Request {
     std::string host;
     std::string method;

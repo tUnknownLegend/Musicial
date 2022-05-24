@@ -5,6 +5,7 @@
 #include <string>
 #include "net_tools.h"
 
+
 struct Response {
     int status_code;
     std::string status_message;

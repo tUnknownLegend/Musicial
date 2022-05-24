@@ -23,6 +23,19 @@ add_executable(server
         src/server_tools.cpp
         include/net_tools.h
         src/net_tools.cpp
+        include/client.h
+       # ../../../qt/lib/include/mainlib.h
+        )
+
+add_library(serverLib
+        src/connection.cpp
+        include/request.h
+        include/response.h
+        include/router.h
+        src/server_tools.cpp
+        include/net_tools.h
+        src/net_tools.cpp
         include/client.h)
+
 target_link_libraries(server ${Boost_LIBRARIES})
 

@@ -3,6 +3,8 @@
 #include <QPixmap>
 #include <QScrollArea>
 #include <QVBoxLayout>
+//#include "net_tools.h"
+//#include "builtLibs"
 
 ChatSelectorButton::ChatSelectorButton(QButtonGroup *_parent, const QString &_name) {
     setFixedSize(235, 50);
