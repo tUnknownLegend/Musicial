@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 
-
 #include "net_tools.h"
 
 /*

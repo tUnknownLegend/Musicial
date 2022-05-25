@@ -26,7 +26,8 @@ class Connection
           private boost::noncopyable {
  public:
     /// Construct a connection with the given io_context.
-    explicit Connection(boost::asio::io_context &io_context, Router<Response(*)(const Request &request)> &requestRouter);
+    explicit Connection(boost::asio::io_context &io_context,
+                        Router<Response(*)(const Request &request)> &requestRouter);
 
     /// Get the socket associated with the connection.
     boost::asio::ip::tcp::socket &socket();

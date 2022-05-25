@@ -6,6 +6,7 @@
 #include <istream>
 #include <ostream>
 #include <string>
+
 #include <boost/asio.hpp>
 #include <boost/bind/bind.hpp>
 
@@ -36,13 +37,12 @@ class Client {
                                             boost::asio::placeholders::results));
     }
 
+
  private:
     /*
     static Message get_request() {
         Message req;
-
         req = net_tools::getMessage();
-
         return req;
     }
      */
@@ -65,6 +65,7 @@ class Client {
             boost::asio::async_write(socket_, boost::asio::buffer(buffer.data(), buffer.size()),
                                      boost::bind(&Client::handle_write_request, this,
                                                  boost::asio::placeholders::error));
+
         } else {
             std::cout << "Error: " << err.message() << "\n";
         }
@@ -134,7 +135,6 @@ class Client {
                     std::istreambuf_iterator<char>(response_stream), std::istreambuf_iterator<char>()));
             std::cout << response_;
 
-            // pushResponse(response_.body);
         } else {
             std::cout << "Error: " << err << "\n";
         }

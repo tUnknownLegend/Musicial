@@ -1,31 +1,30 @@
 #include "server_tools.h"
 
-
 namespace server_tools {
-int startServer() {
-    std::cout << "Info: 'hostname -I' to get local ip" << std::endl;
-    try {
-        std::string ip, port;
-        std::cout << "Enter IP: ";
-        std::cin >> ip;
+    int startServer() {
+        std::cout << "Info: 'hostname -I' to get local ip" << std::endl;
+        try {
+            std::string ip, port;
+            std::cout << "Enter IP: ";
+            std::cin >> ip;
 
-        std::cout << "Enter port: ";
-        std::cin >> port;
+            std::cout << "Enter port: ";
+            std::cin >> port;
 
-        auto num_threads = (std::size_t) sysconf(_SC_NPROCESSORS_ONLN);
-        http::server3::server s(ip, port, num_threads);
+            auto num_threads = (std::size_t) sysconf(_SC_NPROCESSORS_ONLN);
+            http::server3::server s(ip, port, num_threads);
 
-        // Run the server until stopped.
-        s.run();
+            // Run the server until stopped.
+            s.run();
+        }
+
+
+        catch (std::exception &e) {
+            std::cerr << "exception: " << e.what() << "\n";
+        }
+
+        return 0;
     }
-
-
-    catch (std::exception &e) {
-        std::cerr << "exception: " << e.what() << "\n";
-    }
-
-    return 0;
-}
 }  // namespace server_tools
 
 Response HandlerConvertPlaylist(const Request &request) {
@@ -132,3 +131,39 @@ void server::handle_stop() {
 
 }  // namespace server3
 }  // namespace http
+
+struct Token {
+    explicit Token(std::string t) :
+            token(std::move(t)) {
+    }
+
+    std::string token;
+};
+
+class platformAccess {
+ public:
+    bool addToken(Platform p, const Token &t) {
+        auto res = tokens.insert({p, t});
+        return !res.second;
+    }
+
+    bool updateToken(Platform p, const Token &t) {
+        if (tokens.contains(p)) {
+            tokens.at(p) = t;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    Token getPlatformToken(Platform p) {
+        if (tokens.contains(p)) {
+            return tokens.at(p);
+        } else {
+            return Token("");
+        }
+    }
+
+ private:
+    std::map<Platform, Token> tokens;
+};

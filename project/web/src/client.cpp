@@ -10,5 +10,14 @@ int main() {
     std::cin >> path;
 
     Message message = net_tools::getMessage();
-    client::sendMessage(ip, port, path, message);
+
+    try {
+        boost::asio::io_context io_context;
+        std::cout << "client is working" << std::endl;
+        Client c(io_context, ip, port, path, message);
+        io_context.run();
+    }
+    catch (std::exception &e) {
+        std::cout << "Exception: " << e.what() << "\n";
+    }
 }

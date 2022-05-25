@@ -18,173 +18,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3e88756d-b76e-4f47-82c1-658b586b390d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/msc.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/3.16.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/CMakeFiles/3.16.3/CMakeCCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/Progress/11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/Progress/2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/Progress/3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/Progress/4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/Progress/5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/Progress/6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/Progress/count.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/api/CMakeFiles/Musicial_API_LIB.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/api/CMakeFiles/Musicial_API_LIB.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/api/CMakeFiles/Musicial_API_LIB.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/api/CMakeFiles/Musicial_API_LIB.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/api/CMakeFiles/Musicial_API_LIB.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/api/CMakeFiles/Musicial_API_LIB.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/api/CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/api/CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/api/libMusicial_API_LIB.a" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/api/libMusicial_API_LIB.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/src/connection.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/src/server.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/project/server/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build/web/run_tests" beforeDir="false" afterPath="$PROJECT_DIR$/project/build/web/run_tests" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/cache-v2-a7ada0cb93848ed90d1e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-60d740710aea5b6c63ee.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/directory-web.project.server-Debug-e3a58350e09ff42b1b9e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/target-run_tests-Debug-67c5b8a9572de91504f1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/target-server-Debug-435f7c4188d24b511ffb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/project/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/project/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/3.22.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/3.22.3/CMakeCCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/project/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/api/src/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/project/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/db/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/qt/lib/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/qt/lib/src/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project/cmake-build-debug/web/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/CMakeFiles/server.dir/src/connection.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/CMakeFiles/server.dir/src/server.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/server" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/3.16.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/3.16.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/3.16.3/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/web/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-22438d304b3c9876d8f0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/.ninja_deps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/.ninja_log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeFiles/3.22.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeFiles/3.22.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/Musicial" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/build.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/src/connection.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/src/server.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/client" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/include/client.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/client.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/include/client_tools.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/client_tools.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/include/connection.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/connection.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/include/net_tools.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/net_tools.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/include/request.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/request.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/include/response.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/response.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/include/router.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/router.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/include/server_tools.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/server_tools.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/server" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/src/client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/src/client.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/src/connection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/src/connection.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/src/net_tools.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/src/net_tools.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/src/server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/src/server.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/project/server/src/server_tools.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/src/server_tools.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/web/run_tests" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/run_tests" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/include/client_tools.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/client_tools.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/include/connection.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/connection.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/include/server_tools.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/server_tools.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/src/client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/src/client.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/src/server_tools.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/src/server_tools.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/web/tests/network_tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/tests/network_tests.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +61,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "cmake.loaded.for.project": "true",
-    "last_opened_file_path": "/home/al/CLionProjects/Musicial",
+    "last_opened_file_path": "/home/al/Downloads/technopark_game-queue_dev",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "structure.view.defaults.are.configured": "true"
@@ -236,16 +75,16 @@
       <recent name="$PROJECT_DIR$/project/server/include" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.server">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="CMake Application.client">
     <configuration name="run_tests" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Musicial" TARGET_NAME="run_tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Musicial" RUN_TARGET_NAME="run_tests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="client" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="0.0.0.0 5000 /user" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Musicial" TARGET_NAME="client" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Musicial" RUN_TARGET_NAME="client">
@@ -315,7 +154,8 @@
       <workItem from="1653323605083" duration="4546000" />
       <workItem from="1653334862722" duration="5800000" />
       <workItem from="1653391251702" duration="24858000" />
-      <workItem from="1653432892398" duration="4121000" />
+      <workItem from="1653432892398" duration="4903000" />
+      <workItem from="1653487684278" duration="16763000" />
     </task>
     <servers />
   </component>
