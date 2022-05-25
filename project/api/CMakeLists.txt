@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.10)
+project(Musicial_API)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -std=c++14 -Wall")
+set(CMAKE_EXE_LINKER_FLAGS " ${CMAKE_EXE_LINKER_FLAGS} -lcurl")
+
+file(GLOB SOURCES *.cpp *.h)
+
+find_package(GTest REQUIRED)
+find_package(CURL REQUIRED)
+find_package(nlohmann_json 3.7.3 REQUIRED)
+
+include_directories(${GTEST_INCDIR} include src tests)
+#add_subdirectory(src)
+include_directories(${curl_INCDIR})
+
+include_directories(${CURL_INCLUDE_DIR})
+include_directories(${nlohmann_json_INCDIR})
+
+
+#target_link_libraries(main PRIVATE CURL::libcurl)
+
+set(SOURCES src/api.cpp src/main.cpp)
+set(HEADERS include/api.h)
+
+
+add_library(Musicial_API_LIB STATIC ${SOURCES} ${HEADERS})
+#add_executable(${PROJECT_NAME} ${SOURCES})
+
+
+#target_include_directories(${PROJECT_NAME} PUBLIC)
+
+
+target_link_libraries(Musicial_API_LIB  PUBLIC ${Musicial_SRC_LIBRARIES} ${CURL_LIBRARIES} GTest::Main curl nlohmann_json::nlohmann_json CURL::libcurl)

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="Musicial" targetName="client" />
+      <config projectName="Musicial" targetName="run_tests" />
+      <config projectName="Musicial" targetName="Musicial_API_LIB" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3e88756d-b76e-4f47-82c1-658b586b390d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/include/client_tools.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/client_tools.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/include/connection.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/connection.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/include/server_tools.h" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/include/server_tools.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/src/client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/src/client.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/src/server_tools.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/src/server_tools.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/tests/network_tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/tests/network_tests.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2022" />
+    <option name="minorVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="27q95qH5FhzKQuVrnNexBBYBuWo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "cmake.loaded.for.project": "true",
+    "last_opened_file_path": "/home/al/Downloads/technopark_game-queue_dev",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "structure.view.defaults.are.configured": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project/web" />
+      <recent name="$PROJECT_DIR$/project" />
+      <recent name="$PROJECT_DIR$/project/web/project/server/src" />
+      <recent name="$PROJECT_DIR$/project/server/include" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.client">
+    <configuration name="run_tests" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Musicial" TARGET_NAME="run_tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Musicial" RUN_TARGET_NAME="run_tests" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="client" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="0.0.0.0 5000 /user" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Musicial" TARGET_NAME="client" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Musicial" RUN_TARGET_NAME="client">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="server" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Musicial" TARGET_NAME="Musicial_API_LIB" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Musicial" RUN_TARGET_NAME="server">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.server" />
+      <item itemvalue="CMake Application.client" />
+      <item itemvalue="Google Test.run_tests" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e88756d-b76e-4f47-82c1-658b586b390d" name="Changes" comment="" />
+      <created>1650036568734</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650036568734</updated>
+      <workItem from="1650036570354" duration="5767000" />
+      <workItem from="1650049905115" duration="5521000" />
+      <workItem from="1650064638255" duration="893000" />
+      <workItem from="1650065537367" duration="6008000" />
+      <workItem from="1650083271941" duration="2859000" />
+      <workItem from="1650363868947" duration="616000" />
+      <workItem from="1650729870059" duration="1558000" />
+      <workItem from="1651068149153" duration="599000" />
+      <workItem from="1651148934297" duration="1216000" />
+      <workItem from="1651156807870" duration="3417000" />
+      <workItem from="1651256977535" duration="605000" />
+      <workItem from="1651333885868" duration="3369000" />
+      <workItem from="1651404424312" duration="1198000" />
+      <workItem from="1651503042247" duration="1200000" />
+      <workItem from="1651571838066" duration="1140000" />
+      <workItem from="1651583375656" duration="1000" />
+      <workItem from="1651590656700" duration="5270000" />
+      <workItem from="1652291745411" duration="12219000" />
+      <workItem from="1652355476595" duration="18821000" />
+      <workItem from="1652450839097" duration="2000" />
+      <workItem from="1652457843329" duration="599000" />
+      <workItem from="1652471251409" duration="2306000" />
+      <workItem from="1652479619898" duration="363000" />
+      <workItem from="1652479983990" duration="115000" />
+      <workItem from="1652480100209" duration="16000" />
+      <workItem from="1652480124033" duration="45000" />
+      <workItem from="1652480182538" duration="14000" />
+      <workItem from="1652480225379" duration="11828000" />
+      <workItem from="1652511114290" duration="376000" />
+      <workItem from="1652541097443" duration="1000" />
+      <workItem from="1652550430101" duration="5641000" />
+      <workItem from="1652614826914" duration="2149000" />
+      <workItem from="1652633600889" duration="837000" />
+      <workItem from="1652637944963" duration="3262000" />
+      <workItem from="1653064587759" duration="3020000" />
+      <workItem from="1653142603352" duration="3496000" />
+      <workItem from="1653147993493" duration="3399000" />
+      <workItem from="1653233996827" duration="5653000" />
+      <workItem from="1653307655121" duration="2000" />
+      <workItem from="1653318871673" duration="1271000" />
+      <workItem from="1653323605083" duration="4546000" />
+      <workItem from="1653334862722" duration="5800000" />
+      <workItem from="1653391251702" duration="24858000" />
+      <workItem from="1653432892398" duration="4903000" />
+      <workItem from="1653487684278" duration="16763000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="this-&gt;response_.http_version" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
