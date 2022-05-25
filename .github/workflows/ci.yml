@@ -13,6 +13,9 @@ jobs:
       - name: Install GTest
         run: sudo apt-get install libgtest-dev -y 
         
+      - name: Install Boost
+        run: sudo apt-get install libboost-all-dev
+        
       - name: Install Clang-tidy
         run: sudo apt-get install -y clang-tidy
 
