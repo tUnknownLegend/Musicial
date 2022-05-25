@@ -5,6 +5,7 @@ static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *use
     return size * nmemb;
 }
 
+
 int request(const string &URL, const vector<string> &EHeaders, string &readBuffer, string type, string postParameters) {
     CURL *curl;
     CURLcode res;
