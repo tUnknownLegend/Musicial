@@ -1,1 +1,0 @@
-/usr/bin/c++  -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall CMakeFiles/QT_test.dir/src/mainlib.cpp.o -o QT_test  /usr/local/lib/libgmock.a /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a 

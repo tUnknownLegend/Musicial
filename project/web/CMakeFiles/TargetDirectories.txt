@@ -1,7 +1,0 @@
-/home/al/CLionProjects/Musicial/project/web/CMakeFiles/rebuild_cache.dir
-/home/al/CLionProjects/Musicial/project/web/CMakeFiles/edit_cache.dir
-/home/al/CLionProjects/Musicial/project/web/CMakeFiles/run_tests.dir
-/home/al/CLionProjects/Musicial/project/web/project/server/CMakeFiles/rebuild_cache.dir
-/home/al/CLionProjects/Musicial/project/web/project/server/CMakeFiles/edit_cache.dir
-/home/al/CLionProjects/Musicial/project/web/project/server/CMakeFiles/server.dir
-/home/al/CLionProjects/Musicial/project/web/project/server/CMakeFiles/client.dir
