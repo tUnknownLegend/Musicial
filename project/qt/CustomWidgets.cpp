@@ -15,24 +15,16 @@ ChatSelectorButton::ChatSelectorButton(QButtonGroup *_parent, const QString &_na
 
 }
 
-Message::Message(const bool &_IsUserOwner, const QString &text, const QString &pathToPic) : IsUserOwner(_IsUserOwner) {
+Message::Message(const bool &_IsUserOwner, const QString &text) : IsUserOwner(_IsUserOwner) {
     container = new QGroupBox();
     container->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     UserID = IsUserOwner;
 
     mainText = new QLabel(container);
     mainText->setText(text);
-    //mainText->setFrameStyle(QFrame::Box);
     mainText->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     mainText->setAlignment(Qt::AlignTop | Qt::AlignRight);
     mainText->setMargin(5);
-
-    if (pathToPic != "") {
-        avatar = new QLabel(container);
-        QPixmap pix(pathToPic);
-        //avatar->setStyleSheet("border-image:url(:/2.png);");
-        avatar->setPixmap(pix);
-    }
 
     if (IsUserOwner) {
         container->setStyleSheet(
@@ -47,9 +39,9 @@ Message::Message(const bool &_IsUserOwner, const QString &text, const QString &p
 
 Message::~Message() {
     delete mainText;
-    delete avatar;
+    //delete avatar;
     delete container;
-    delete scrollArea;
+    //delete scrollArea;
 }
 
 MessageSendBox::MessageSendBox(QWidget *_parent) {

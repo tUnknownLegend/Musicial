@@ -1,5 +1,6 @@
-#include "playlistcreator.h"
+//#include "CustomWidgets.h"
 #include "MainWindow.h"
+#include "playlistcreator.h"
 
 PlaylistCreator::PlaylistCreator(MainWindow *_parent) : parent(_parent) {
     Text = new QLineEdit();
@@ -23,3 +24,4 @@ void PlaylistCreator::SubmitPlaylist() {
 
     //SendPlaylist(text.toStdString(), UserID);
 }
+

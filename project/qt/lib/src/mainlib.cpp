@@ -122,8 +122,12 @@ bool client::MessageGroup::sendPlaylist() {
     return false;
 }
 
-client::MessageGroup::MessageGroup(net_tools::Message _message) {
+client::MessageGroup::MessageGroup(const net_tools::Message &_message) {
     Messages.push_back(_message);
+}
+
+client::MessageGroup::MessageGroup(std::vector<net_tools::Message> &_messages) {
+    Messages = std::move(_messages);
 }
 
 client::MessageGroup::MessageGroup(std::string text, uint64_t id, bool isUrl) {

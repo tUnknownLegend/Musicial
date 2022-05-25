@@ -60,14 +60,11 @@ Response HandlerConvertPlaylist(const Request &request) {
 }
 
 Response HandlerTest(const Request &request) {
-
-
     Response response;
 
     response.status_code = 200;
     response.status_message = "OK";
     response.http_version = "HTTP/1.1";
-
 
     return response;
 }

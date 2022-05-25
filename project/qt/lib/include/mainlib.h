@@ -7,6 +7,10 @@
 #ifndef MUSICIAL_BUILD_H
 #define MUSICIAL_BUILD_H
 
+#define BOT_ID 0
+#define USER_ID 1
+#define CHAT_ID
+
 namespace client {
 /*
     class RecieveMessageNet {
@@ -72,21 +76,6 @@ namespace client {
         bool action(std::string &login, std::string &password);
     };
 
-    struct User {
-        uint64_t id;
-        std::string firstName;
-        std::string secondName;
-        std::string userName;
-        std::string email;
-        std::string phoneNumber;
-        Picture avatar;
-    };
-
-    class Profile {
-    public:
-        User user;
-        /* + analytics */
-    };
 /*
     struct Post {
         // struct of channel post
@@ -112,7 +101,7 @@ namespace client {
 
     class SongGroup : public Group {
     public:
-        std::vector<templib::Song> song;
+        std::vector<templib::Song> song = {};
 
         bool getDB() override { return false; };
 
@@ -128,12 +117,11 @@ namespace client {
     public:
         std::vector<net_tools::Message> Messages = {};
 
-        explicit MessageGroup(net_tools::Message _message);
+        explicit MessageGroup(const net_tools::Message &_message);
 
         MessageGroup(std::string text, uint64_t id, bool isUrl);
-        //MessageGroup(vector<Message> Messages);
 
-        bool getDB() override { return false; };
+        explicit MessageGroup(std::vector<net_tools::Message> &_messages);
 
         bool receiveNet(const net_tools::Message &message);
 
@@ -145,11 +133,15 @@ namespace client {
 
         bool send();
 
-        bool send(std::function<void(const std::vector<net_tools::Message>::iterator &, const std::vector<net_tools::Message>::iterator &)> _QtDraw);
+        bool send(std::function<void(const std::vector<net_tools::Message>::iterator &,
+                                     const std::vector<net_tools::Message>::iterator &)> _QtDraw);
 
     private:
 
-        std::function<void(const std::vector<net_tools::Message>::iterator &, const std::vector<net_tools::Message>::iterator &)> QtDraw;
+        std::function<void(const std::vector<net_tools::Message>::iterator &,
+                           const std::vector<net_tools::Message>::iterator &)> QtDraw;
+
+        bool getDB() override { return false; };
 
         bool sendText();
 
@@ -174,32 +166,6 @@ namespace client {
 
         bool action();
     };
-/*
-    struct Chat {
-        uint64_t id;
-        std::vector<MessageGroup> myMessages;
-        std::vector<MessageGroup> otherMessages; // ?
-    };
-
-    struct Dialog : public Instance {
-        Picture dialogPic;
-        TextField lastMessage;
-    };
-
-
-    class DialogGroup : public Group {
-        std::vector<Dialog> Dialogs;
-
-        bool getDB() override { return false; };
-
-        bool receiveNet() override { return false; };
-
-        bool sendDB() override { return false; };
-
-        bool sendNet() override { return false; };
-    };
-*/
 }
-
 
 #endif //MUSICIAL_BUILD_H

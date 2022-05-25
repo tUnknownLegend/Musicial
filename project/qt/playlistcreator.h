@@ -7,7 +7,7 @@
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QButtonGroup>
-#include "CustomWidgets.h"
+//#include "CustomWidgets.h"
 #include "MainWindow.h"
 
 class PlaylistCreator : public QWidget {
@@ -15,8 +15,6 @@ class PlaylistCreator : public QWidget {
 public:
     explicit PlaylistCreator(MainWindow *_parent = nullptr);
 
-//private slots:
-    //void slotButtonClicked(bool checked);
     QLineEdit *Text;
     QVBoxLayout *Layout;
     QPushButton *submitBtn;
