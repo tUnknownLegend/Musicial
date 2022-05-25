@@ -1,7 +1,6 @@
-
-#include <fstream>
-
-#include "api.h"
+//#include "api.h"
+#include "apiYoutube.h"
+#include "apiSpotify.h"
 
 // struct RefsForURL{
 //     std::string ApiUrl;
@@ -12,44 +11,42 @@
 
 int main()
 {
-    PlaylistManager<YoutubePlaylist> YPManager;
-    RefsForURL playlistRefs = {"https://www.googleapis.com/youtube/v3/playlistItems",
-                "AIzaSyC3-MWvfyHVPjEVn8XYZd-HMVpc_mlxNHE",
-                "PL6AVWk5NUegUV-FWNYbCG_ykC13vevU_6", ""};
-    string URL1 = GetPlaylistItemsURLYoutube(playlistRefs);
-    vector<string> headers1;
-    GetPlaylistItemsHeadersYoutube(headers1);
-    YoutubePlaylist B = YPManager.createExistingPlaylist(URL1, headers1);
-    for(int i = 0; i < B.songs.size(); i++){
-        std::cout <<  B.songs[i].songName << "-" << B.songs[i].artist << std::endl;
-    }
+    // RefsForURL playlistRefs = {"https://www.googleapis.com/youtube/v3/playlistItems",
+    //             "AIzaSyC3-MWvfyHVPjEVn8XYZd-HMVpc_mlxNHE",
+    //             "PL6AVWk5NUegUV-FWNYbCG_ykC13vevU_6", ""};
+    // string URL1 = GetPlaylistItemsURLYoutube(playlistRefs);
+    // vector<string> headers1;
+    // SetPlaylistItemsHeadersYoutube(headers1);
+    // YoutubePlaylist B = createPlaylistFromExistingYoutubePlaylist(URL1, headers1);
+    // for(int i = 0; i < B.songs.size(); i++){
+    //     std::cout <<  B.songs[i].songName << "-" << B.songs[i].artist << std::endl;
+    // }
 
-    PlaylistManager<SpotifyPlaylist> SPManager;
-    RefsForURL playlistRefs2 = {"https://api.spotify.com/v1/playlists/",
-                "",
-                "6DlkmnKtGkaGy0hCKaqi15",
-                "BQC0e8ZzorvXJ8q5RDEVy8Mmdg3Wz1v8UF0oxYrTzYBd7xfTDbmBmRjiuMhZU7amVeE1PJ355lp4Na89xZUt5U8YfIXzNsPcJDUUqFCXJZRTrl2EflP8qJiJVKwAcy6gbiHdV_0XlV_d4PXU8KyujKJ6rOxnw5o"};
-    string URL2 = GetPlaylistItemsURLSpotify(playlistRefs2);
-    vector<string> headers2;
-    GetPlaylistItemsHeadersSpotify(headers2, playlistRefs2.OAuthToken);
-    SpotifyPlaylist C = SPManager.createExistingPlaylist(URL2, headers2);
-    for(int i = 0; i< C.songs.size(); i++){
-        std::cout <<  C.songs[i].songName << "-" << C.songs[i].artist << std::endl;
-    }
-    //std::vector<std::string> playlist;
-    //FILE* file = fopen("../playlists.txt", "w");
-    //     if (file)
-    //     {
-    //         ofstream out("../playlists.txt");
-    //         for(int i = 0; i < playlist.size(); i++){
-    //             out << playlist[i] << endl;
-    //             //out << data << endl;
-    //             //fprintf(file, "%d\n", 1);
-    //         }
-    //     }
-    //     else
-    //         cout << "Нет доступа к файлу!" << endl;
-    //     fclose(file);
+    //PlaylistManager<SpotifyPlaylist> SPManager;
+    // RefsForURL playlistRefs2 = {"https://api.spotify.com/v1/playlists/",
+    //             "",
+    //             "6DlkmnKtGkaGy0hCKaqi15",
+    //             "BQAkqqRkL8hskcLBGOCuazmqmPYMszSLziG8hfA_c2xctGN_IBmncQRA1rHD0D0r4pfMoBwfMBItZT1Alb-JpSXvBIN7rocu7DooVLvJ2PROUfWnyIjIOrhrkfnsDe2ftKFje10N0KLznH1OlPKfqG3LR9zC22af_4NgXv1WN12gSsiMJz2fFqiah1vR0LEC-tpd87ZT6oUEiTJlz77C31thjiUu2HI"};
+    // string URL2 = URLSpotifyGetPlaylistItems(playlistRefs2);
     
+    // SpotifyPlaylist C = createPlaylistFromExistingSpotifyPlaylist(URL2, headers2);
+    // for(int i = 0; i< C.songs.size(); i++){
+    //     std::cout <<  C.songs[i].songName << " - " << C.songs[i].artist << std::endl;
+    // }
+    // std::cout <<  123123 << std::endl;
+    // string s = createYoutubePlaylistFromSonglist(C.songs.begin(), C.songs.end());
+
+    Song A = {"Before I Forget", "Slipknot"};
+    //B.songs.push_back(A);
+    //string s = URLSpotifySearchSong(A);
+    //string s = createEmptyPlaylistSpotify(usedIdSpotify,OAuthTokenSpotify);
+    //std::cout <<  s << std::endl;
+    //string ref = createSpotifyPlaylistFromSonglist(B.songs.begin(), B.songs.end(), usedIdSpotify);
+    //std::cout <<  ref << std::endl;
+    string playlistId = "3OIW9zDn6coCdVGMpBa6vC";
+    if(addSongSpotify(A, playlistId)){
+        std::cout << "added" << std::endl;
+    }
+    //3OIW9zDn6coCdVGMpBa6vC
     return 0;
 }
