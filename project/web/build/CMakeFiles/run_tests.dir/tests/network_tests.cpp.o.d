@@ -256,4 +256,5 @@ CMakeFiles/run_tests.dir/tests/network_tests.cpp.o: \
  /usr/local/include/gtest/gtest-typed-test.h \
  /usr/local/include/gtest/gtest_pred_impl.h \
  /usr/local/include/gtest/gtest_prod.h \
- /home/aint/park/Musicial/project/web/tests/../project/server/include/net_tools.h
+ /home/aint/park/Musicial/project/web/include/net_tools.h \
+ /home/aint/park/Musicial/project/web/include/shared_lib.h

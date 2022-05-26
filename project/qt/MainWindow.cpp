@@ -92,7 +92,7 @@ void MainWindow::SendMessageClicked() {
     QString text = sendBox->Text->displayText();
 
     client::MessageGroup messages(text.toStdString(), 0, false);
-    messages.send([this](const std::vector<net_tools::Message>::iterator & mBegin, const std::vector<net_tools::Message>::iterator & mEnd){
+    messages.send([this](const std::vector<Message>::iterator & mBegin, const std::vector<Message>::iterator & mEnd){
 
         for (auto i = mBegin; i != mEnd; ++i) {
             // recive
@@ -121,7 +121,7 @@ void MainWindow::SumbitPlaylist(QString text) {
     //    return;
 
     client::MessageGroup messages(text.toStdString(), 0, false);
-    messages.send([this](const std::vector<net_tools::Message>::iterator & mBegin, const std::vector<net_tools::Message>::iterator & mEnd){
+    messages.send([this](const std::vector<Message>::iterator & mBegin, const std::vector<Message>::iterator & mEnd){
 
         for (auto i = mBegin; i != mEnd; ++i) {
             // recive

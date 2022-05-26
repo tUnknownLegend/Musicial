@@ -17,8 +17,8 @@ PlaylistCreator::PlaylistCreator(MainWindow *_parent) : parent(_parent) {
     grid = new QGridLayout;
     //Layout = new QVBoxLayout(this);
     submitBtn = new QPushButton("Submit");
-    AddPlaylistBtn = new QPushButton("Add Song");
-    AddSongBtn = new QPushButton("Add Playlist");
+    AddPlaylistBtn = new QPushButton("Add Playlist");
+    AddSongBtn = new QPushButton("Add Song");
         grid->addWidget(createFirstExclusiveGroup(), 0, 0);
         grid->addWidget(createNonExclusiveGroup(), 0, 1);
         rawCounter = 1;

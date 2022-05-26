@@ -1,7 +1,5 @@
+/home/aint/park/Musicial/project/web/build/CMakeFiles/server.dir
 /home/aint/park/Musicial/project/web/build/CMakeFiles/run_tests.dir
+/home/aint/park/Musicial/project/web/build/CMakeFiles/serverLib.dir
 /home/aint/park/Musicial/project/web/build/CMakeFiles/edit_cache.dir
 /home/aint/park/Musicial/project/web/build/CMakeFiles/rebuild_cache.dir
-/home/aint/park/Musicial/project/web/build/project/server/CMakeFiles/server.dir
-/home/aint/park/Musicial/project/web/build/project/server/CMakeFiles/serverLib.dir
-/home/aint/park/Musicial/project/web/build/project/server/CMakeFiles/edit_cache.dir
-/home/aint/park/Musicial/project/web/build/project/server/CMakeFiles/rebuild_cache.dir

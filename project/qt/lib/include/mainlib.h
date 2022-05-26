@@ -2,7 +2,8 @@
 #include <vector>
 #include "tem.h"
 #include <functional>
-#include "../../../web/project/server/include/net_tools.h" //fix
+#include "../../../web/include/net_tools.h" //fix
+#include "../../../web/include/shared_lib.h"
 
 #ifndef MUSICIAL_BUILD_H
 #define MUSICIAL_BUILD_H
@@ -14,11 +15,11 @@ namespace client {
 /*
     class RecieveMessageNet {
     public:
-        std::vector<net_tools::Message> messages = {};
+        std::vector<Message> messages = {};
 
 
-        void addToVec(const net_tools::Message &message) {messages.push_back(message);};
-        friend void receiveMessage(const net_tools::Message &message) {
+        void addToVec(const Message &message) {messages.push_back(message);};
+        friend void receiveMessage(const Message &message) {
             //addToVec(message);
             //messages.push_back(message); };
 
@@ -61,7 +62,7 @@ namespace client {
 
     class ButtonSendMessage : public Button {
     public:
-        bool action(net_tools::Message &message) {
+        bool action(Message &message) {
             // getData()
             // sendToServer()
             // sendToDB()
@@ -114,15 +115,15 @@ namespace client {
 
     class MessageGroup : public Group {
     public:
-        std::vector<net_tools::Message> Messages = {};
+        std::vector<Message> Messages = {};
 
-        explicit MessageGroup(const net_tools::Message &_message);
+        explicit MessageGroup(const Message &_message);
 
         MessageGroup(std::string text, uint64_t id, bool isUrl);
 
-        explicit MessageGroup(std::vector<net_tools::Message> &_messages);
+        explicit MessageGroup(std::vector<Message> &_messages);
 
-        bool receiveNet(const net_tools::Message &message);
+        bool receiveNet(const Message &message);
 
         bool sendDB() override;
 
@@ -132,13 +133,13 @@ namespace client {
 
         bool send();
 
-        bool send(std::function<void(const std::vector<net_tools::Message>::iterator &,
-                                     const std::vector<net_tools::Message>::iterator &)> _QtDraw);
+        bool send(std::function<void(const std::vector<Message>::iterator &,
+                                     const std::vector<Message>::iterator &)> _QtDraw);
 
     private:
 
-        std::function<void(const std::vector<net_tools::Message>::iterator &,
-                           const std::vector<net_tools::Message>::iterator &)> QtDraw;
+        std::function<void(const std::vector<Message>::iterator &,
+                           const std::vector<Message>::iterator &)> QtDraw;
 
         bool getDB() override { return false; };
 
@@ -146,7 +147,7 @@ namespace client {
 
         bool sendPlaylist();
 
-        bool receiveMessage(const net_tools::Message &message);
+        bool receiveMessage(const Message &message);
     };
 
     class ButtonCreatePlaylist : public Button {
@@ -161,7 +162,7 @@ namespace client {
 
     class ButtonGetDialog : public Button {
     public:
-        std::vector<net_tools::Message> Messages;
+        std::vector<Message> Messages;
 
         bool action();
     };

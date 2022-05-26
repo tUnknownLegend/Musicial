@@ -1,1 +1,1 @@
-/usr/bin/c++  -std=c++14 -Wall -ggdb3 -pthread CMakeFiles/run_tests.dir/tests/run_tests.cpp.o CMakeFiles/run_tests.dir/tests/network_tests.cpp.o -o run_tests  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0 /usr/local/lib/libgtest.a 
+/usr/bin/c++ CMakeFiles/run_tests.dir/tests/run_tests.cpp.o CMakeFiles/run_tests.dir/tests/network_tests.cpp.o -o run_tests  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0 /usr/local/lib/libgtest.a -lpthread 

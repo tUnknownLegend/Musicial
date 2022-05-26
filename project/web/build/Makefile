@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named server
+
+# Build rule for target.
+server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
+.PHONY : server
+
+# fast build rule for target.
+server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+.PHONY : server/fast
+
+#=============================================================================
 # Target rules for targets named run_tests
 
 # Build rule for target.
@@ -130,19 +143,6 @@ run_tests/fast:
 .PHONY : run_tests/fast
 
 #=============================================================================
-# Target rules for targets named server
-
-# Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
-.PHONY : server
-
-# fast build rule for target.
-server/fast:
-	$(MAKE) $(MAKESILENT) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/build
-.PHONY : server/fast
-
-#=============================================================================
 # Target rules for targets named serverLib
 
 # Build rule for target.
@@ -152,8 +152,113 @@ serverLib: cmake_check_build_system
 
 # fast build rule for target.
 serverLib/fast:
-	$(MAKE) $(MAKESILENT) -f project/server/CMakeFiles/serverLib.dir/build.make project/server/CMakeFiles/serverLib.dir/build
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/build
 .PHONY : serverLib/fast
+
+src/connection.o: src/connection.cpp.o
+.PHONY : src/connection.o
+
+# target to build an object file
+src/connection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/connection.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/src/connection.cpp.o
+.PHONY : src/connection.cpp.o
+
+src/connection.i: src/connection.cpp.i
+.PHONY : src/connection.i
+
+# target to preprocess a source file
+src/connection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/connection.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/src/connection.cpp.i
+.PHONY : src/connection.cpp.i
+
+src/connection.s: src/connection.cpp.s
+.PHONY : src/connection.s
+
+# target to generate assembly for a file
+src/connection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/connection.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/src/connection.cpp.s
+.PHONY : src/connection.cpp.s
+
+src/net_tools.o: src/net_tools.cpp.o
+.PHONY : src/net_tools.o
+
+# target to build an object file
+src/net_tools.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/net_tools.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/src/net_tools.cpp.o
+.PHONY : src/net_tools.cpp.o
+
+src/net_tools.i: src/net_tools.cpp.i
+.PHONY : src/net_tools.i
+
+# target to preprocess a source file
+src/net_tools.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/net_tools.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/src/net_tools.cpp.i
+.PHONY : src/net_tools.cpp.i
+
+src/net_tools.s: src/net_tools.cpp.s
+.PHONY : src/net_tools.s
+
+# target to generate assembly for a file
+src/net_tools.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/net_tools.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/src/net_tools.cpp.s
+.PHONY : src/net_tools.cpp.s
+
+src/server.o: src/server.cpp.o
+.PHONY : src/server.o
+
+# target to build an object file
+src/server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.o
+.PHONY : src/server.cpp.o
+
+src/server.i: src/server.cpp.i
+.PHONY : src/server.i
+
+# target to preprocess a source file
+src/server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.i
+.PHONY : src/server.cpp.i
+
+src/server.s: src/server.cpp.s
+.PHONY : src/server.s
+
+# target to generate assembly for a file
+src/server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.s
+.PHONY : src/server.cpp.s
+
+src/server_tools.o: src/server_tools.cpp.o
+.PHONY : src/server_tools.o
+
+# target to build an object file
+src/server_tools.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server_tools.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/src/server_tools.cpp.o
+.PHONY : src/server_tools.cpp.o
+
+src/server_tools.i: src/server_tools.cpp.i
+.PHONY : src/server_tools.i
+
+# target to preprocess a source file
+src/server_tools.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server_tools.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/src/server_tools.cpp.i
+.PHONY : src/server_tools.cpp.i
+
+src/server_tools.s: src/server_tools.cpp.s
+.PHONY : src/server_tools.s
+
+# target to generate assembly for a file
+src/server_tools.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server_tools.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/src/server_tools.cpp.s
+.PHONY : src/server_tools.cpp.s
 
 tests/network_tests.o: tests/network_tests.cpp.o
 .PHONY : tests/network_tests.o
@@ -214,6 +319,18 @@ help:
 	@echo "... run_tests"
 	@echo "... server"
 	@echo "... serverLib"
+	@echo "... src/connection.o"
+	@echo "... src/connection.i"
+	@echo "... src/connection.s"
+	@echo "... src/net_tools.o"
+	@echo "... src/net_tools.i"
+	@echo "... src/net_tools.s"
+	@echo "... src/server.o"
+	@echo "... src/server.i"
+	@echo "... src/server.s"
+	@echo "... src/server_tools.o"
+	@echo "... src/server_tools.i"
+	@echo "... src/server_tools.s"
 	@echo "... tests/network_tests.o"
 	@echo "... tests/network_tests.i"
 	@echo "... tests/network_tests.s"

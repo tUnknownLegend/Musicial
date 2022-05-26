@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 
-
-#include "../project/server/include/net_tools.h"
+#include "net_tools.h"
 
 /*
 TEST(parseMessage, CorrectData) {

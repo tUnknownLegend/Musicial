@@ -4,10 +4,10 @@
 #include <utility>
 //#include <stdlib.h>
 //#include "../../../web/project/server/include/client.h"
-#include "../../../web/project/server/include/net_tools.h"
-#include "../../../web/project/server/include/client.h"
+//#include "../../../web/project/server/include/net_tools.h"
+#include "../../../web/include/client.h"
 //#include ""
-#include "../../../api/include/api.h"
+//#include "../../../api/include/api.h"
 
 bool client::MessageGroup::receive() {
 
@@ -16,18 +16,18 @@ bool client::MessageGroup::receive() {
     return false;
 }
 
-void pushMessage(const net_tools::Message &message, const net_tools::Message &vectEnd) {
+void pushMessage(const Message &message, const Message &vectEnd) {
     //client::MessageGroup::receiveMessage(message);
 }
 
-bool client::MessageGroup::receiveMessage(const net_tools::Message &message) {
+bool client::MessageGroup::receiveMessage(const Message &message) {
     Messages.push_back(message);
     //receiveNet();
 
     return false;
 }
 
-bool client::MessageGroup::receiveNet(const net_tools::Message &message) {
+bool client::MessageGroup::receiveNet(const Message &message) {
 
     //message.text = "[Server]: " + message.text;
     Messages.clear();
@@ -66,8 +66,8 @@ bool client::MessageGroup::send() {
     return false;
 }
 
-bool client::MessageGroup::send(std::function<void(const std::vector<net_tools::Message>::iterator &,
-                                                   const std::vector<net_tools::Message>::iterator &)> _QtDraw) {
+bool client::MessageGroup::send(std::function<void(const std::vector<Message>::iterator &,
+                                                   const std::vector<Message>::iterator &)> _QtDraw) {
     QtDraw = std::move(_QtDraw);
 
     sendNet();
@@ -94,7 +94,7 @@ bool client::MessageGroup::sendNet() {
         //i.playlists.ytRef = "[playlist]: " + i.playlists.ytRef;
 
         webClient::sendMessage("0.0.0.0", "8000", "/test", i,
-                               [this](const net_tools::Message &Message) { receiveNet(Message); }); // fix!
+                               [this](const Message &Message) { receiveNet(Message); }); // fix!
     }
 
     //testing
@@ -122,16 +122,16 @@ bool client::MessageGroup::sendPlaylist() {
     return false;
 }
 
-client::MessageGroup::MessageGroup(const net_tools::Message &_message) {
+client::MessageGroup::MessageGroup(const Message &_message) {
     Messages.push_back(_message);
 }
 
-client::MessageGroup::MessageGroup(std::vector<net_tools::Message> &_messages) {
+client::MessageGroup::MessageGroup(std::vector<Message> &_messages) {
     Messages = std::move(_messages);
 }
 
 client::MessageGroup::MessageGroup(std::string text, uint64_t id, bool isUrl) {
-    net_tools::Message message;
+    Message message;
     message.ownerID = id;
     if (isUrl)
         message.playlists.ytRef = std::move(text);
@@ -144,7 +144,7 @@ client::MessageGroup::MessageGroup(std::string text, uint64_t id, bool isUrl) {
 bool client::ButtonGetDialog::action() {
     // getData()
     //creating fake data
-    std::vector<net_tools::Message> fakeMessages;
+    std::vector<Message> fakeMessages;
     int n = 35;
     fakeMessages.reserve(n);
     for (int i = 0; i < n; ++i) {

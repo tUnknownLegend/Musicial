@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.16)
 
 project(Musicial CXX)
 
-set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++14 -Wall -ggdb3 -pthread")
+set(CMAKE_CXX_STANDARD 20)
 #set(CMAKE_C_CLANG_TIDY clang-tidy; -checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus*)
 set(INCLUDE_DIRS "${CMAKE_SOURCE_DIR}")
 

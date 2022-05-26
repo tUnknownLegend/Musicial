@@ -80,16 +80,63 @@ build web/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build web/rebuild_cache: phony web/CMakeFiles/rebuild_cache.util
 
+# =============================================================================
+# Object build statements for EXECUTABLE target server
+
 
 #############################################
-# Utility command for edit_cache
+# Order-only phony target for server
 
-build web/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/aint/park/Musicial/project/cmake-build-debug/web && /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
+build cmake_object_order_depends_target_server: phony || web/CMakeFiles/server.dir
 
-build web/edit_cache: phony web/CMakeFiles/edit_cache.util
+build web/CMakeFiles/server.dir/src/server.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/src/server.cpp || cmake_object_order_depends_target_server
+  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
+  DEP_FILE = web/CMakeFiles/server.dir/src/server.cpp.o.d
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/include
+  OBJECT_DIR = web/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = web/CMakeFiles/server.dir/src
+
+build web/CMakeFiles/server.dir/src/connection.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/src/connection.cpp || cmake_object_order_depends_target_server
+  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
+  DEP_FILE = web/CMakeFiles/server.dir/src/connection.cpp.o.d
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/include
+  OBJECT_DIR = web/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = web/CMakeFiles/server.dir/src
+
+build web/CMakeFiles/server.dir/src/server_tools.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/src/server_tools.cpp || cmake_object_order_depends_target_server
+  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
+  DEP_FILE = web/CMakeFiles/server.dir/src/server_tools.cpp.o.d
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/include
+  OBJECT_DIR = web/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = web/CMakeFiles/server.dir/src
+
+build web/CMakeFiles/server.dir/src/net_tools.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/src/net_tools.cpp || cmake_object_order_depends_target_server
+  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
+  DEP_FILE = web/CMakeFiles/server.dir/src/net_tools.cpp.o.d
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/include
+  OBJECT_DIR = web/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = web/CMakeFiles/server.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target server
+
+
+#############################################
+# Link the executable web/server
+
+build web/server: CXX_EXECUTABLE_LINKER__server_Debug web/CMakeFiles/server.dir/src/server.cpp.o web/CMakeFiles/server.dir/src/connection.cpp.o web/CMakeFiles/server.dir/src/server_tools.cpp.o web/CMakeFiles/server.dir/src/net_tools.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0 /usr/lib/x86_64-linux-gnu/libcurl.so /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0  /usr/lib/x86_64-linux-gnu/libcurl.so  -lcurl  /usr/local/lib/libgtest_main.a  /usr/local/lib/libgtest.a
+  OBJECT_DIR = web/CMakeFiles/server.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = web/server
+  TARGET_PDB = server.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target run_tests
@@ -104,6 +151,7 @@ build web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o: CXX_COMPILER__run_test
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
   DEP_FILE = web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o.d
   FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/include
   OBJECT_DIR = web/CMakeFiles/run_tests.dir
   OBJECT_FILE_DIR = web/CMakeFiles/run_tests.dir/tests
 
@@ -111,6 +159,7 @@ build web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o: CXX_COMPILER__run_
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
   DEP_FILE = web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o.d
   FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/include
   OBJECT_DIR = web/CMakeFiles/run_tests.dir
   OBJECT_FILE_DIR = web/CMakeFiles/run_tests.dir/tests
 
@@ -132,62 +181,34 @@ build web/run_tests: CXX_EXECUTABLE_LINKER__run_tests_Debug web/CMakeFiles/run_t
   TARGET_PDB = run_tests.dbg
 
 # =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/aint/park/Musicial/project/web/CMakeLists.txt
-# =============================================================================
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build web/project/server/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/aint/park/Musicial/project/cmake-build-debug/web/project/server && /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/aint/park/Musicial/project -B/home/aint/park/Musicial/project/cmake-build-debug
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build web/project/server/rebuild_cache: phony web/project/server/CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build web/project/server/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/aint/park/Musicial/project/cmake-build-debug/web/project/server && /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build web/project/server/edit_cache: phony web/project/server/CMakeFiles/edit_cache.util
-
-# =============================================================================
 # Object build statements for STATIC_LIBRARY target serverLib
 
 
 #############################################
 # Order-only phony target for serverLib
 
-build cmake_object_order_depends_target_serverLib: phony || web/project/server/CMakeFiles/serverLib.dir
+build cmake_object_order_depends_target_serverLib: phony || web/CMakeFiles/serverLib.dir
 
-build web/project/server/CMakeFiles/serverLib.dir/src/connection.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/project/server/src/connection.cpp || cmake_object_order_depends_target_serverLib
-  DEP_FILE = web/project/server/CMakeFiles/serverLib.dir/src/connection.cpp.o.d
-  FLAGS = -pthread -g -std=gnu++2a
-  INCLUDES = -I/home/aint/park/Musicial/project/web/project/server/include
-  OBJECT_DIR = web/project/server/CMakeFiles/serverLib.dir
-  OBJECT_FILE_DIR = web/project/server/CMakeFiles/serverLib.dir/src
+build web/CMakeFiles/serverLib.dir/src/connection.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/src/connection.cpp || cmake_object_order_depends_target_serverLib
+  DEP_FILE = web/CMakeFiles/serverLib.dir/src/connection.cpp.o.d
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/include
+  OBJECT_DIR = web/CMakeFiles/serverLib.dir
+  OBJECT_FILE_DIR = web/CMakeFiles/serverLib.dir/src
 
-build web/project/server/CMakeFiles/serverLib.dir/src/server_tools.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/project/server/src/server_tools.cpp || cmake_object_order_depends_target_serverLib
-  DEP_FILE = web/project/server/CMakeFiles/serverLib.dir/src/server_tools.cpp.o.d
-  FLAGS = -pthread -g -std=gnu++2a
-  INCLUDES = -I/home/aint/park/Musicial/project/web/project/server/include
-  OBJECT_DIR = web/project/server/CMakeFiles/serverLib.dir
-  OBJECT_FILE_DIR = web/project/server/CMakeFiles/serverLib.dir/src
+build web/CMakeFiles/serverLib.dir/src/server_tools.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/src/server_tools.cpp || cmake_object_order_depends_target_serverLib
+  DEP_FILE = web/CMakeFiles/serverLib.dir/src/server_tools.cpp.o.d
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/include
+  OBJECT_DIR = web/CMakeFiles/serverLib.dir
+  OBJECT_FILE_DIR = web/CMakeFiles/serverLib.dir/src
 
-build web/project/server/CMakeFiles/serverLib.dir/src/net_tools.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/project/server/src/net_tools.cpp || cmake_object_order_depends_target_serverLib
-  DEP_FILE = web/project/server/CMakeFiles/serverLib.dir/src/net_tools.cpp.o.d
-  FLAGS = -pthread -g -std=gnu++2a
-  INCLUDES = -I/home/aint/park/Musicial/project/web/project/server/include
-  OBJECT_DIR = web/project/server/CMakeFiles/serverLib.dir
-  OBJECT_FILE_DIR = web/project/server/CMakeFiles/serverLib.dir/src
+build web/CMakeFiles/serverLib.dir/src/net_tools.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/src/net_tools.cpp || cmake_object_order_depends_target_serverLib
+  DEP_FILE = web/CMakeFiles/serverLib.dir/src/net_tools.cpp.o.d
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  INCLUDES = -I/home/aint/park/Musicial/project/web/include
+  OBJECT_DIR = web/CMakeFiles/serverLib.dir
+  OBJECT_FILE_DIR = web/CMakeFiles/serverLib.dir/src
 
 
 # =============================================================================
@@ -195,68 +216,26 @@ build web/project/server/CMakeFiles/serverLib.dir/src/net_tools.cpp.o: CXX_COMPI
 
 
 #############################################
-# Link the static library web/project/server/libserverLib.a
+# Link the static library web/libserverLib.a
 
-build web/project/server/libserverLib.a: CXX_STATIC_LIBRARY_LINKER__serverLib_Debug web/project/server/CMakeFiles/serverLib.dir/src/connection.cpp.o web/project/server/CMakeFiles/serverLib.dir/src/server_tools.cpp.o web/project/server/CMakeFiles/serverLib.dir/src/net_tools.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -pthread -g
-  OBJECT_DIR = web/project/server/CMakeFiles/serverLib.dir
+build web/libserverLib.a: CXX_STATIC_LIBRARY_LINKER__serverLib_Debug web/CMakeFiles/serverLib.dir/src/connection.cpp.o web/CMakeFiles/serverLib.dir/src/server_tools.cpp.o web/CMakeFiles/serverLib.dir/src/net_tools.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g
+  OBJECT_DIR = web/CMakeFiles/serverLib.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = web/project/server/libserverLib.a
+  TARGET_FILE = web/libserverLib.a
   TARGET_PDB = serverLib.a.dbg
 
-# =============================================================================
-# Object build statements for EXECUTABLE target server
-
 
 #############################################
-# Order-only phony target for server
+# Utility command for edit_cache
 
-build cmake_object_order_depends_target_server: phony || web/project/server/CMakeFiles/server.dir
+build web/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/aint/park/Musicial/project/cmake-build-debug/web && /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
 
-build web/project/server/CMakeFiles/server.dir/src/server.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/project/server/src/server.cpp || cmake_object_order_depends_target_server
-  DEP_FILE = web/project/server/CMakeFiles/server.dir/src/server.cpp.o.d
-  FLAGS = -pthread -g -std=gnu++2a
-  INCLUDES = -I/home/aint/park/Musicial/project/web/project/server/include
-  OBJECT_DIR = web/project/server/CMakeFiles/server.dir
-  OBJECT_FILE_DIR = web/project/server/CMakeFiles/server.dir/src
-
-build web/project/server/CMakeFiles/server.dir/src/connection.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/project/server/src/connection.cpp || cmake_object_order_depends_target_server
-  DEP_FILE = web/project/server/CMakeFiles/server.dir/src/connection.cpp.o.d
-  FLAGS = -pthread -g -std=gnu++2a
-  INCLUDES = -I/home/aint/park/Musicial/project/web/project/server/include
-  OBJECT_DIR = web/project/server/CMakeFiles/server.dir
-  OBJECT_FILE_DIR = web/project/server/CMakeFiles/server.dir/src
-
-build web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/project/server/src/server_tools.cpp || cmake_object_order_depends_target_server
-  DEP_FILE = web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o.d
-  FLAGS = -pthread -g -std=gnu++2a
-  INCLUDES = -I/home/aint/park/Musicial/project/web/project/server/include
-  OBJECT_DIR = web/project/server/CMakeFiles/server.dir
-  OBJECT_FILE_DIR = web/project/server/CMakeFiles/server.dir/src
-
-build web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/project/server/src/net_tools.cpp || cmake_object_order_depends_target_server
-  DEP_FILE = web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o.d
-  FLAGS = -pthread -g -std=gnu++2a
-  INCLUDES = -I/home/aint/park/Musicial/project/web/project/server/include
-  OBJECT_DIR = web/project/server/CMakeFiles/server.dir
-  OBJECT_FILE_DIR = web/project/server/CMakeFiles/server.dir/src
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target server
-
-
-#############################################
-# Link the executable web/project/server/server
-
-build web/project/server/server: CXX_EXECUTABLE_LINKER__server_Debug web/project/server/CMakeFiles/server.dir/src/server.cpp.o web/project/server/CMakeFiles/server.dir/src/connection.cpp.o web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o
-  FLAGS = -pthread -g
-  OBJECT_DIR = web/project/server/CMakeFiles/server.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = web/project/server/server
-  TARGET_PDB = server.dbg
+build web/edit_cache: phony web/CMakeFiles/edit_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -560,15 +539,15 @@ build libMusicial_API_LIB.a: phony api/libMusicial_API_LIB.a
 
 build libQT_SRC.a: phony qt/lib/src/libQT_SRC.a
 
-build libserverLib.a: phony web/project/server/libserverLib.a
+build libserverLib.a: phony web/libserverLib.a
 
 build musicial: phony db/musicial
 
 build run_tests: phony web/run_tests
 
-build server: phony web/project/server/server
+build server: phony web/server
 
-build serverLib: phony web/project/server/libserverLib.a
+build serverLib: phony web/libserverLib.a
 
 # =============================================================================
 # Folder targets.
@@ -613,14 +592,7 @@ build qt/lib/src/all: phony qt/lib/src/libQT_SRC.a
 #############################################
 # Folder: /home/aint/park/Musicial/project/cmake-build-debug/web
 
-build web/all: phony web/run_tests web/project/server/all
-
-# =============================================================================
-
-#############################################
-# Folder: /home/aint/park/Musicial/project/cmake-build-debug/web/project/server
-
-build web/project/server/all: phony web/project/server/libserverLib.a web/project/server/server
+build web/all: phony web/server web/run_tests web/libserverLib.a
 
 # =============================================================================
 # Built-in targets
@@ -629,14 +601,14 @@ build web/project/server/all: phony web/project/server/libserverLib.a web/projec
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../api/CMakeLists.txt ../db/CMakeLists.txt ../qt/lib/CMakeLists.txt ../qt/lib/src/CMakeLists.txt ../web/CMakeLists.txt ../web/project/server/CMakeLists.txt /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindDependencyMacro.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFile.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFileCXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckLibraryExists.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindCURL.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindGTest.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPostgreSQL.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindThreads.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/GoogleTest.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/SelectLibraryConfigurations.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake /usr/local/lib/cmake/GTest/GTestConfig.cmake /usr/local/lib/cmake/GTest/GTestConfigVersion.cmake /usr/local/lib/cmake/GTest/GTestTargets-noconfig.cmake /usr/local/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../api/CMakeLists.txt ../db/CMakeLists.txt ../qt/lib/CMakeLists.txt ../qt/lib/src/CMakeLists.txt ../web/CMakeLists.txt /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindDependencyMacro.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFile.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFileCXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckLibraryExists.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindCURL.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindGTest.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPostgreSQL.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindThreads.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/GoogleTest.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/SelectLibraryConfigurations.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake /usr/local/lib/cmake/GTest/GTestConfig.cmake /usr/local/lib/cmake/GTest/GTestConfigVersion.cmake /usr/local/lib/cmake/GTest/GTestTargets-noconfig.cmake /usr/local/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../api/CMakeLists.txt ../db/CMakeLists.txt ../qt/lib/CMakeLists.txt ../qt/lib/src/CMakeLists.txt ../web/CMakeLists.txt ../web/project/server/CMakeLists.txt /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindDependencyMacro.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFile.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFileCXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckLibraryExists.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindCURL.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindGTest.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPostgreSQL.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindThreads.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/GoogleTest.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/SelectLibraryConfigurations.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake /usr/local/lib/cmake/GTest/GTestConfig.cmake /usr/local/lib/cmake/GTest/GTestConfigVersion.cmake /usr/local/lib/cmake/GTest/GTestTargets-noconfig.cmake /usr/local/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../api/CMakeLists.txt ../db/CMakeLists.txt ../qt/lib/CMakeLists.txt ../qt/lib/src/CMakeLists.txt ../web/CMakeLists.txt /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindDependencyMacro.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFile.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFileCXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CheckLibraryExists.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindCURL.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindGTest.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindPostgreSQL.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/FindThreads.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/GoogleTest.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/SelectLibraryConfigurations.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake /usr/lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake /usr/local/lib/cmake/GTest/GTestConfig.cmake /usr/local/lib/cmake/GTest/GTestConfigVersion.cmake /usr/local/lib/cmake/GTest/GTestTargets-noconfig.cmake /usr/local/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################

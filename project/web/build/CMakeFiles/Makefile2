@@ -63,35 +63,46 @@ CMAKE_BINARY_DIR = /home/aint/park/Musicial/project/web/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/server.dir/all
 all: CMakeFiles/run_tests.dir/all
-all: project/server/all
+all: CMakeFiles/serverLib.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: project/server/preinstall
+preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/server.dir/clean
 clean: CMakeFiles/run_tests.dir/clean
-clean: project/server/clean
+clean: CMakeFiles/serverLib.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory project/server
+# Target rules for target CMakeFiles/server.dir
 
-# Recursive "all" directory target.
-project/server/all: project/server/CMakeFiles/server.dir/all
-project/server/all: project/server/CMakeFiles/serverLib.dir/all
-.PHONY : project/server/all
+# All Build rule for target.
+CMakeFiles/server.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aint/park/Musicial/project/web/build/CMakeFiles --progress-num=4,5,6,7,8 "Built target server"
+.PHONY : CMakeFiles/server.dir/all
 
-# Recursive "preinstall" directory target.
-project/server/preinstall:
-.PHONY : project/server/preinstall
+# Build rule for subdir invocation for target.
+CMakeFiles/server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/web/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/web/build/CMakeFiles 0
+.PHONY : CMakeFiles/server.dir/rule
 
-# Recursive "clean" directory target.
-project/server/clean: project/server/CMakeFiles/server.dir/clean
-project/server/clean: project/server/CMakeFiles/serverLib.dir/clean
-.PHONY : project/server/clean
+# Convenience name for target.
+server: CMakeFiles/server.dir/rule
+.PHONY : server
+
+# clean rule for target.
+CMakeFiles/server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/clean
+.PHONY : CMakeFiles/server.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/run_tests.dir
@@ -120,56 +131,30 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 #=============================================================================
-# Target rules for target project/server/CMakeFiles/server.dir
+# Target rules for target CMakeFiles/serverLib.dir
 
 # All Build rule for target.
-project/server/CMakeFiles/server.dir/all:
-	$(MAKE) $(MAKESILENT) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/depend
-	$(MAKE) $(MAKESILENT) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aint/park/Musicial/project/web/build/CMakeFiles --progress-num=4,5,6,7,8 "Built target server"
-.PHONY : project/server/CMakeFiles/server.dir/all
-
-# Build rule for subdir invocation for target.
-project/server/CMakeFiles/server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/web/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project/server/CMakeFiles/server.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/web/build/CMakeFiles 0
-.PHONY : project/server/CMakeFiles/server.dir/rule
-
-# Convenience name for target.
-server: project/server/CMakeFiles/server.dir/rule
-.PHONY : server
-
-# clean rule for target.
-project/server/CMakeFiles/server.dir/clean:
-	$(MAKE) $(MAKESILENT) -f project/server/CMakeFiles/server.dir/build.make project/server/CMakeFiles/server.dir/clean
-.PHONY : project/server/CMakeFiles/server.dir/clean
-
-#=============================================================================
-# Target rules for target project/server/CMakeFiles/serverLib.dir
-
-# All Build rule for target.
-project/server/CMakeFiles/serverLib.dir/all:
-	$(MAKE) $(MAKESILENT) -f project/server/CMakeFiles/serverLib.dir/build.make project/server/CMakeFiles/serverLib.dir/depend
-	$(MAKE) $(MAKESILENT) -f project/server/CMakeFiles/serverLib.dir/build.make project/server/CMakeFiles/serverLib.dir/build
+CMakeFiles/serverLib.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aint/park/Musicial/project/web/build/CMakeFiles --progress-num=9,10,11,12 "Built target serverLib"
-.PHONY : project/server/CMakeFiles/serverLib.dir/all
+.PHONY : CMakeFiles/serverLib.dir/all
 
 # Build rule for subdir invocation for target.
-project/server/CMakeFiles/serverLib.dir/rule: cmake_check_build_system
+CMakeFiles/serverLib.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/web/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project/server/CMakeFiles/serverLib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/serverLib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/web/build/CMakeFiles 0
-.PHONY : project/server/CMakeFiles/serverLib.dir/rule
+.PHONY : CMakeFiles/serverLib.dir/rule
 
 # Convenience name for target.
-serverLib: project/server/CMakeFiles/serverLib.dir/rule
+serverLib: CMakeFiles/serverLib.dir/rule
 .PHONY : serverLib
 
 # clean rule for target.
-project/server/CMakeFiles/serverLib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f project/server/CMakeFiles/serverLib.dir/build.make project/server/CMakeFiles/serverLib.dir/clean
-.PHONY : project/server/CMakeFiles/serverLib.dir/clean
+CMakeFiles/serverLib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverLib.dir/build.make CMakeFiles/serverLib.dir/clean
+.PHONY : CMakeFiles/serverLib.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

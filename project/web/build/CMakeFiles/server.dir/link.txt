@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/server.dir/src/server.cpp.o CMakeFiles/server.dir/src/connection.cpp.o CMakeFiles/server.dir/src/server_tools.cpp.o CMakeFiles/server.dir/src/net_tools.cpp.o -o server  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0 /usr/lib/x86_64-linux-gnu/libcurl.so -lcurl /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a -lpthread 
