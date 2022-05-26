@@ -42,18 +42,21 @@ MainWindow::MainWindow(QWidget *parent) :
     scrollArea = new QScrollArea(RightSectorWidget);
 
     scrollArea->setStyleSheet("QScrollBar:vertical { ""width: 10px;""}");
-    scrollArea->setMinimumSize(400, 400);
+    //scrollArea->setMinimumSize(400, 400);
 
     scrollArea->setAlignment(Qt::AlignRight);
     scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     scrollArea->setWidgetResizable(true);
 
-    ChatListWidget = new QGroupBox(RightSectorWidget);
-    scrollArea->setWidget(ChatListWidget);
-    ChatListWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
+    //scrollArea->setLayout(ChatList);
+
+    ChatListWidget = new QGroupBox(scrollArea);
+    scrollArea->setWidget(ChatListWidget);
+    //ChatListWidget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
     ChatList = new QVBoxLayout(ChatListWidget);
-    ChatList->setAlignment(Qt::AlignRight);
+    ChatList->setSizeConstraint(QLayout::SetMinimumSize);
+    //ChatList->setAlignment(Qt::AlignRight);
     ChatListWidget->setLayout(ChatList);
 
     sendBox = new MessageSendBox(RightSectorWidget);
@@ -87,44 +90,18 @@ void MainWindow::SendMessageClicked() {
         return;
 
     QString text = sendBox->Text->displayText();
+
     client::MessageGroup messages(text.toStdString(), 0, false);
     messages.send([this](const std::vector<net_tools::Message>::iterator & mBegin, const std::vector<net_tools::Message>::iterator & mEnd){
 
         for (auto i = mBegin; i != mEnd; ++i) {
             // recive
-            Message *message = new Message(i->ownerID, QString::fromStdString(i->text));
-            ChatList->addWidget(message->container);
+            Message *message = new Message(i->ownerID, QString::fromStdString(i->text), true, *ChatList);
+            message->mainText->setWordWrap(true);
+            ChatList->addWidget(message->mainText);
         }
     }
     );
-/*
-
-    //text = QString::fromStdString(messages.Messages[0].text);
-    QList < Message * > MessageList;
-    //Message m(1, "first line (not)second line");
-
-    for (auto &i: messages.Messages) {     
-        // send
-        Message *message = new Message(0, sendBox->Text->displayText());
-        MessageList.append(message);
-
-        //recive:
-        //message = new Message(!i.ownerID, QString::fromStdString(i.text));
-        //MessageList.append(message);
-    }
-    //messages.Messages.clear();
-
-    //Message *message = new Message(1, text);
-    //MessageList.append(message);
-
-    for (auto &i: MessageList) {
-        ChatList->addWidget(i->container);
-        //scrollArea->minimumHeight();
-    }
-
-    //scrollArea->verticalScrollBar()->set;
-    scrollArea->verticalScrollBar()->setSliderPosition(scrollArea->verticalScrollBar()->maximum());
-*/
 
     //messages.Messages
 
@@ -139,20 +116,35 @@ void MainWindow::SendPlaylistClicked() {
 }
 
 void MainWindow::SumbitPlaylist(QString text) {
+
+    //if (sendBox->Text->displayText() == "")
+    //    return;
+
+    client::MessageGroup messages(text.toStdString(), 0, false);
+    messages.send([this](const std::vector<net_tools::Message>::iterator & mBegin, const std::vector<net_tools::Message>::iterator & mEnd){
+
+        for (auto i = mBegin; i != mEnd; ++i) {
+            // recive
+            Message *message = new Message(i->ownerID, QString::fromStdString(i->text), true, *ChatList);
+            message->mainText->setWordWrap(true);
+            ChatList->addWidget(message->mainText);
+        }
+    }
+    );
+
+    /*
     client::MessageGroup messages(text.toStdString(), 0, true);
     messages.send();
 
     //text = QString::fromStdString(messages.Messages[0].text);
-    QList < Message * > MessageList;
+    //QList < Message * > MessageList;
     //Message m(1, "first line (not)second line");
 
     for (auto &i: messages.Messages) {
-        Message *message = new Message(0, text);
+        Message *message = new Message(USER_ID, text, true);
         MessageList.append(message);
-        message = new Message(!i.ownerID, QString::fromStdString(i.playlists.ytRef));
-        MessageList.append(message);
-
-
+        //message = new Message(!i.ownerID, QString::fromStdString(i.playlists.ytRef));
+        //MessageList.append(message);
 
         //m_->verticalScrollBar()->setSliderPosition(m_ScrollArea->verticalScrollBar()->maximum());
     }
@@ -165,11 +157,12 @@ void MainWindow::SumbitPlaylist(QString text) {
 
     scrollArea->verticalScrollBar()->setSliderPosition(scrollArea->verticalScrollBar()->maximum());
 
-
+*/
     //SendPlaylist(text.toStdString(), UserID);
 }
 
-void MainWindow::UpdateChatList() {
+void MainWindow::UpdateChatList() {  
+    /*
     client::ButtonGetDialog updateContainer;
     updateContainer.action();
 
@@ -184,5 +177,5 @@ void MainWindow::UpdateChatList() {
     }
 
     scrollArea->verticalScrollBar()->setSliderPosition(scrollArea->verticalScrollBar()->maximum());
-
+*/
 }

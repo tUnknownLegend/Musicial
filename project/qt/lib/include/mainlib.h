@@ -9,7 +9,6 @@
 
 #define BOT_ID 0
 #define USER_ID 1
-#define CHAT_ID
 
 namespace client {
 /*

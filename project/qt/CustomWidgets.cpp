@@ -15,32 +15,47 @@ ChatSelectorButton::ChatSelectorButton(QButtonGroup *_parent, const QString &_na
 
 }
 
-Message::Message(const bool &_IsUserOwner, const QString &text) : IsUserOwner(_IsUserOwner) {
-    container = new QGroupBox();
-    container->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    UserID = IsUserOwner;
+Message::Message(const unsigned int& _UserID, const QString &text, const bool isUserOwner, QVBoxLayout& _layout) : UserID(_UserID) {
 
-    mainText = new QLabel(container);
+    //UserID = IsUserOwner;
+
+    mainText = new QLabel();
     mainText->setText(text);
-    mainText->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    mainText->setAlignment(Qt::AlignTop | Qt::AlignRight);
+    mainText->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+   // mainText->setAlignment(Qt::AlignTop | Qt::AlignRight);
     mainText->setMargin(5);
+    mainText->setTextFormat(Qt::RichText);
+   // mainText->openExternalLinks;
+    //_parent.ensureWidgetVisible(container, 1, 1);
+    //_parent.setWidgetResizable(true);
+    //mainText->setMaximumWidth(container->width());
+    //mainText->adjustSize();
+    mainText->setTextInteractionFlags(Qt::TextBrowserInteraction);
+    mainText->setOpenExternalLinks(true);
 
-    if (IsUserOwner) {
-        container->setStyleSheet(
-                "QGroupBox {width: 50px;border: 2px solid gray;border-radius: 3px;background-color: white;padding: 0px 5px 10px 15px;}");
-        container->setAlignment(Qt::AlignTop | Qt::AlignRight);
+
+    if (!isUserOwner) {
+        mainText->setStyleSheet(
+                "QLabel {border: 2px solid gray; border-style: inset; border-radius: 10px;background-color: white;padding: 5px 5px 5px 5px;}");
+        //container->setAlignment(Qt::AlignTop | Qt::AlignRight);
+        //container->setGeometry(container->x(), container->y(), _parent.width() - 20, container->height());
     } else {
-        container->setStyleSheet(
-                "QGroupBox {border: 1px solid gray;border-radius: 2px;background-color: lightGray;padding: 0px 5px 10px 15px;}");
-        container->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+        mainText->setStyleSheet(
+                "QLabel {border: 1px solid gray; border-style: outset;border: 10px;background-color: lightGray;padding: 5px 5px 5px 5px;}");
+        //container->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+        //container->setContentsMargins(50, 50, 50, 50);
+        //container->setGeometry(container->x(), container->y(), _parent.width() - 20, container->height());
     }
+    //_parent.setAlignment(Qt::AlignLeft);
+    //container->setGeometry(0, 0, mainText->x() - mainText->width(), mainText->y() - mainText->height());
+    //mainText->setGeometry(0, 0, 0, 0);
+    //container->setMinimumSize(mainText->width(), mainText->height());
 }
 
 Message::~Message() {
     delete mainText;
     //delete avatar;
-    delete container;
+    //delete container;
     //delete scrollArea;
 }
 

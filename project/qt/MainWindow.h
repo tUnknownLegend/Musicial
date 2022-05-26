@@ -5,8 +5,6 @@
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QPushButton>
-#include <QHBoxLayout>
-#include <QButtonGroup>
 #include "CustomWidgets.h"
 #include <QScrollBar>
 

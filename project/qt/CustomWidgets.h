@@ -27,16 +27,17 @@ class Message {
 public:
     Message() = delete;
 
-    Message(const bool &_IsUserOwner, const QString &text);
+    Message(const unsigned int& _UserID, const QString &text, const bool isUserOwner, QVBoxLayout& _layout);
 
     ~Message();
 
     //net_tools::Message
 
-    bool IsUserOwner;
+    //bool IsUserOwner;
     unsigned int UserID;
-    QGroupBox *container;
+    //QGroupBox *container;
     QLabel *mainText;
+    QVBoxLayout* Layout;
     //QLabel *avatar;
     //QScrollArea *scrollArea;
 };
@@ -51,6 +52,7 @@ public:
     QPushButton *sendMusic;
 };
 
+/*
 class BorderLayout : public QLayout {
 public:
     enum Position { West, North, South, East, Center };
@@ -89,5 +91,5 @@ private:
 
     QList<ItemWrapper *> list;
 };
-
+*/
 #endif // CUSTOMWIDGETS_H
