@@ -131,34 +131,6 @@ void MainWindow::SumbitPlaylist(QString text) {
         }
     }
     );
-
-    /*
-    client::MessageGroup messages(text.toStdString(), 0, true);
-    messages.send();
-
-    //text = QString::fromStdString(messages.Messages[0].text);
-    //QList < Message * > MessageList;
-    //Message m(1, "first line (not)second line");
-
-    for (auto &i: messages.Messages) {
-        Message *message = new Message(USER_ID, text, true);
-        MessageList.append(message);
-        //message = new Message(!i.ownerID, QString::fromStdString(i.playlists.ytRef));
-        //MessageList.append(message);
-
-        //m_->verticalScrollBar()->setSliderPosition(m_ScrollArea->verticalScrollBar()->maximum());
-    }
-
-    for (auto &i: MessageList) {
-        ChatList->addWidget(i->container);
-        //scrollArea->maximumHeight();
-    }
-
-
-    scrollArea->verticalScrollBar()->setSliderPosition(scrollArea->verticalScrollBar()->maximum());
-
-*/
-    //SendPlaylist(text.toStdString(), UserID);
 }
 
 void MainWindow::UpdateChatList() {  
