@@ -1,4 +1,5 @@
 #pragma once
+
 #include "api.h"
 
 string URLSpotifyGetPlaylistItems(string &playlistSpotifyId);
@@ -28,29 +29,28 @@ string createEmptyPlaylistSpotify(const string &userId);
 bool addSongSpotify(Song &song, string &playlistId);
 
 template<typename ForwardIterator>
-string createSpotifyPlaylistFromSonglist(ForwardIterator begin, ForwardIterator end, const string &userId){
+string createSpotifyPlaylistFromSonglist(ForwardIterator begin, ForwardIterator end, const string &userId) {
     string playlistId = createEmptyPlaylistSpotify(usedIdSpotify);
     string URL = URLSpotifyCreatePlaylistFromSonglist(playlistId);
     string readBuffer;
     vector<string> headers;
     SetHeadersSpotify(headers);
     json postParametersJson;
-    postParametersJson["uris"] = json::array();    
+    postParametersJson["uris"] = json::array();
     int missedSongsCount = 0;
-    for(ForwardIterator it = begin; it != end; it++){
+    for (ForwardIterator it = begin; it != end; it++) {
         string songId = searchSongSpotify(*it);
-        if(songId == "-1"){
+        if (songId == "-1") {
             missedSongsCount++;
-        }
-        else{
-            postParametersJson["uris"].push_back("spotify:track:"+ songId);
+        } else {
+            postParametersJson["uris"].push_back("spotify:track:" + songId);
             //std::cout <<  (*it).songName << " - " <<(*it).artist << std::endl; 
-        } 
+        }
     }
     string postParameters = postParametersJson.dump();
     std::cout << postParameters << std::endl;
-    int res = request(URL, headers, readBuffer, "post", postParameters);
-    if (res == -1){
+    int res = requestAPI(URL, headers, readBuffer, "post", postParameters);
+    if (res == -1) {
         std::cout << "error" << std::endl;
         return "";
     }

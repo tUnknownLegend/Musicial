@@ -83,30 +83,30 @@ CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aint/park/Musicial/project/api/src/api.cpp -o CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.s
 
-CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o: CMakeFiles/Musicial_API_LIB.dir/flags.make
-CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o: ../src/main.cpp
-CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o: CMakeFiles/Musicial_API_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aint/park/Musicial/project/api/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o -MF CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o.d -o CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o -c /home/aint/park/Musicial/project/api/src/main.cpp
+CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o: CMakeFiles/Musicial_API_LIB.dir/flags.make
+CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o: ../src/apiSpotify.cpp
+CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o: CMakeFiles/Musicial_API_LIB.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aint/park/Musicial/project/api/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o -MF CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o.d -o CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o -c /home/aint/park/Musicial/project/api/src/apiSpotify.cpp
 
-CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aint/park/Musicial/project/api/src/main.cpp > CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.i
+CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aint/park/Musicial/project/api/src/apiSpotify.cpp > CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.i
 
-CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aint/park/Musicial/project/api/src/main.cpp -o CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.s
+CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aint/park/Musicial/project/api/src/apiSpotify.cpp -o CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.s
 
 # Object files for target Musicial_API_LIB
 Musicial_API_LIB_OBJECTS = \
 "CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o" \
-"CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o"
+"CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o"
 
 # External object files for target Musicial_API_LIB
 Musicial_API_LIB_EXTERNAL_OBJECTS =
 
 libMusicial_API_LIB.a: CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o
-libMusicial_API_LIB.a: CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o
+libMusicial_API_LIB.a: CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o
 libMusicial_API_LIB.a: CMakeFiles/Musicial_API_LIB.dir/build.make
 libMusicial_API_LIB.a: CMakeFiles/Musicial_API_LIB.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aint/park/Musicial/project/api/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libMusicial_API_LIB.a"

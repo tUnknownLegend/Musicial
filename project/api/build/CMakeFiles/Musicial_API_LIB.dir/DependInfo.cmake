@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/aint/park/Musicial/project/api/src/api.cpp" "CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o" "gcc" "CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o.d"
-  "/home/aint/park/Musicial/project/api/src/main.cpp" "CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o" "gcc" "CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o.d"
+  "/home/aint/park/Musicial/project/api/src/apiSpotify.cpp" "CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o" "gcc" "CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o.d"
   )
 
 # Targets to which this target links.

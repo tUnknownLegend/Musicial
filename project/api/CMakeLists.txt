@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(Musicial_API)
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -std=c++14 -Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -std=c++14 -Wall -lcurl")
 set(CMAKE_EXE_LINKER_FLAGS " ${CMAKE_EXE_LINKER_FLAGS}")
 
 file(GLOB SOURCES *.cpp *.h)
@@ -16,8 +16,8 @@ include_directories(${GTEST_INCDIR} include src tests)
 include_directories(${CURL_INCLUDE_DIR})
 include_directories(${nlohmann_json_INCDIR})
 
-set(SOURCES src/api.cpp src/main.cpp)
-set(HEADERS include/api.h)
+set(SOURCES src/api.cpp src/apiSpotify.cpp)
+set(HEADERS include/api.h include/apiSpotify.h include/apiYoutube.h)
 
 
 add_library(Musicial_API_LIB STATIC ${SOURCES} ${HEADERS})

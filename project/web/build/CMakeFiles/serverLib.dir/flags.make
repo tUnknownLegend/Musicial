@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/aint/park/Musicial/project/web/include
 
-CXX_FLAGS = -std=gnu++2a
+CXX_FLAGS =  -std=c++14 -Wall -ggdb3 -pthread -lcurl -std=gnu++2a
 

@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project(Musicial CXX)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++14 -Wall -ggdb3 -pthread -lcurl")
 
 include_directories(
         ${BOOST_INCLUDE_DIRS}
@@ -28,8 +29,11 @@ add_executable(server
         include/router.h
         src/server_tools.cpp
         src/net_tools.cpp
-        include/shared_lib.h)
-target_link_libraries(server ${Boost_LIBRARIES} CURL::libcurl GTest::Main curl nlohmann_json::nlohmann_json)
+        include/shared_lib.h
+        )
+
+#../builtLibs/libMusicial_API_LIB.a
+target_link_libraries(server ${Boost_LIBRARIES} CURL::libcurl GTest::Main curl nlohmann_json::nlohmann_json ${CMAKE_SOURCE_DIR}/../builtLibs/libMusicial_API_LIB.a CURL::libcurl )
 
 set(SOURCES tests/run_tests.cpp tests/network_tests.cpp include/shared_lib.h)
 add_executable(run_tests include/net_tools.h ${SOURCES})

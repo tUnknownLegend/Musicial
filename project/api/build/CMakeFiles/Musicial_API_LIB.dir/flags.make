@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/aint/park/Musicial/project/api/include -I/home/aint/park/Musicial/project/api/src -I/home/aint/park/Musicial/project/api/tests
 
-CXX_FLAGS =   -std=c++14 -Wall -std=gnu++11
+CXX_FLAGS =   -std=c++14 -Wall -lcurl -std=gnu++11
 

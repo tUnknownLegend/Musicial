@@ -142,6 +142,8 @@ server: CMakeFiles/server.dir/src/net_tools.cpp.o
 server: CMakeFiles/server.dir/build.make
 server: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
 server: /usr/lib/x86_64-linux-gnu/libcurl.so
+server: ../../builtLibs/libMusicial_API_LIB.a
+server: /usr/lib/x86_64-linux-gnu/libcurl.so
 server: /usr/local/lib/libgtest_main.a
 server: /usr/local/lib/libgtest.a
 server: CMakeFiles/server.dir/link.txt

@@ -153,29 +153,29 @@ src/api.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.s
 .PHONY : src/api.cpp.s
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+src/apiSpotify.o: src/apiSpotify.cpp.o
+.PHONY : src/apiSpotify.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/apiSpotify.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o
+.PHONY : src/apiSpotify.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+src/apiSpotify.i: src/apiSpotify.cpp.i
+.PHONY : src/apiSpotify.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/apiSpotify.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.i
+.PHONY : src/apiSpotify.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/apiSpotify.s: src/apiSpotify.cpp.s
+.PHONY : src/apiSpotify.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/apiSpotify.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Musicial_API_LIB.dir/build.make CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.s
+.PHONY : src/apiSpotify.cpp.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... src/api.o"
 	@echo "... src/api.i"
 	@echo "... src/api.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/apiSpotify.o"
+	@echo "... src/apiSpotify.i"
+	@echo "... src/apiSpotify.s"
 .PHONY : help
 
 

@@ -18,7 +18,6 @@
 #include "response.h"
 #include "router.h"
 
-
 namespace server_tools {
     int startServer();
 }

@@ -1203,4 +1203,35 @@ CMakeFiles/server.dir/src/server_tools.cpp.o: \
  /home/aint/park/Musicial/project/web/include/shared_lib.h \
  /home/aint/park/Musicial/project/web/include/request.h \
  /home/aint/park/Musicial/project/web/include/response.h \
- /home/aint/park/Musicial/project/web/include/router.h
+ /home/aint/park/Musicial/project/web/include/router.h \
+ /home/aint/park/Musicial/project/web/src/../../api/include/apiSpotify.h \
+ /home/aint/park/Musicial/project/web/src/../../api/include/api.h \
+ /usr/include/x86_64-linux-gnu/curl/curl.h \
+ /usr/include/x86_64-linux-gnu/curl/curlver.h \
+ /usr/include/x86_64-linux-gnu/curl/system.h \
+ /usr/include/x86_64-linux-gnu/curl/easy.h \
+ /usr/include/x86_64-linux-gnu/curl/multi.h \
+ /usr/include/x86_64-linux-gnu/curl/curl.h \
+ /usr/include/x86_64-linux-gnu/curl/urlapi.h /usr/include/json.hpp \
+ /usr/include/c++/9/numeric /usr/include/c++/9/bits/stl_numeric.h \
+ /usr/include/c++/9/pstl/glue_numeric_defs.h \
+ /usr/include/c++/9/forward_list /usr/include/c++/9/bits/forward_list.h \
+ /usr/include/c++/9/bits/forward_list.tcc /usr/include/c++/9/valarray \
+ /usr/include/c++/9/bits/valarray_array.h \
+ /usr/include/c++/9/bits/valarray_array.tcc \
+ /usr/include/c++/9/bits/valarray_before.h \
+ /usr/include/c++/9/bits/slice_array.h \
+ /usr/include/c++/9/bits/valarray_after.h \
+ /usr/include/c++/9/bits/gslice.h /usr/include/c++/9/bits/gslice_array.h \
+ /usr/include/c++/9/bits/mask_array.h \
+ /usr/include/c++/9/bits/indirect_array.h /usr/include/c++/9/filesystem \
+ /usr/include/c++/9/bits/fs_fwd.h /usr/include/c++/9/bits/fs_path.h \
+ /usr/include/c++/9/locale /usr/include/c++/9/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/9/bits/codecvt.h \
+ /usr/include/c++/9/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/9/bits/locale_conv.h /usr/include/c++/9/iomanip \
+ /usr/include/c++/9/bits/quoted_string.h /usr/include/c++/9/codecvt \
+ /usr/include/c++/9/bits/fs_dir.h /usr/include/c++/9/bits/fs_ops.h \
+ /home/aint/park/Musicial/project/web/src/../../api/include/apiYoutube.h

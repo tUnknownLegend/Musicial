@@ -92,7 +92,7 @@ build cmake_object_order_depends_target_server: phony || web/CMakeFiles/server.d
 build web/CMakeFiles/server.dir/src/server.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/src/server.cpp || cmake_object_order_depends_target_server
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
   DEP_FILE = web/CMakeFiles/server.dir/src/server.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g -std=gnu++2a
   INCLUDES = -I/home/aint/park/Musicial/project/web/include
   OBJECT_DIR = web/CMakeFiles/server.dir
   OBJECT_FILE_DIR = web/CMakeFiles/server.dir/src
@@ -100,7 +100,7 @@ build web/CMakeFiles/server.dir/src/server.cpp.o: CXX_COMPILER__server_Debug /ho
 build web/CMakeFiles/server.dir/src/connection.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/src/connection.cpp || cmake_object_order_depends_target_server
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
   DEP_FILE = web/CMakeFiles/server.dir/src/connection.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g -std=gnu++2a
   INCLUDES = -I/home/aint/park/Musicial/project/web/include
   OBJECT_DIR = web/CMakeFiles/server.dir
   OBJECT_FILE_DIR = web/CMakeFiles/server.dir/src
@@ -108,7 +108,7 @@ build web/CMakeFiles/server.dir/src/connection.cpp.o: CXX_COMPILER__server_Debug
 build web/CMakeFiles/server.dir/src/server_tools.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/src/server_tools.cpp || cmake_object_order_depends_target_server
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
   DEP_FILE = web/CMakeFiles/server.dir/src/server_tools.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g -std=gnu++2a
   INCLUDES = -I/home/aint/park/Musicial/project/web/include
   OBJECT_DIR = web/CMakeFiles/server.dir
   OBJECT_FILE_DIR = web/CMakeFiles/server.dir/src
@@ -116,7 +116,7 @@ build web/CMakeFiles/server.dir/src/server_tools.cpp.o: CXX_COMPILER__server_Deb
 build web/CMakeFiles/server.dir/src/net_tools.cpp.o: CXX_COMPILER__server_Debug /home/aint/park/Musicial/project/web/src/net_tools.cpp || cmake_object_order_depends_target_server
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
   DEP_FILE = web/CMakeFiles/server.dir/src/net_tools.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g -std=gnu++2a
   INCLUDES = -I/home/aint/park/Musicial/project/web/include
   OBJECT_DIR = web/CMakeFiles/server.dir
   OBJECT_FILE_DIR = web/CMakeFiles/server.dir/src
@@ -129,9 +129,9 @@ build web/CMakeFiles/server.dir/src/net_tools.cpp.o: CXX_COMPILER__server_Debug 
 #############################################
 # Link the executable web/server
 
-build web/server: CXX_EXECUTABLE_LINKER__server_Debug web/CMakeFiles/server.dir/src/server.cpp.o web/CMakeFiles/server.dir/src/connection.cpp.o web/CMakeFiles/server.dir/src/server_tools.cpp.o web/CMakeFiles/server.dir/src/net_tools.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0 /usr/lib/x86_64-linux-gnu/libcurl.so /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g
-  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0  /usr/lib/x86_64-linux-gnu/libcurl.so  -lcurl  /usr/local/lib/libgtest_main.a  /usr/local/lib/libgtest.a
+build web/server: CXX_EXECUTABLE_LINKER__server_Debug web/CMakeFiles/server.dir/src/server.cpp.o web/CMakeFiles/server.dir/src/connection.cpp.o web/CMakeFiles/server.dir/src/server_tools.cpp.o web/CMakeFiles/server.dir/src/net_tools.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0 /usr/lib/x86_64-linux-gnu/libcurl.so ../../builtLibs/libMusicial_API_LIB.a /usr/lib/x86_64-linux-gnu/libcurl.so /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0  /usr/lib/x86_64-linux-gnu/libcurl.so  -lcurl  ../../builtLibs/libMusicial_API_LIB.a  /usr/lib/x86_64-linux-gnu/libcurl.so  /usr/local/lib/libgtest_main.a  /usr/local/lib/libgtest.a
   OBJECT_DIR = web/CMakeFiles/server.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -150,7 +150,7 @@ build cmake_object_order_depends_target_run_tests: phony || cmake_object_order_d
 build web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o: CXX_COMPILER__run_tests_Debug /home/aint/park/Musicial/project/web/tests/run_tests.cpp || cmake_object_order_depends_target_run_tests
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
   DEP_FILE = web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g -std=gnu++2a
   INCLUDES = -I/home/aint/park/Musicial/project/web/include
   OBJECT_DIR = web/CMakeFiles/run_tests.dir
   OBJECT_FILE_DIR = web/CMakeFiles/run_tests.dir/tests
@@ -158,7 +158,7 @@ build web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o: CXX_COMPILER__run_test
 build web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o: CXX_COMPILER__run_tests_Debug /home/aint/park/Musicial/project/web/tests/network_tests.cpp || cmake_object_order_depends_target_run_tests
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
   DEP_FILE = web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g -std=gnu++2a
   INCLUDES = -I/home/aint/park/Musicial/project/web/include
   OBJECT_DIR = web/CMakeFiles/run_tests.dir
   OBJECT_FILE_DIR = web/CMakeFiles/run_tests.dir/tests
@@ -172,7 +172,7 @@ build web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o: CXX_COMPILER__run_
 # Link the executable web/run_tests
 
 build web/run_tests: CXX_EXECUTABLE_LINKER__run_tests_Debug web/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o web/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0 api/libMusicial_API_LIB.a /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0 /usr/lib/x86_64-linux-gnu/libcurl.so /usr/lib/x86_64-linux-gnu/libcurl.so /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a || api/libMusicial_API_LIB.a
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0  api/libMusicial_API_LIB.a  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0  /usr/lib/x86_64-linux-gnu/libcurl.so  /usr/lib/x86_64-linux-gnu/libcurl.so  /usr/local/lib/libgtest_main.a  /usr/local/lib/libgtest.a  -lcurl
   OBJECT_DIR = web/CMakeFiles/run_tests.dir
   POST_BUILD = :
@@ -191,21 +191,21 @@ build cmake_object_order_depends_target_serverLib: phony || web/CMakeFiles/serve
 
 build web/CMakeFiles/serverLib.dir/src/connection.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/src/connection.cpp || cmake_object_order_depends_target_serverLib
   DEP_FILE = web/CMakeFiles/serverLib.dir/src/connection.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g -std=gnu++2a
   INCLUDES = -I/home/aint/park/Musicial/project/web/include
   OBJECT_DIR = web/CMakeFiles/serverLib.dir
   OBJECT_FILE_DIR = web/CMakeFiles/serverLib.dir/src
 
 build web/CMakeFiles/serverLib.dir/src/server_tools.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/src/server_tools.cpp || cmake_object_order_depends_target_serverLib
   DEP_FILE = web/CMakeFiles/serverLib.dir/src/server_tools.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g -std=gnu++2a
   INCLUDES = -I/home/aint/park/Musicial/project/web/include
   OBJECT_DIR = web/CMakeFiles/serverLib.dir
   OBJECT_FILE_DIR = web/CMakeFiles/serverLib.dir/src
 
 build web/CMakeFiles/serverLib.dir/src/net_tools.cpp.o: CXX_COMPILER__serverLib_Debug /home/aint/park/Musicial/project/web/src/net_tools.cpp || cmake_object_order_depends_target_serverLib
   DEP_FILE = web/CMakeFiles/serverLib.dir/src/net_tools.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g -std=gnu++2a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g -std=gnu++2a
   INCLUDES = -I/home/aint/park/Musicial/project/web/include
   OBJECT_DIR = web/CMakeFiles/serverLib.dir
   OBJECT_FILE_DIR = web/CMakeFiles/serverLib.dir/src
@@ -219,7 +219,7 @@ build web/CMakeFiles/serverLib.dir/src/net_tools.cpp.o: CXX_COMPILER__serverLib_
 # Link the static library web/libserverLib.a
 
 build web/libserverLib.a: CXX_STATIC_LIBRARY_LINKER__serverLib_Debug web/CMakeFiles/serverLib.dir/src/connection.cpp.o web/CMakeFiles/serverLib.dir/src/server_tools.cpp.o web/CMakeFiles/serverLib.dir/src/net_tools.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -std=c++14 -Wall -ggdb3 -pthread -g
+  LANGUAGE_COMPILE_FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl -g
   OBJECT_DIR = web/CMakeFiles/serverLib.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -276,7 +276,7 @@ build cmake_object_order_depends_target_client: phony || qt/lib/CMakeFiles/clien
 
 build qt/lib/CMakeFiles/client.dir/src/mainlib.cpp.o: CXX_COMPILER__client_Debug /home/aint/park/Musicial/project/qt/lib/src/mainlib.cpp || cmake_object_order_depends_target_client
   DEP_FILE = qt/lib/CMakeFiles/client.dir/src/mainlib.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g -std=gnu++11
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g -std=gnu++11
   INCLUDES = -I/home/aint/park/Musicial/project/qt/lib/include -I/home/aint/park/Musicial/project/qt/lib/src -I/home/aint/park/Musicial/project/qt/lib/tests
   OBJECT_DIR = qt/lib/CMakeFiles/client.dir
   OBJECT_FILE_DIR = qt/lib/CMakeFiles/client.dir/src
@@ -290,7 +290,7 @@ build qt/lib/CMakeFiles/client.dir/src/mainlib.cpp.o: CXX_COMPILER__client_Debug
 # Link the executable qt/lib/client
 
 build qt/lib/client: CXX_EXECUTABLE_LINKER__client_Debug qt/lib/CMakeFiles/client.dir/src/mainlib.cpp.o
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g
   OBJECT_DIR = qt/lib/CMakeFiles/client.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -308,7 +308,7 @@ build cmake_object_order_depends_target_QT_test: phony || qt/lib/CMakeFiles/QT_t
 
 build qt/lib/CMakeFiles/QT_test.dir/src/mainlib.cpp.o: CXX_COMPILER__QT_test_Debug /home/aint/park/Musicial/project/qt/lib/src/mainlib.cpp || cmake_object_order_depends_target_QT_test
   DEP_FILE = qt/lib/CMakeFiles/QT_test.dir/src/mainlib.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g -std=gnu++11
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g -std=gnu++11
   INCLUDES = -I/home/aint/park/Musicial/project/qt/lib/include -I/home/aint/park/Musicial/project/qt/lib/src -I/home/aint/park/Musicial/project/qt/lib/tests
   OBJECT_DIR = qt/lib/CMakeFiles/QT_test.dir
   OBJECT_FILE_DIR = qt/lib/CMakeFiles/QT_test.dir/src
@@ -322,7 +322,7 @@ build qt/lib/CMakeFiles/QT_test.dir/src/mainlib.cpp.o: CXX_COMPILER__QT_test_Deb
 # Link the executable qt/lib/QT_test
 
 build qt/lib/QT_test: CXX_EXECUTABLE_LINKER__QT_test_Debug qt/lib/CMakeFiles/QT_test.dir/src/mainlib.cpp.o | /usr/local/lib/libgmock.a /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g
   LINK_LIBRARIES = /usr/local/lib/libgmock.a  /usr/local/lib/libgtest_main.a  /usr/local/lib/libgtest.a
   OBJECT_DIR = qt/lib/CMakeFiles/QT_test.dir
   POST_BUILD = :
@@ -369,7 +369,7 @@ build cmake_object_order_depends_target_QT_SRC: phony || qt/lib/src/CMakeFiles/Q
 
 build qt/lib/src/CMakeFiles/QT_SRC.dir/mainlib.cpp.o: CXX_COMPILER__QT_SRC_Debug /home/aint/park/Musicial/project/qt/lib/src/mainlib.cpp || cmake_object_order_depends_target_QT_SRC
   DEP_FILE = qt/lib/src/CMakeFiles/QT_SRC.dir/mainlib.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g -std=gnu++11
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g -std=gnu++11
   INCLUDES = -I/home/aint/park/Musicial/project/qt/lib/include -I/home/aint/park/Musicial/project/qt/lib/src -I/home/aint/park/Musicial/project/qt/lib/tests -I/home/aint/park/Musicial/project/qt/lib/src/include -I/home/aint/park/Musicial/project/qt/lib/src/../../../web/project/server/include
   OBJECT_DIR = qt/lib/src/CMakeFiles/QT_SRC.dir
   OBJECT_FILE_DIR = qt/lib/src/CMakeFiles/QT_SRC.dir
@@ -383,7 +383,7 @@ build qt/lib/src/CMakeFiles/QT_SRC.dir/mainlib.cpp.o: CXX_COMPILER__QT_SRC_Debug
 # Link the static library qt/lib/src/libQT_SRC.a
 
 build qt/lib/src/libQT_SRC.a: CXX_STATIC_LIBRARY_LINKER__QT_SRC_Debug qt/lib/src/CMakeFiles/QT_SRC.dir/mainlib.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g
+  LANGUAGE_COMPILE_FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g
   OBJECT_DIR = qt/lib/src/CMakeFiles/QT_SRC.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -429,14 +429,14 @@ build cmake_object_order_depends_target_Musicial_API_LIB: phony || api/CMakeFile
 
 build api/CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o: CXX_COMPILER__Musicial_API_LIB_Debug /home/aint/park/Musicial/project/api/src/api.cpp || cmake_object_order_depends_target_Musicial_API_LIB
   DEP_FILE = api/CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g -std=gnu++11
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -lcurl -g -std=gnu++11
   INCLUDES = -I/home/aint/park/Musicial/project/api/include -I/home/aint/park/Musicial/project/api/src -I/home/aint/park/Musicial/project/api/tests
   OBJECT_DIR = api/CMakeFiles/Musicial_API_LIB.dir
   OBJECT_FILE_DIR = api/CMakeFiles/Musicial_API_LIB.dir/src
 
-build api/CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o: CXX_COMPILER__Musicial_API_LIB_Debug /home/aint/park/Musicial/project/api/src/main.cpp || cmake_object_order_depends_target_Musicial_API_LIB
-  DEP_FILE = api/CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g -std=gnu++11
+build api/CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o: CXX_COMPILER__Musicial_API_LIB_Debug /home/aint/park/Musicial/project/api/src/apiSpotify.cpp || cmake_object_order_depends_target_Musicial_API_LIB
+  DEP_FILE = api/CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o.d
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -lcurl -g -std=gnu++11
   INCLUDES = -I/home/aint/park/Musicial/project/api/include -I/home/aint/park/Musicial/project/api/src -I/home/aint/park/Musicial/project/api/tests
   OBJECT_DIR = api/CMakeFiles/Musicial_API_LIB.dir
   OBJECT_FILE_DIR = api/CMakeFiles/Musicial_API_LIB.dir/src
@@ -449,8 +449,8 @@ build api/CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o: CXX_COMPILER__Musicial
 #############################################
 # Link the static library api/libMusicial_API_LIB.a
 
-build api/libMusicial_API_LIB.a: CXX_STATIC_LIBRARY_LINKER__Musicial_API_LIB_Debug api/CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o api/CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g
+build api/libMusicial_API_LIB.a: CXX_STATIC_LIBRARY_LINKER__Musicial_API_LIB_Debug api/CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o api/CMakeFiles/Musicial_API_LIB.dir/src/apiSpotify.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -lcurl -g
   OBJECT_DIR = api/CMakeFiles/Musicial_API_LIB.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -496,14 +496,14 @@ build cmake_object_order_depends_target_musicial: phony || db/CMakeFiles/musicia
 
 build db/CMakeFiles/musicial.dir/main.cpp.o: CXX_COMPILER__musicial_Debug /home/aint/park/Musicial/project/db/main.cpp || cmake_object_order_depends_target_musicial
   DEP_FILE = db/CMakeFiles/musicial.dir/main.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g -std=gnu++14
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g -std=gnu++14
   INCLUDES = -I/home/aint/park/Musicial/project/db/. -I/usr/local/opt/libpq/include -I/usr/local/Cellar/boost/1.78.0_1/include
   OBJECT_DIR = db/CMakeFiles/musicial.dir
   OBJECT_FILE_DIR = db/CMakeFiles/musicial.dir
 
 build db/CMakeFiles/musicial.dir/db.cpp.o: CXX_COMPILER__musicial_Debug /home/aint/park/Musicial/project/db/db.cpp || cmake_object_order_depends_target_musicial
   DEP_FILE = db/CMakeFiles/musicial.dir/db.cpp.o.d
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g -std=gnu++14
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g -std=gnu++14
   INCLUDES = -I/home/aint/park/Musicial/project/db/. -I/usr/local/opt/libpq/include -I/usr/local/Cellar/boost/1.78.0_1/include
   OBJECT_DIR = db/CMakeFiles/musicial.dir
   OBJECT_FILE_DIR = db/CMakeFiles/musicial.dir
@@ -517,7 +517,7 @@ build db/CMakeFiles/musicial.dir/db.cpp.o: CXX_COMPILER__musicial_Debug /home/ai
 # Link the executable db/musicial
 
 build db/musicial: CXX_EXECUTABLE_LINKER__musicial_Debug db/CMakeFiles/musicial.dir/main.cpp.o db/CMakeFiles/musicial.dir/db.cpp.o
-  FLAGS = -std=c++14 -Wall -ggdb3 -pthread  -std=c++14 -Wall -g
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g
   OBJECT_DIR = db/CMakeFiles/musicial.dir
   POST_BUILD = :
   PRE_LINK = :

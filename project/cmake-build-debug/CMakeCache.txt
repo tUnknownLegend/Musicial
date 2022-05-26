@@ -230,6 +230,15 @@ CURL_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libcurl.so
 GTest_DIR:PATH=/usr/local/lib/cmake/GTest
 
 //Value Computed by CMake
+MusicialCXX_BINARY_DIR:STATIC=/home/aint/park/Musicial/project/cmake-build-debug
+
+//Value Computed by CMake
+MusicialCXX_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+MusicialCXX_SOURCE_DIR:STATIC=/home/aint/park/Musicial/project
+
+//Value Computed by CMake
 Musicial_API_BINARY_DIR:STATIC=/home/aint/park/Musicial/project/cmake-build-debug/api
 
 //Value Computed by CMake
