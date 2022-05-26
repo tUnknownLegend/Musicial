@@ -21,9 +21,9 @@ class Client {
  public:
     Client(boost::asio::io_context &io_context,
            const std::string &server, const std::string &port, const std::string &path,
-           const Message &message)
+           const sharedLib::Message &message, std::function<void(const sharedLib::Message &Message)> a)
             : resolver_(io_context),
-              socket_(io_context) {
+              socket_(io_context), sendResponse(std::move(a)) {
         request_.method = "GET";
         request_.path = path;
         request_.http_version = "HTTP/1.0";
@@ -39,13 +39,6 @@ class Client {
 
 
  private:
-    /*
-    static Message get_request() {
-        Message req;
-        req = net_tools::getMessage();
-        return req;
-    }
-     */
 
     void handle_resolve(const boost::system::error_code &err,
                         const tcp::resolver::results_type &endpoints) {
@@ -135,11 +128,14 @@ class Client {
                     std::istreambuf_iterator<char>(response_stream), std::istreambuf_iterator<char>()));
             std::cout << response_;
 
+            sendResponse(response_.body);
+
         } else {
             std::cout << "Error: " << err << "\n";
         }
     }
 
+    std::function<void(const sharedLib::Message &Message)> sendResponse;
 
     tcp::resolver resolver_;
     tcp::socket socket_;
@@ -152,11 +148,11 @@ class Client {
 
 namespace client_tools {
     int send(const std::string &ip, const std::string &port, const std::string &path,
-             const Message &message) {
+             const sharedLib::Message &message, std::function<void(const sharedLib::Message &Message)> a) {
         try {
             boost::asio::io_context io_context;
             std::cout << "client is working" << std::endl;
-            Client c(io_context, ip, port, path, message);
+            Client c(io_context, ip, port, path, message, std::move(a));
             io_context.run();
         }
         catch (std::exception &e) {
@@ -166,7 +162,7 @@ namespace client_tools {
         return 0;
     }
 
-    void pushResponse(const Message &message) {
+    void pushResponse(const sharedLib::Message &message) {
         // do something on client side
     }
 

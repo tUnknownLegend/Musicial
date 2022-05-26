@@ -13,7 +13,7 @@ struct Response {
     std::vector<std::string> headers;
     std::string http_version;
 
-    Message body;
+    sharedLib::Message body;
 };
 
 inline std::ostream &operator<<(std::ostream &os, const Response &response) {

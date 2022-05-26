@@ -9,7 +9,7 @@ int main() {
     std::cout << "Enter path: ";
     std::cin >> path;
 
-    Message message = net_tools::getMessage();
+    sharedLib::Message message = net_tools::getMessage();
 
     try {
         boost::asio::io_context io_context;

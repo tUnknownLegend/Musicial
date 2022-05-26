@@ -62,7 +62,7 @@ namespace client {
 
     class ButtonSendMessage : public Button {
     public:
-        bool action(Message &message) {
+        bool action(sharedLib::Message &message) {
             // getData()
             // sendToServer()
             // sendToDB()
@@ -115,15 +115,15 @@ namespace client {
 
     class MessageGroup : public Group {
     public:
-        std::vector<Message> Messages = {};
+        std::vector<sharedLib::Message> Messages = {};
 
-        explicit MessageGroup(const Message &_message);
+        explicit MessageGroup(const sharedLib::Message &_message);
 
         MessageGroup(std::string text, uint64_t id, bool isUrl);
 
-        explicit MessageGroup(std::vector<Message> &_messages);
+        explicit MessageGroup(std::vector<sharedLib::Message> &_messages);
 
-        bool receiveNet(const Message &message);
+        bool receiveNet(const sharedLib::Message &message);
 
         bool sendDB() override;
 
@@ -133,13 +133,13 @@ namespace client {
 
         bool send();
 
-        bool send(std::function<void(const std::vector<Message>::iterator &,
-                                     const std::vector<Message>::iterator &)> _QtDraw);
+        bool send(std::function<void(const std::vector<sharedLib::Message>::iterator &,
+                                     const std::vector<sharedLib::Message>::iterator &)> _QtDraw);
 
     private:
 
-        std::function<void(const std::vector<Message>::iterator &,
-                           const std::vector<Message>::iterator &)> QtDraw;
+        std::function<void(const std::vector<sharedLib::Message>::iterator &,
+                           const std::vector<sharedLib::Message>::iterator &)> QtDraw;
 
         bool getDB() override { return false; };
 
@@ -147,7 +147,7 @@ namespace client {
 
         bool sendPlaylist();
 
-        bool receiveMessage(const Message &message);
+        bool receiveMessage(const sharedLib::Message &message);
     };
 
     class ButtonCreatePlaylist : public Button {
@@ -162,7 +162,7 @@ namespace client {
 
     class ButtonGetDialog : public Button {
     public:
-        std::vector<Message> Messages;
+        std::vector<sharedLib::Message> Messages;
 
         bool action();
     };

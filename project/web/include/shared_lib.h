@@ -3,48 +3,59 @@
 
 #include <iostream>
 #include <string>
+#include <utility>
 #include <vector>
 
-enum Platform {
-    YouTube, Spotify
-};
+namespace sharedLib {
 
-struct Database {
-};
+    enum Platform {
+        YouTube, Spotify
+    };
 
-struct URL {
-    std::string link;
-};
+    struct Database {
+    };
 
-struct Playlist {
-    URL ref;
-    Platform platform;
-};
+    struct URL {
+        URL() = default;
 
-struct Song {
-    URL ref;
-    Platform platform;
-};
+        explicit URL(std::string _link) : link(std::move(_link)) {};
+        std::string link;
+    };
 
-struct User {
-    uint64_t id;
-    std::string email;
-    std::string nickname;
-    std::string firstName;
-    std::string secondName;
-    std::string phoneNumber;
-    std::string avatarRef;
-};
+    struct Playlist {
+        Playlist() = default;
 
-struct Message {
-    uint64_t ownerID;
-    uint64_t chatID;
-    std::string text;
-    std::vector<Playlist> playlists;
-    uint64_t playlistNumber{};
-    std::vector<Song> songs;
-    uint64_t songsNumber{};
-};
+        Playlist(URL _url, Platform _platform) : ref(std::move(_url)), platform(_platform) {};
+        URL ref;
+        Platform platform;
+    };
 
+    struct Song {
+        Song() = default;
+        Song(URL _url, Platform _platform) : ref(std::move(_url)), platform(_platform) {};
+        URL ref;
+        Platform platform;
+    };
 
+    struct User {
+        uint64_t id;
+        std::string email;
+        std::string nickname;
+        std::string firstName;
+        std::string secondName;
+        std::string phoneNumber;
+        std::string avatarRef;
+    };
+
+    struct Message {
+        uint64_t ownerID = 0;
+        uint64_t chatID = 0;
+        std::string text = "-";
+        std::vector<Playlist> playlists;
+        uint64_t playlistNumber = 0;
+        std::vector<Song> songs;
+        uint64_t songsNumber = 0;
+    };
+
+}
 #endif  // PROJECT_WEB_INCLUDE_SHARED_LIB_H_

@@ -28,7 +28,7 @@ namespace server_tools {
 }  // namespace server_tools
 
 Response HandlerConvertPlaylist(const Request &request) {
-    Message ans = net_tools::getAnswer(request.body);
+    sharedLib::Message ans = net_tools::getAnswer(request.body);
 
     Response response;
 
@@ -142,12 +142,12 @@ struct Token {
 
 class platformAccess {
  public:
-    bool addToken(Platform p, const Token &t) {
+    bool addToken(sharedLib::Platform p, const Token &t) {
         auto res = tokens.insert({p, t});
         return !res.second;
     }
 
-    bool updateToken(Platform p, const Token &t) {
+    bool updateToken(sharedLib::Platform p, const Token &t) {
         if (tokens.contains(p)) {
             tokens.at(p) = t;
             return true;
@@ -156,7 +156,7 @@ class platformAccess {
         }
     }
 
-    Token getPlatformToken(Platform p) {
+    Token getPlatformToken(sharedLib::Platform p) {
         if (tokens.contains(p)) {
             return tokens.at(p);
         } else {
@@ -165,5 +165,5 @@ class platformAccess {
     }
 
  private:
-    std::map<Platform, Token> tokens;
+    std::map<sharedLib::Platform, Token> tokens;
 };

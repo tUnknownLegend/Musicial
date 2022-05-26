@@ -7,9 +7,11 @@
 
 namespace webClient {
     void sendMessage(const std::string &ip, const std::string &port, const std::string &path,
-                     const Message &message) {
-        client_tools::send(ip, port, path, message);
+                     const sharedLib::Message &message, std::function<void(const sharedLib::Message &Message)> a) {
+        client_tools::send(ip, port, path, message, std::move(a));
+        //std::cout << "HAHAHA";
     }
 }
+
 
 #endif  // PROJECT_WEB_INCLUDE_CLIENT_H_

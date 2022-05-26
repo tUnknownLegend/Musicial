@@ -16,18 +16,18 @@ bool client::MessageGroup::receive() {
     return false;
 }
 
-void pushMessage(const Message &message, const Message &vectEnd) {
+void pushMessage(const sharedLib::Message &message, const sharedLib::Message &vectEnd) {
     //client::MessageGroup::receiveMessage(message);
 }
 
-bool client::MessageGroup::receiveMessage(const Message &message) {
+bool client::MessageGroup::receiveMessage(const sharedLib::Message &message) {
     Messages.push_back(message);
     //receiveNet();
 
     return false;
 }
 
-bool client::MessageGroup::receiveNet(const Message &message) {
+bool client::MessageGroup::receiveNet(const sharedLib::Message &message) {
 
     //message.text = "[Server]: " + message.text;
     Messages.clear();
@@ -66,8 +66,8 @@ bool client::MessageGroup::send() {
     return false;
 }
 
-bool client::MessageGroup::send(std::function<void(const std::vector<Message>::iterator &,
-                                                   const std::vector<Message>::iterator &)> _QtDraw) {
+bool client::MessageGroup::send(std::function<void(const std::vector<sharedLib::Message>::iterator &,
+                                                   const std::vector<sharedLib::Message>::iterator &)> _QtDraw) {
     QtDraw = std::move(_QtDraw);
 
     sendNet();
@@ -93,8 +93,8 @@ bool client::MessageGroup::sendNet() {
         //i.text = "[server]: " + i.text;
         //i.playlists.ytRef = "[playlist]: " + i.playlists.ytRef;
 
-        webClient::sendMessage("0.0.0.0", "8000", "/test", i,
-                               [this](const Message &Message) { receiveNet(Message); }); // fix!
+        webClient::sendMessage("0.0.0.0", "8000", "echo", i,
+                               [this](const sharedLib::Message &Message) { receiveNet(Message); }); // fix!
     }
 
     //testing
@@ -122,19 +122,19 @@ bool client::MessageGroup::sendPlaylist() {
     return false;
 }
 
-client::MessageGroup::MessageGroup(const Message &_message) {
+client::MessageGroup::MessageGroup(const sharedLib::Message &_message) {
     Messages.push_back(_message);
 }
 
-client::MessageGroup::MessageGroup(std::vector<Message> &_messages) {
+client::MessageGroup::MessageGroup(std::vector<sharedLib::Message> &_messages) {
     Messages = std::move(_messages);
 }
 
 client::MessageGroup::MessageGroup(std::string text, uint64_t id, bool isUrl) {
-    Message message;
+    sharedLib::Message message;
     message.ownerID = id;
     if (isUrl)
-        message.playlists.ytRef = std::move(text);
+        message.playlists.emplace_back(sharedLib::URL(text), sharedLib::YouTube);
     else
         message.text = std::move(text);
 
@@ -144,7 +144,7 @@ client::MessageGroup::MessageGroup(std::string text, uint64_t id, bool isUrl) {
 bool client::ButtonGetDialog::action() {
     // getData()
     //creating fake data
-    std::vector<Message> fakeMessages;
+    std::vector<sharedLib::Message> fakeMessages;
     int n = 35;
     fakeMessages.reserve(n);
     for (int i = 0; i < n; ++i) {
