@@ -11,25 +11,20 @@ using json = nlohmann::json;
 using std::string;
 using std::vector;
 
-const string OAuthTokenSpotify = "BQAG8y0-_IHFyHu4KXG9v8hHRQG7EPMrxdLVqFTxZO_Lq_KJygwKgrVT1kOe7MSoS6ij4zcqz8JJEQHYtBHg8XXS8PBh_gLoM98cCn7cswfHXu8RS-7rHSyzo1FXAVBeVllgZqwb4NjcbWgLFcbQg-GX_Z-nX_yePda3RgSYu391uxvX-Y3MioSz_IJKHtiNqI2pZYGaBK2PLBkQfAapu1z3Tuy8CSY";
-const string usedIdSpotify = "8sseequ1nh63lrksvl8pqyxta";
+class Settings{
+public:
 
-
-struct PlaylistPlatformsRefs{
-    string SpotifyRef;
-    string YoutubeRef;
+    const string getOAuthTokenSpotify(){return OAuthTokenSpotify;}
+    const string getUserIdSpotify(){return userIdSpotify;}
+private:
+    const string OAuthTokenSpotify = "BQBYC3Ee0q9jaPByTR48whKVKcOOCvQxJRELWgkj7aHUptTn0jTai40l4ARuOwTAsTsDv12qScgbY95OYwCJ2xkRVyOwAFbJC3m527IvRh3WIs71-ZdfkaaEqMBGEgrfh2o8--qO5Jgd1d7HaSGaEWItLtOhIp6Lh1vD6rD6Xx_2yDln3QCgnIWuJoybl26HFE_V6CiWM-2XM9Rq8UJKCce_GHlbK1g";
+    const string userIdSpotify = "8sseequ1nh63lrksvl8pqyxta";
+    string ApiKey;
 };
 
 struct Song{
     string songName;
     string artist;
-};
-
-struct RefsForURL{
-    string ApiUrl;
-    string ApiKey;
-    string playlistID;
-    string OAuthToken;
 };
 
 class Playlist{
@@ -38,25 +33,22 @@ public:
         playlistId = 0;
         playlistCreatorId = 0;
         playlistSize = 0;
-        Refs = {"",""};
         playlistCreator = "";
     }   
     ~Playlist(){};
+    
+    vector<Song> songs;
+    
+    bool addSong(Song &s){songs.push_back(s);};
+
+private:
     int playlistId;
     int playlistCreatorId;
     string playlistCreator;
     int playlistSize;
-    vector<Song> songs;
-    PlaylistPlatformsRefs Refs;
-    
-    bool addSong(Song &s){};
-    bool removeSong(int number){};
-    bool swapSongs(int number1, int number2){};
-    void deletePlaylist(){};
-
-    //bool send(uint64_t chat_id);
-    //void receive(int senderId, int platform);
 };
 
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp);
-int request(const string &URL, const vector<string> &EHeaders, string &readBuffer, string type = "get", string postParameters = "{}");
+int APIrequest(const string &URL, const vector<string> &EHeaders, string &readBuffer, string type = "get", string postParameters = "{}");
+
+string getIdFromURL(string &playlistURL);

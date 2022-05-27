@@ -5,8 +5,7 @@ static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *use
     return size * nmemb;
 }
 
-
-int request(const string &URL, const vector<string> &EHeaders, string &readBuffer, string type, string postParameters) {
+int APIrequest(const string &URL, const vector<string> &EHeaders, string &readBuffer, string type, string postParameters) {
     CURL *curl;
     CURLcode res;
     curl = curl_easy_init();
@@ -23,7 +22,7 @@ int request(const string &URL, const vector<string> &EHeaders, string &readBuffe
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
         if(type == "post"){
-            std::cout << postParameters <<std::endl;
+            //std::cout << postParameters <<std::endl;
             const char *constpostParameters = postParameters.c_str();
             curl_easy_setopt(curl, CURLOPT_POSTFIELDS, constpostParameters);
         }
@@ -36,4 +35,17 @@ int request(const string &URL, const vector<string> &EHeaders, string &readBuffe
     }
     curl_global_cleanup();
     return 1;
+}
+
+string getIdFromURL(string &playlistURL) {
+    char *helpString = new char[playlistURL.size() + 1];
+    strcpy(helpString, playlistURL.c_str());
+    char *p = strtok(helpString, "/");
+    string ansString;
+    while(p != NULL){
+        ansString = string(p);
+        p = strtok(NULL, "/");
+    }
+    delete [] helpString;
+    return ansString;
 }
