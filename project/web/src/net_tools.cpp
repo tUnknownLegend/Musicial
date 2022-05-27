@@ -100,6 +100,13 @@ namespace net_tools {
             result += "\r\n";
         }
 
+        result += std::to_string(message.toPlatformNumber);
+        result += "\r\n";
+        for (auto &i: message.toPlatform) {
+            result += std::to_string(i);
+            result += "\r\n";
+        }
+
         return result;
     }
 
@@ -140,6 +147,14 @@ namespace net_tools {
                 result.songs.push_back(s);
             }
         }
+
+        result.toPlatformNumber = (uint64_t) std::stoi(blocks[4 + result.playlistNumber * 2 + result.songsNumber * 2]);
+        for (uint64_t i = 0; i < result.toPlatformNumber; ++i) {
+            auto p = static_cast<sharedLib::Platform>(std::stoi(blocks[i + 1 + 5 + result.playlistNumber * 2 + result.songsNumber * 2]));
+            result.toPlatform.push_back(p);
+
+        }
+
 
         return result;
     }

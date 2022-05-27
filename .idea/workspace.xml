@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b582a978-7400-4893-8b73-37e8fb7bba36" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/project/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/msc.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/cache-v2-54bddbff47fb17039d41.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-be38fb72ab0abf0e2b05.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-ff0aef8d06d432c1f4a7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/directory-api-Debug-2a9c8334f4ffbf0de720.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/directory-db-Debug-1a1d36c2bb120b4d29b2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/directory-qt.lib-Debug-ef4267c57ae46a038ada.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/directory-qt.lib.src-Debug-96e1529f963b98ce58dc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/directory-web-Debug-01e88eaec3c1a6607050.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/index-2022-05-26T18-04-40-0722.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/target-Musicial_API_LIB-Debug-ef5faeca43c9aedcfdc3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/target-QT_SRC-Debug-9f33b7c835bdb1a6de95.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/target-QT_test-Debug-34874cd3339db4dcd7c9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/target-client-Debug-1ec4e0bce8dbb28f447b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/target-musicial-Debug-1ec630bd2b585114f9b4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/target-run_tests-Debug-8f62bd90e8d02becf10f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/target-server-Debug-68e9719f1a4de073dd65.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/target-serverLib-Debug-98b0cee1459b50fb336b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-a49cbc98a99b6d91628a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/api/CMakeFiles/Musicial_API_LIB.dir/src/api.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/api/CMakeFiles/Musicial_API_LIB.dir/src/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/api/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/api/libMusicial_API_LIB.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/api/src/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/db/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/qt/lib/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/qt/lib/src/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/CMakeFiles/server.dir/src/connection.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/CMakeFiles/server.dir/src/net_tools.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/CMakeFiles/server.dir/src/server.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/CMakeFiles/server.dir/src/server_tools.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/CMakeFiles/server.dir/src/connection.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/CMakeFiles/server.dir/src/net_tools.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/CMakeFiles/server.dir/src/server.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/CMakeFiles/server.dir/src/server_tools.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/cmake-build-debug/web/project/server/server" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/db/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/db/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/3.22.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/3.22.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/3.22.3/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/tests/network_tests.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/run_tests.dir/tests/run_tests.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/src/connection.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/src/connection.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/src/net_tools.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/src/net_tools.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/src/server.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/src/server.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/src/server_tools.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/server.dir/src/server_tools.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/cmake_clean_target.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/src/connection.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/src/connection.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/src/net_tools.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/src/net_tools.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/src/server_tools.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/CMakeFiles/serverLib.dir/src/server_tools.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/run_tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/build/server" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/src/net_tools.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/src/net_tools.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/web/src/server_tools.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/web/src/server_tools.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29hxpqHIc9H4rND2wSO2DkXxRLo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/al/CLionProjects/Musicial&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b582a978-7400-4893-8b73-37e8fb7bba36" name="Changes" comment="" />
+      <created>1653577160735</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653577160735</updated>
+      <workItem from="1653577166014" duration="796000" />
+      <workItem from="1653579309989" duration="1214000" />
+      <workItem from="1653640007675" duration="1045000" />
+      <workItem from="1653647699936" duration="1007000" />
+      <workItem from="1653648749010" duration="647000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

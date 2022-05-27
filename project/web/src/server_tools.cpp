@@ -1,8 +1,8 @@
 #include "server_tools.h"
 
 //#include "../../api/include/api.h"
-#include "../../api/include/apiSpotify.h"
-#include "../../api/include/apiYoutube.h"
+//#include "../../api/include/apiSpotify.h"
+//#include "../../api/include/apiYoutube.h"
 
 namespace server_tools {
     int startServer() {
@@ -37,21 +37,6 @@ Response HandlerConvertPlaylist(const Request &request) {
     Response response;
 
 
-    RefsForURL playlistRefs = {"https://www.googleapis.com/youtube/v3/playlistItems",
-                               "AIzaSyC3-MWvfyHVPjEVn8XYZd-HMVpc_mlxNHE",
-                               "PL6AVWk5NUegUV-FWNYbCG_ykC13vevU_6", ""};
-    string URL1 = GetPlaylistItemsURLYoutube(playlistRefs);
-    vector<string> headers1;
-    SetPlaylistItemsHeadersYoutube(headers1);
-    Playlist B = createPlaylistFromExistingYoutubePlaylist(URL1, headers1);
-
-    Song A = {"Before I Forget", "Slipknot"};
-    B.songs.push_back(A);
-
-    std::string ref = createSpotifyPlaylistFromSonglist(B.songs.begin(), B.songs.end(), usedIdSpotify);
-
-
-    response.body.text = ref;
     response.status_code = 200;
     response.status_message = "OK";
     response.http_version = "HTTP/1.1";

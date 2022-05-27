@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/al/CLionProjects/Musicial/project/web/tests/network_tests.cpp
+gtest/gtest.h
+-
+net_tools.h
+/home/al/CLionProjects/Musicial/project/web/tests/net_tools.h
+
+/home/al/CLionProjects/Musicial/project/web/tests/run_tests.cpp
+gtest/gtest.h
+-
+
+web/include/net_tools.h
+cstdint
+-
+cstdio
+-
+cstdlib
+-
+iostream
+-
+sstream
+-
+string
+-
+vector
+-
+shared_lib.h
+web/include/shared_lib.h
+
+web/include/shared_lib.h
+iostream
+-
+string
+-
+utility
+-
+vector
+-
+

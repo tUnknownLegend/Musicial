@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall   CMakeFiles/client.dir/src/mainlib.cpp.o  -o client 

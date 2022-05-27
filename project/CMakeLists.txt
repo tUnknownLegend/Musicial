@@ -16,6 +16,7 @@ add_subdirectory(api)
 add_subdirectory(db)
 
 #add_executable(run_tests project/server/include/net_tools.h ${SOURCES} )
-target_link_libraries(run_tests Musicial_API_LIB GTest::GTest
+target_link_libraries(run_tests
+        Musicial_API_LIB GTest::GTest // fix
         ${Boost_LIBRARIES}
         )
