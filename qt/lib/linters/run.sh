@@ -25,12 +25,12 @@ print_header "RUN cppcheck"
 check_log "cppcheck project --enable=warning --inconclusive --error-exitcode=0 -I ../* --suppress=missingIncludeSystem" "\(information\)"
 
 print_header "RUN clang-tidy"
-check_log "clang-tidy ../* -header-filter=.* -extra-arg=-std=gnu99" "Error (?:reading|while processing)"
+check_log "clang-tidy ../*.cpp -header-filter=.* -extra-arg=-std=c++11" "Error (?:reading|while processing)"
 
 #print_header "RUN cppcheck"
 #check_log "cppcheck --verbose  --error-exitcode=0 * lib/*"
 
 print_header "RUN cpplint"
-check_log "cpplint --extensions=cpp, h * lib/*" "Can't open for reading"
+check_log "cpplint --extensions=cpp, ../*.cpp * ../*.h" "Can't open for reading"
 
 print_header "SUCCESS"

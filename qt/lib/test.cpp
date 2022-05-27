@@ -11,12 +11,13 @@ public:
     MOCK_METHOD0(Mocksend, void());
 
     mockMessageGroup() = delete;
+
     mockMessageGroup(const std::string &text, uint64_t ownerID,
                      const sharedLib::Platform &platform, const std::vector<sharedLib::Playlist> &playlists = {},
                      const std::vector<sharedLib::Song> &songs = {},
                      const std::vector<sharedLib::Platform> &toPlatform = {}) : Messages(text, ownerID, platform,
-                                                                                             playlists, songs,
-                                                                                             toPlatform) {
+                                                                                         playlists, songs,
+                                                                                         toPlatform) {
         // MessageGroup m(text, ownerID, platform, playlists, songs, toPlatform);
         MockrmockMessageGroup();
         std::cout << "mockMessageGroup init";
@@ -63,7 +64,7 @@ TEST(mMessageGroup, MockmMessageGroup) {
     bool res = 0;
 
     res = messageGr.sendd([](const std::vector<sharedLib::Message>::iterator &a,
-                       const std::vector<sharedLib::Message>::iterator &b) {
+                             const std::vector<sharedLib::Message>::iterator &b) {
         std::cout << a->text;
     });
     EXPECT_EQ(res, true);
@@ -79,36 +80,45 @@ TEST(getPlatform, getPlatform_int) {
     EXPECT_EQ(client::getPlatform(sharedLib::Spotify), "Spotify");
 }
 
-TEST(checkURLs, allRight){
+TEST(checkURLs, allRight) {
     std::vector<sharedLib::Playlist> playlists;
-    playlists.emplace_back(sharedLib::URL("https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB"), sharedLib::Spotify);
-    playlists.emplace_back(sharedLib::URL("https://www.youtube.com/playlist?list=PLcidtVPGDsUWcrT65QjefzB8syuGpgDoN"), sharedLib::YouTube);
+    playlists.emplace_back(sharedLib::URL("https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB"),
+                           sharedLib::Spotify);
+    playlists.emplace_back(sharedLib::URL("https://www.youtube.com/playlist?list=PLcidtVPGDsUWcrT65QjefzB8syuGpgDoN"),
+                           sharedLib::YouTube);
     std::vector<sharedLib::Song> songs;
-    songs.emplace_back(sharedLib::URL("https://open.spotify.com/track/0ZLhqWBAhobSU4bTvKdM2K?si=e8a36ebb078f4dea"), sharedLib::Spotify),
-    songs.emplace_back(sharedLib::URL("https://www.youtube.com/watch?v=dcG8c_KxeJ4a"), sharedLib::YouTube);
+    songs.emplace_back(sharedLib::URL("https://open.spotify.com/track/0ZLhqWBAhobSU4bTvKdM2K?si=e8a36ebb078f4dea"),
+                       sharedLib::Spotify),
+            songs.emplace_back(sharedLib::URL("https://www.youtube.com/watch?v=dcG8c_KxeJ4a"), sharedLib::YouTube);
 
     EXPECT_EQ(client::checkURLs<sharedLib::Playlist>(playlists.begin(), playlists.end()), true);
     EXPECT_EQ(client::checkURLs<sharedLib::Song>(songs.begin(), songs.end()), true);
 }
 
-TEST(checkURLs, allFalse){
+TEST(checkURLs, allFalse) {
     std::vector<sharedLib::Playlist> playlists;
-    playlists.emplace_back(sharedLib::URL("https://open.spoify.com/playlist/1hBbNxTjcitTZfu51dB7RB"), sharedLib::Spotify);
-    playlists.emplace_back(sharedLib::URL("https://www.youtub.com/playlist?list=PLcidtVPGDsUWcrT65QjefzB8syuGpgDoN"), sharedLib::YouTube);
+    playlists.emplace_back(sharedLib::URL("https://open.spoify.com/playlist/1hBbNxTjcitTZfu51dB7RB"),
+                           sharedLib::Spotify);
+    playlists.emplace_back(sharedLib::URL("https://www.youtub.com/playlist?list=PLcidtVPGDsUWcrT65QjefzB8syuGpgDoN"),
+                           sharedLib::YouTube);
     std::vector<sharedLib::Song> songs;
-    songs.emplace_back(sharedLib::URL("https://open.spoify.co/track/0ZLhqWBAhobSU4bTvKdM2K?si=e8a36ebb078f4dea"), sharedLib::Spotify),
+    songs.emplace_back(sharedLib::URL("https://open.spoify.co/track/0ZLhqWBAhobSU4bTvKdM2K?si=e8a36ebb078f4dea"),
+                       sharedLib::Spotify),
             songs.emplace_back(sharedLib::URL("youtubecom"), sharedLib::YouTube);
 
     EXPECT_EQ(client::checkURLs<sharedLib::Playlist>(playlists.begin(), playlists.end()), false);
     EXPECT_EQ(client::checkURLs<sharedLib::Song>(songs.begin(), songs.end()), false);
 }
 
-TEST(checkURLs, semiFalse){
+TEST(checkURLs, semiFalse) {
     std::vector<sharedLib::Playlist> playlists;
-    playlists.emplace_back(sharedLib::URL("https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB"), sharedLib::Spotify);
-    playlists.emplace_back(sharedLib::URL("https://www.youtuba.com/playlist?list=PLcidtVPGDsUWcrT65QjefzB8syuGpgDoN"), sharedLib::YouTube);
+    playlists.emplace_back(sharedLib::URL("https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB"),
+                           sharedLib::Spotify);
+    playlists.emplace_back(sharedLib::URL("https://www.youtuba.com/playlist?list=PLcidtVPGDsUWcrT65QjefzB8syuGpgDoN"),
+                           sharedLib::YouTube);
     std::vector<sharedLib::Song> songs;
-    songs.emplace_back(sharedLib::URL("https://open.spotify.com/track/0ZLhqWBAhobSU4bTvKdM2K?si=e8a36ebb078f4dea"), sharedLib::Spotify),
+    songs.emplace_back(sharedLib::URL("https://open.spotify.com/track/0ZLhqWBAhobSU4bTvKdM2K?si=e8a36ebb078f4dea"),
+                       sharedLib::Spotify),
             songs.emplace_back(sharedLib::URL("youtubecom"), sharedLib::YouTube);
 
     EXPECT_EQ(client::checkURLs<sharedLib::Playlist>(playlists.begin(), playlists.end()), false);

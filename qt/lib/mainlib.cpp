@@ -29,7 +29,7 @@ bool client::MessageGroup::send() {
 }
 
 bool client::MessageGroup::send(const std::function<void(const std::vector<sharedLib::Message>::iterator &,
-                                                         const std::vector<sharedLib::Message>::iterator &)> &qtDraw) {
+        const std::vector<sharedLib::Message>::iterator &)> &qtDraw) {
     QtDraw = qtDraw;
     return sendNet() && sendDB();
 }
@@ -41,7 +41,7 @@ bool client::MessageGroup::sendNet() {
     //  echo
     //  test
     //  convert_playlist
-    for (auto &i: Messages) {
+    for (auto &i : Messages) {
         i.ownerID = BOT_ID;
 
         if (i.playlistNumber != 0 || i.songsNumber != 0)
@@ -62,7 +62,8 @@ client::MessageGroup::MessageGroup(std::vector<sharedLib::Message> &_messages) {
     Messages = std::move(_messages);
 }
 
-client::MessageGroup::MessageGroup(const std::string &text, uint64_t ownerID, const sharedLib::Platform &platform,
+client::MessageGroup::MessageGroup(const std::string &text, uint64_t ownerID,
+                                   const sharedLib::Platform &platform,
                                    const std::vector<sharedLib::Playlist> &playlists,
                                    const std::vector<sharedLib::Song> &songs,
                                    const std::vector<sharedLib::Platform> &toPlatform) {

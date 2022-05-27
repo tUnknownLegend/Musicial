@@ -13,14 +13,12 @@
 #define USER_ID 1
 
 namespace client {
-
     class Group {
+
     public:
         unsigned short amount;
 
         virtual bool getDB() = 0;
-
-        //virtual bool receiveNet() = 0;
 
         virtual bool sendDB() = 0;
 
