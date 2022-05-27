@@ -1,5 +1,5 @@
 rm -r ./build/*
 cd build
-cmake ..
-make
+scan-build cmake ..
+scan-build make
 ./Musicial_test

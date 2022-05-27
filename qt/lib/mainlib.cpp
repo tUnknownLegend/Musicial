@@ -58,7 +58,7 @@ client::MessageGroup::MessageGroup(const sharedLib::Message &_message) {
     Messages.push_back(_message);
 }
 
-client::MessageGroup::MessageGroup(std::vector<sharedLib::Message> &_messages) {
+client::MessageGroup::MessageGroup(const std::vector<sharedLib::Message> &_messages) {
     Messages = std::move(_messages);
 }
 

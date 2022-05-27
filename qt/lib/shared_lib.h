@@ -13,65 +13,60 @@
 #endif
 
 namespace sharedLib {
+enum Platform {
+    None, YouTube, Spotify
+};
 
-    enum Platform {
-        None, YouTube, Spotify
-    };
+struct URL {
+    URL() = default;
 
-    struct Database {
-    };
+    explicit URL(std::string _link) : link(std::move(_link)) {}
+    std::string link = DEFAULT_STRING_INIT;
+};
 
-    struct URL {
-        URL() = default;
+struct Playlist {
+    Playlist() = default;
 
-        explicit URL(std::string _link) : link(std::move(_link)) {};
-        std::string link = DEFAULT_STRING_INIT;
-    };
+    Playlist(URL _url, Platform _platform) : ref(std::move(_url)), platform(_platform) {}
+    URL ref = {};
+    Platform platform = None;
+};
 
-    struct Playlist {
-        Playlist() = default;
+struct Song {
+    Song() = default;
 
-        Playlist(URL _url, Platform _platform) : ref(std::move(_url)), platform(_platform) {};
-        URL ref = {};
-        Platform platform = None;
-    };
+    Song(URL _url, Platform _platform) : ref(std::move(_url)), platform(_platform) {}
+    URL ref = {};
+    Platform platform = None;
+};
 
-    struct Song {
-        Song() = default;
+struct User {
+    uint64_t id;
+    std::string email = DEFAULT_STRING_INIT;
+    std::string nickname = DEFAULT_STRING_INIT;
+    std::string firstName = DEFAULT_STRING_INIT;
+    std::string secondName = DEFAULT_STRING_INIT;
+    std::string phoneNumber = DEFAULT_STRING_INIT;
+    std::string avatarRef = DEFAULT_STRING_INIT;
+};
 
-        Song(URL _url, Platform _platform) : ref(std::move(_url)), platform(_platform) {};
-        URL ref = {};
-        //author
-        //std::string name = DEFAULT_STRING_INIT;
-        Platform platform = None;
-    };
-
-    struct User {
-        uint64_t id;
-        std::string email = DEFAULT_STRING_INIT;
-        std::string nickname = DEFAULT_STRING_INIT;
-        std::string firstName = DEFAULT_STRING_INIT;
-        std::string secondName = DEFAULT_STRING_INIT;
-        std::string phoneNumber = DEFAULT_STRING_INIT;
-        std::string avatarRef = DEFAULT_STRING_INIT;
-    };
-
-    struct Message {
-        uint64_t ownerID = 0;
-        uint64_t chatID = 0;
-        std::string text = DEFAULT_STRING_INIT;
-        std::vector<Playlist> playlists = {};
-        uint64_t playlistNumber = 0;
-        std::vector<Song> songs = {};
-        uint64_t songsNumber = 0;
-        std::vector<Platform> toPlatform = {};
-        uint64_t toPlatformNumber = 0;
-    };
-}
+struct Message {
+    uint64_t ownerID = 0;
+    uint64_t chatID = 0;
+    std::string text = DEFAULT_STRING_INIT;
+    std::vector<Playlist> playlists = {};
+    uint64_t playlistNumber = 0;
+    std::vector<Song> songs = {};
+    uint64_t songsNumber = 0;
+    std::vector<Platform> toPlatform = {};
+    uint64_t toPlatformNumber = 0;
+};
+}  // namespace sharedLib
 
 namespace webClient {
     void sendMessage(const std::string &ip, const std::string &port, const std::string &path,
-                     const sharedLib::Message &message, std::function<void(const sharedLib::Message &Message)> a);
+                     const sharedLib::Message &message,
+                     const std::function<void(const sharedLib::Message &Message)>& a);
 }
 
 #endif  // PROJECT_WEB_INCLUDE_SHARED_LIB_H_

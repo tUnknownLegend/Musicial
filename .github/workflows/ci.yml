@@ -30,18 +30,12 @@ jobs:
         
       - name: Valgrind install
         run: sudo apt-get update && sudo apt-get install -y valgrind 
-        
-      - name: scan-build  clang-tidy
-        run: cd qt/lib && mkdir build && cd build && scan-build cmake .. && scan-build make
-        
-      - name: cppcheck
-        run: cppcheck qt/ qt/lib  --enable=all --error-exitcode=1 -I qt/lib/ --suppress=missingIncludeSystem
-        
-      - name: Cpplint
-        run: cpplint --extensions=cpp,h --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting qt/* qt/lib/* && cpplint --extensions=cpp --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting qt/lib/*
+
+      - name: build
+        run: cd ./qt/lib && bash ./st.bash  
 
       - name: Valgrind 
-        run: mkdir valgrind_tests && cd valgrind_tests && cmake .. && make && valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s -q ./Musicial_test &&  cmake -Dparallel=ON .. && make &&  valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s -q ./Musicial_test
+        run: cd ./qt/lib/build && valgrind --tool=memcheck --leak-check=yes --error-exitcode=1 ./Musicial_test
 
-      - name: run with fbinfer
-        run: mkdir infer_build && cd infer_build && cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .. && cd .. && infer run --compilation-database infer_build/compile_commands.json
+      - name: linters
+        run: cd qt/lib/linters && bash run.sh

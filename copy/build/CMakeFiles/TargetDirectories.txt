@@ -1,3 +1,0 @@
-/home/aint/park/tempMusicial/Musicial/qt/copy/build/CMakeFiles/Musicial_test.dir
-/home/aint/park/tempMusicial/Musicial/qt/copy/build/CMakeFiles/edit_cache.dir
-/home/aint/park/tempMusicial/Musicial/qt/copy/build/CMakeFiles/rebuild_cache.dir
