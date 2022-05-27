@@ -14,7 +14,9 @@ class MainWindow : public QWidget {
 public:
     explicit MainWindow(QWidget *parent = nullptr);
 
-    void SumbitPlaylist(client::MessageGroup& messages);
+    void SumbitPlaylist(client::MessageGroup &messages);
+
+    ~MainWindow();
 
 private:
 
@@ -30,21 +32,25 @@ private:
 
     MessageSendBox *sendBox;
 
-    void resizeEvent(QResizeEvent*);
+    void resizeEvent(QResizeEvent *);
 
     QPushButton *SendMessage;
     QPushButton *SendPlaylist;
 
-    QList<Message*>* TextMessanges;
+    QList<Message *> *TextMessanges;
+
+    void SendMessageF(const std::vector<sharedLib::Message>::iterator &mBegin,
+                      const std::vector<sharedLib::Message>::iterator &mEnd);
+
+    void SendPlaylistF(const std::vector<sharedLib::Message>::iterator &mBegin,
+                       const std::vector<sharedLib::Message>::iterator &mEnd);
 
 private
     slots:
 
-    void SendMessageClicked();
+            void SendMessageClicked();
 
     void SendPlaylistClicked();
-
-    void UpdateChatList();
 
     void SendMessageReleased();
 };

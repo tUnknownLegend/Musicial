@@ -6,39 +6,33 @@
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QMessageBox>
-//#include <QLabel>
+#include "lib/src/mainlib.cpp"
 
 PlaylistCreator::PlaylistCreator(MainWindow *_parent) : parent(_parent) {
-
+    setWindowTitle("Generate Playlist");
     Layout = new QVBoxLayout;
     setLayout(Layout);
 
-    PlaylistFields = new QList<QLineEdit*>;
-    SongFields = new QList<QLineEdit*>;
-    fromPlatformList = new QList<QRadioButton*>;
-    toPlatformList = new QList<QCheckBox*>;
+    PlaylistFields = new QList<QLineEdit *>;
+    SongFields = new QList<QLineEdit *>;
+    fromPlatformList = new QList<QRadioButton *>;
+    toPlatformList = new QList<QCheckBox *>;
 
-    //FieldsWidget = new QWidget();
     grid = new QGridLayout;
-    //Layout = new QVBoxLayout(this);
     submitBtn = new QPushButton("Submit");
     AddPlaylistBtn = new QPushButton("Add Playlist");
     AddSongBtn = new QPushButton("Add Song");
-        grid->addWidget(createExclusiveGroup(*fromPlatformList), 0, 0);
-        grid->addWidget(createNonExclusiveGroup(*toPlatformList), 0, 1);
-        rawCounter = 1;
-        AddPlaylist();
+    grid->addWidget(createExclusiveGroup(*fromPlatformList), 0, 0);
+    grid->addWidget(createNonExclusiveGroup(*toPlatformList), 0, 1);
+    rawCounter = 1;
+    AddPlaylist();
 
     Layout->addLayout(grid);
     gridButtons = new QGridLayout;
-        gridButtons->addWidget(AddPlaylistBtn, 0, 0);
-        gridButtons->addWidget(AddSongBtn, 0, 1);
+    gridButtons->addWidget(AddPlaylistBtn, 0, 0);
+    gridButtons->addWidget(AddSongBtn, 0, 1);
     Layout->addLayout(gridButtons);
     Layout->addWidget(submitBtn);
-    //FieldsWidget->setLayout(grid);
-    //Layout->addWidget(Text);
-
-    //Layout->addWidget(submitBtn);
 
     connect(submitBtn, SIGNAL(clicked()), this, SLOT(SubmitPlaylist()));
     connect(AddPlaylistBtn, SIGNAL(clicked()), this, SLOT(AddPlaylist()));
@@ -64,9 +58,9 @@ void PlaylistCreator::SubmitPlaylist() {
     sharedLib::Platform fromPlatform = sharedLib::None;
     unsigned int platformN = sharedLib::YouTube;
 
-    for (auto& i: *fromPlatformList) {
+    for (auto &i: *fromPlatformList) {
         if (i->isChecked())
-            fromPlatform = (sharedLib::Platform)platformN;
+            fromPlatform = (sharedLib::Platform) platformN;
         ++platformN;
     }
 
@@ -75,34 +69,37 @@ void PlaylistCreator::SubmitPlaylist() {
 
     std::vector<sharedLib::Platform> toPlatform;
     platformN = sharedLib::YouTube;
-    for (auto& i : *toPlatformList) {
+    for (auto &i: *toPlatformList) {
         ++platformN;
         if (i->isChecked())
-            toPlatform.emplace_back((sharedLib::Platform)platformN);
+            toPlatform.emplace_back((sharedLib::Platform) platformN);
     }
 
     if (!ShowErrorMessage(toPlatform.size() == 0, tr("Choose to which platform(s) to transform")))
         return;
 
     std::vector<sharedLib::Playlist> playlists;
-    for (auto& i : *PlaylistFields) {
+    for (auto &i: *PlaylistFields) {
         playlists.emplace_back(sharedLib::Playlist(sharedLib::URL(i->text().toStdString()), fromPlatform));
     }
 
     std::vector<sharedLib::Song> songs;
-    for (auto& i : *SongFields) {
+    for (auto &i: *SongFields) {
         songs.emplace_back(sharedLib::Song(sharedLib::URL(i->text().toStdString()), fromPlatform));
     }
 
-    if (!ShowErrorMessage(playlists.size() == 0 && songs.size() == 0, tr("Insert at least one link to playlist or song")))
+    if (!ShowErrorMessage(playlists.size() == 0 && songs.size() == 0,
+                          tr("Insert at least one link to playlist or song")))
         return;
 
-    /*
-     * std::for_each(SongFields->begin(), SongFields->end(),
-                  [playlists, fromPlatform] (QLineEdit* i) mutable {
-        playlists.emplace_back(sharedLib::Playlist(sharedLib::URL(i->text().toStdString()), fromPlatform));
-    });
-    */
+    if (playlists.size() != 0 &&
+        !ShowErrorMessage(!client::checkURLs<sharedLib::Playlist>(playlists.begin(), playlists.end()),
+                          tr("Wrong playlist URL format")))
+        return;
+
+    if (songs.size() != 0 &&
+        !ShowErrorMessage(!client::checkURLs<sharedLib::Song>(songs.begin(), songs.end()), tr("Wrong song URL format")))
+        return;
 
     client::MessageGroup messages(std::to_string(rawCounter) + " field(s) was sent", USER_ID, fromPlatform,
                                   playlists, songs, toPlatform);
@@ -112,8 +109,7 @@ void PlaylistCreator::SubmitPlaylist() {
     this->close();
 }
 
-QGroupBox *PlaylistCreator::createExclusiveGroup(QList<QRadioButton*>& list)
-{
+QGroupBox *PlaylistCreator::createExclusiveGroup(QList<QRadioButton *> &list) {
     QGroupBox *groupBox = new QGroupBox(tr("From"));
 
     QRadioButton *radioYT = new QRadioButton(tr("Youtube"));
@@ -121,7 +117,6 @@ QGroupBox *PlaylistCreator::createExclusiveGroup(QList<QRadioButton*>& list)
     list.append(radioYT);
     list.append(radioSpoty);
 
-    //radioYT->setChecked(true);
     QVBoxLayout *vbox = new QVBoxLayout;
     vbox->addWidget(radioYT);
     vbox->addWidget(radioSpoty);
@@ -131,26 +126,25 @@ QGroupBox *PlaylistCreator::createExclusiveGroup(QList<QRadioButton*>& list)
     return groupBox;
 }
 
-QLabel* PlaylistCreator::createLable(QString name) {
+QLabel *PlaylistCreator::createLable(QString name) {
     name.prepend(QString::number(rawCounter));
-    QLabel* lable = new QLabel(name);
+    QLabel *lable = new QLabel(name);
     return lable;
 }
 
-QLineEdit* PlaylistCreator::createLinedEdit(QString placeHolder) {
-    QLineEdit* lineEdit = new QLineEdit();
+QLineEdit *PlaylistCreator::createLinedEdit(QString placeHolder) {
+    QLineEdit *lineEdit = new QLineEdit();
     lineEdit->setPlaceholderText(QString(placeHolder));
     return lineEdit;
 }
 
-QGroupBox *PlaylistCreator::createNonExclusiveGroup(QList<QCheckBox*>& list) {
+QGroupBox *PlaylistCreator::createNonExclusiveGroup(QList<QCheckBox *> &list) {
     QGroupBox *groupBox = new QGroupBox(tr("Transform to"));
     groupBox->setFlat(true);
     QCheckBox *checkBoxYT = new QCheckBox(tr("Youtube"));
     QCheckBox *checkBoxSpoty = new QCheckBox(tr("Spotify"));
     list.append(checkBoxYT);
     list.append(checkBoxSpoty);
-    //checkBoxSpoty->setChecked(true);
     QVBoxLayout *vbox = new QVBoxLayout;
     vbox->addWidget(checkBoxYT);
     vbox->addWidget(checkBoxSpoty);

@@ -13,6 +13,12 @@ jobs:
       - name: Install GTest
         run: sudo apt-get install libgtest-dev -y 
         
+      - name: Install json
+        run: sudo apt-get install - y nlohmann-json3-dev
+        
+      - name: Install Curl 
+        run: sudo apt-get install -y libcurl3
+        
       - name: Install Clang-tidy
         run: sudo apt-get install -y clang-tidy
 
@@ -32,21 +38,16 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y valgrind 
         
       - name: scan-build  clang-tidy
-        run: mkdir build && cd build && scan-build cmake .. && scan-build make
+        run: cd project && mkdir build && cd build && scan-build cmake .. && scan-build make
         
       - name: cppcheck
-        run: cppcheck src tests  --enable=all --error-exitcode=1 -I project/include --suppress=missingIncludeSystem
+        run: cppcheck web/src web/tests  --enable=all --error-exitcode=1 -I qt/ --suppress=missingIncludeSystem
         
       - name: Cpplint
-        run: cpplint --extensions=c,h --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting project/src/* project/include/* && cpplint --extensions=cpp --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting tests/*
-
-      - name: Tests
-        run: cd tests && cmake .. && make  && ./run_tests && cmake -Dparallel=ON .. && make && ./run_tests && cd .. && lcov -t "hw2" -o hw2.info -c -d . && lcov --remove hw2.info "/usr/include/*" "./include/*" "/usr/local/*" > coverage.info && genhtml -o report coverage.info
-
-
+        run: cpplint --extensions=cpp,h --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting qt/* qt/lib/* && cpplint --extensions=cpp --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting qt/lib/*
 
       - name: Valgrind 
-        run: mkdir valgrind_tests && cd valgrind_tests && cmake .. && make && valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s -q ./run_tests &&  cmake -Dparallel=ON .. && make &&  valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s -q ./run_tests
+        run: mkdir valgrind_tests && cd valgrind_tests && cmake .. && make && valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s -q ./Musicial_test &&  cmake -Dparallel=ON .. && make &&  valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s -q ./Musicial_test
 
       - name: run with fbinfer
         run: mkdir infer_build && cd infer_build && cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .. && cd .. && infer run --compilation-database infer_build/compile_commands.json

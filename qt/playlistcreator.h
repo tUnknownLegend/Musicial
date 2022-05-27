@@ -7,50 +7,53 @@
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QButtonGroup>
-//#include "CustomWidgets.h"
 #include "MainWindow.h"
 #include <QGroupBox>
 #include <QCheckBox>
 #include <QRadioButton>
-//#include <QLabel>
 
 class PlaylistCreator : public QWidget {
     Q_OBJECT
 public:
     explicit PlaylistCreator(MainWindow *_parent = nullptr);
 
-    QGridLayout* grid;
-    QGridLayout* gridButtons;
+    QGridLayout *grid;
+    QGridLayout *gridButtons;
     QPushButton *submitBtn;
     QPushButton *AddSongBtn;
     QPushButton *AddPlaylistBtn;
     MainWindow *parent;
-    QLineEdit* text;
-    QWidget* FieldsWidget;
+    QLineEdit *text;
+    QWidget *FieldsWidget;
     QVBoxLayout *Layout;
-    QList<QLineEdit*>* PlaylistFields;
-    QList<QLineEdit*>* SongFields;
-    QList<QRadioButton*>* fromPlatformList;
-    QList<QCheckBox*>* toPlatformList;
+    QList<QLineEdit *> *PlaylistFields;
+    QList<QLineEdit *> *SongFields;
+    QList<QRadioButton *> *fromPlatformList;
+    QList<QCheckBox *> *toPlatformList;
 
 private
     slots:
             void SubmitPlaylist();
-            void AddPlaylist();
-            void AddSong();
+
+    void AddPlaylist();
+
+    void AddSong();
+
 private:
 
-     QGroupBox *createExclusiveGroup(QList<QRadioButton*>& list);
-           // QGroupBox *createSecondExclusiveGroup();
-     QGroupBox *createNonExclusiveGroup(QList<QCheckBox*>& list);
-          //  QGroupBox *createPushButtonGroup();
-     QLabel *createLable(QString name);
+    QGroupBox *createExclusiveGroup(QList<QRadioButton *> &list);
 
-     QLineEdit* createLinedEdit(QString placeHolder);
+    // QGroupBox *createSecondExclusiveGroup();
+    QGroupBox *createNonExclusiveGroup(QList<QCheckBox *> &list);
 
-     unsigned int rawCounter = 0;
+    //  QGroupBox *createPushButtonGroup();
+    QLabel *createLable(QString name);
 
-     bool ShowErrorMessage(bool error, QString errorBody);
+    QLineEdit *createLinedEdit(QString placeHolder);
+
+    unsigned int rawCounter = 0;
+
+    bool ShowErrorMessage(bool error, QString errorBody);
 };
 
 #endif // PLAYLISTCREATOR_H
