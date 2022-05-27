@@ -32,10 +32,10 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y valgrind 
         
       - name: scan-build  clang-tidy
-        run: cd project && mkdir build && cd build && scan-build cmake .. && scan-build make
+        run: cd qt/lib && mkdir build && cd build && scan-build cmake .. && scan-build make
         
       - name: cppcheck
-        run: cppcheck web/src web/tests  --enable=all --error-exitcode=1 -I qt/ --suppress=missingIncludeSystem
+        run: cppcheck qt/ qt/lib  --enable=all --error-exitcode=1 -I qt/lib/ --suppress=missingIncludeSystem
         
       - name: Cpplint
         run: cpplint --extensions=cpp,h --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting qt/* qt/lib/* && cpplint --extensions=cpp --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting qt/lib/*
