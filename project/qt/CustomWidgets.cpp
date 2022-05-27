@@ -30,9 +30,7 @@ Message::Message(const unsigned int& _UserID, const QString &text, const bool is
     //_parent.setWidgetResizable(true);
     //mainText->setMaximumWidth(container->width());
     //mainText->adjustSize();
-    mainText->setTextInteractionFlags(Qt::TextBrowserInteraction);
-    mainText->setOpenExternalLinks(true);
-
+    mainText->setWordWrap(true);
 
     if (!isUserOwner) {
         mainText->setStyleSheet(

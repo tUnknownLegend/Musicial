@@ -1,23 +1,14 @@
-#include "../include/mainlib.h"
-//#include "../include/tem.h"
 #include <string>
 #include <utility>
-//#include <stdlib.h>
-//#include "../../../web/project/server/include/client.h"
-//#include "../../../web/project/server/include/net_tools.h"
+#include "../include/mainlib.h"
 #include "../../../web/include/client.h"
-//#include ""
 //#include "../../../api/include/api.h"
 
-bool client::MessageGroup::receive() {
+bool client::MessageGroup::receive(const sharedLib::Message &message) {
 
-    //receiveNet();
+    receiveNet(message);
     sendDB();
     return false;
-}
-
-void pushMessage(const sharedLib::Message &message, const sharedLib::Message &vectEnd) {
-    //client::MessageGroup::receiveMessage(message);
 }
 
 bool client::MessageGroup::receiveMessage(const sharedLib::Message &message) {
@@ -32,7 +23,6 @@ bool client::MessageGroup::receiveNet(const sharedLib::Message &message) {
     //message.text = "[Server]: " + message.text;
     Messages.clear();
     Messages.push_back(message);
-
     QtDraw(Messages.begin(), Messages.end());
 
     /*
@@ -66,10 +56,9 @@ bool client::MessageGroup::send() {
     return false;
 }
 
-bool client::MessageGroup::send(std::function<void(const std::vector<sharedLib::Message>::iterator &,
-                                                   const std::vector<sharedLib::Message>::iterator &)> _QtDraw) {
-    QtDraw = std::move(_QtDraw);
-
+bool client::MessageGroup::send(const std::function<void(const std::vector<sharedLib::Message>::iterator &,
+                                                         const std::vector<sharedLib::Message>::iterator &)> &qtDraw) {
+    QtDraw = qtDraw;
     sendNet();
     sendDB();
 
@@ -89,9 +78,14 @@ bool client::MessageGroup::sendNet() {
 
     for (auto &i: Messages) {
         // fix struct Message
-        i.ownerID = 1; // fix
+        i.ownerID = BOT_ID; // fix
+        i.text = "";
         //i.text = "[server]: " + i.text;
         //i.playlists.ytRef = "[playlist]: " + i.playlists.ytRef;
+
+
+        //echo
+        //test
 
         webClient::sendMessage("0.0.0.0", "8000", "echo", i,
                                [this](const sharedLib::Message &Message) { receiveNet(Message); }); // fix!
@@ -105,23 +99,6 @@ bool client::MessageGroup::sendNet() {
     return false;
 }
 
-bool client::MessageGroup::sendDB() {
-
-
-    return false;
-}
-
-bool client::MessageGroup::sendText() {
-
-    return false;
-}
-
-bool client::MessageGroup::sendPlaylist() {
-
-
-    return false;
-}
-
 client::MessageGroup::MessageGroup(const sharedLib::Message &_message) {
     Messages.push_back(_message);
 }
@@ -130,17 +107,53 @@ client::MessageGroup::MessageGroup(std::vector<sharedLib::Message> &_messages) {
     Messages = std::move(_messages);
 }
 
-client::MessageGroup::MessageGroup(std::string text, uint64_t id, bool isUrl) {
+client::MessageGroup::MessageGroup(const std::string &text, uint64_t ownerID, const sharedLib::Platform &platform,
+                                   const std::vector<sharedLib::Playlist> &playlists,
+                                   const std::vector<sharedLib::Song> &songs,
+                                   const std::vector<sharedLib::Platform> &toPlatform) {
     sharedLib::Message message;
-    message.ownerID = id;
-    if (isUrl)
-        message.playlists.emplace_back(sharedLib::URL(text), sharedLib::YouTube);
-    else
-        message.text = std::move(text);
+    message.ownerID = ownerID;
+    message.text = text;
+
+    if (platform != sharedLib::None) {
+        message.playlists = playlists;
+        message.playlistNumber = message.playlists.size();
+        message.songs = songs;
+        message.songsNumber = message.songs.size();
+        message.toPlatform = toPlatform;
+        message.toPlatformNumber = message.toPlatform.size();
+    }
 
     Messages.push_back(message);
 }
 
+client::LocalData::LocalData(const std::function<void(const std::vector<sharedLib::Message>::iterator &,
+                                                      const std::vector<sharedLib::Message>::iterator &)> &qtDraw,
+                             const std::function<void(const std::vector<sharedLib::Message>::iterator &,
+                                                      const std::vector<sharedLib::Message>::iterator &)> &_saveData) {
+    file = fopen(FILE_PATH, "rb");
+    
+    saveData = _saveData;
+}
+
+bool client::LocalData::save() {
+
+}
+
+std::string client::getPlatform(const sharedLib::Platform &platform) {
+    switch (platform) {
+        case sharedLib::YouTube:
+            return "Youtube";
+            break;
+        case sharedLib::Spotify:
+            return "Spotify";
+            break;
+        default:
+            return "None";
+    }
+}
+
+/*
 bool client::ButtonGetDialog::action() {
     // getData()
     //creating fake data
@@ -157,14 +170,4 @@ bool client::ButtonGetDialog::action() {
     // sendDataToQT()
     return false;
 };
-
-bool client::ButtonAuth::action(std::string &login, std::string &password) {
-
-
-
-    // getDataWithAPI()
-    // sendToServer()
-    // sendToDB()
-    return false;
-};
-
+*/

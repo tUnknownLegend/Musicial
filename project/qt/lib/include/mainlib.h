@@ -1,8 +1,7 @@
 #include <string>
 #include <vector>
-#include "tem.h"
 #include <functional>
-#include "../../../web/include/net_tools.h" //fix
+//#include "../../../web/include/net_tools.h"
 #include "../../../web/include/shared_lib.h"
 
 #ifndef MUSICIAL_BUILD_H
@@ -10,22 +9,9 @@
 
 #define BOT_ID 0
 #define USER_ID 1
+#define FILE_PATH "data.bin"
 
 namespace client {
-/*
-    class RecieveMessageNet {
-    public:
-        std::vector<Message> messages = {};
-
-
-        void addToVec(const Message &message) {messages.push_back(message);};
-        friend void receiveMessage(const Message &message) {
-            //addToVec(message);
-            //messages.push_back(message); };
-
-    };
-
-*/
     struct Size {
         unsigned short height;
         unsigned short width;
@@ -60,16 +46,6 @@ namespace client {
 
     };
 
-    class ButtonSendMessage : public Button {
-    public:
-        bool action(sharedLib::Message &message) {
-            // getData()
-            // sendToServer()
-            // sendToDB()
-            return false;
-        };
-    };
-
     class ButtonAuth : public Button {
     public:
         // security?
@@ -98,20 +74,7 @@ namespace client {
         virtual bool sendNet() = 0;
     };
 
-
-    class SongGroup : public Group {
-    public:
-        std::vector<templib::Song> song = {};
-
-        bool getDB() override { return false; };
-
-        //bool receiveNet() override { return false; };
-
-        bool sendDB() override { return false; };
-
-        bool sendNet() override { return false; };
-    };
-
+    std::string getPlatform(const sharedLib::Platform &platform);
 
     class MessageGroup : public Group {
     public:
@@ -119,22 +82,25 @@ namespace client {
 
         explicit MessageGroup(const sharedLib::Message &_message);
 
-        MessageGroup(std::string text, uint64_t id, bool isUrl);
+        MessageGroup(const std::string &text, uint64_t ownerID, const sharedLib::Platform &platform,
+                     const std::vector<sharedLib::Playlist> &playlists = {},
+                     const std::vector<sharedLib::Song> &songs = {},
+                     const std::vector<sharedLib::Platform> &toPlatform = {});
 
         explicit MessageGroup(std::vector<sharedLib::Message> &_messages);
 
         bool receiveNet(const sharedLib::Message &message);
 
-        bool sendDB() override;
+        bool sendDB() override { return false; };
 
         bool sendNet() override;
 
-        bool receive();
+        bool receive(const sharedLib::Message &message);
 
         bool send();
 
-        bool send(std::function<void(const std::vector<sharedLib::Message>::iterator &,
-                                     const std::vector<sharedLib::Message>::iterator &)> _QtDraw);
+        bool send(const std::function<void(const std::vector<sharedLib::Message>::iterator &,
+                                           const std::vector<sharedLib::Message>::iterator &)> &qtDraw);
 
     private:
 
@@ -143,29 +109,28 @@ namespace client {
 
         bool getDB() override { return false; };
 
-        bool sendText();
-
-        bool sendPlaylist();
-
         bool receiveMessage(const sharedLib::Message &message);
     };
 
-    class ButtonCreatePlaylist : public Button {
+    class LocalData {
     public:
-        bool action(SongGroup &list) {
-            // getDataWithAPI()
-            // sendToServer()
-            // sendToDB()
-            return false;
-        };
-    };
 
-    class ButtonGetDialog : public Button {
-    public:
-        std::vector<sharedLib::Message> Messages;
+        LocalData() = delete;
 
-        bool action();
+        explicit LocalData(const std::function<void(const std::vector<sharedLib::Message>::iterator &,
+                                                    const std::vector<sharedLib::Message>::iterator &)> &qtDraw,
+                           const std::function<void(const std::vector<sharedLib::Message>::iterator &,
+                                                    const std::vector<sharedLib::Message>::iterator &)> &_saveData);
+
+        ~LocalData() { fclose(file); };
+
+        bool save();
+
+    private:
+
+        FILE *file;
+        std::function<void(const std::vector<sharedLib::Message>::iterator &,
+                           const std::vector<sharedLib::Message>::iterator &)> saveData;
     };
 }
-
 #endif //MUSICIAL_BUILD_H

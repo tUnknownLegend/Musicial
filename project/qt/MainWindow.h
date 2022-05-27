@@ -7,13 +7,14 @@
 #include <QPushButton>
 #include "CustomWidgets.h"
 #include <QScrollBar>
+#include "lib/include/mainlib.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = nullptr);
 
-    void SumbitPlaylist(QString text);
+    void SumbitPlaylist(client::MessageGroup& messages);
 
 private:
 
@@ -33,6 +34,8 @@ private:
 
     QPushButton *SendMessage;
     QPushButton *SendPlaylist;
+
+    QList<Message*>* TextMessanges;
 
 private
     slots:

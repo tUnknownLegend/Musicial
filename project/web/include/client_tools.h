@@ -135,8 +135,6 @@ class Client {
         }
     }
 
-    std::function<void(const sharedLib::Message &Message)> sendResponse;
-
     tcp::resolver resolver_;
     tcp::socket socket_;
 
@@ -144,6 +142,8 @@ class Client {
 
     Request request_;
     Response response_;
+
+    std::function<void(const sharedLib::Message &Message)> sendResponse;
 };
 
 namespace client_tools {

@@ -38,11 +38,11 @@ Response HandlerConvertPlaylist(const Request &request) {
 
 
     RefsForURL playlistRefs = {"https://www.googleapis.com/youtube/v3/playlistItems",
-                         "AIzaSyC3-MWvfyHVPjEVn8XYZd-HMVpc_mlxNHE",
-                         "PL6AVWk5NUegUV-FWNYbCG_ykC13vevU_6", ""};
-             string URL1 = GetPlaylistItemsURLYoutube(playlistRefs);
-             vector<string> headers1;
-             SetPlaylistItemsHeadersYoutube(headers1);
+                               "AIzaSyC3-MWvfyHVPjEVn8XYZd-HMVpc_mlxNHE",
+                               "PL6AVWk5NUegUV-FWNYbCG_ykC13vevU_6", ""};
+    string URL1 = GetPlaylistItemsURLYoutube(playlistRefs);
+    vector<string> headers1;
+    SetPlaylistItemsHeadersYoutube(headers1);
     Playlist B = createPlaylistFromExistingYoutubePlaylist(URL1, headers1);
 
     Song A = {"Before I Forget", "Slipknot"};
@@ -87,69 +87,69 @@ Response HandlerTest(const Request &request) {
 
 
 namespace http {
-namespace server3 {
-server::server(const std::string &address, const std::string &port,
-               std::size_t thread_pool_size)
-        : thread_pool_size_(thread_pool_size),
-          signals_(io_context_),
-          acceptor_(io_context_),
-          new_connection_() {
-    // Register to handle the signals that indicate when the server should exit.
-    signals_.add(SIGINT);   // остановка процесса с терминала
-    signals_.add(SIGTERM);  // сигнал от kill
-    signals_.async_wait(boost::bind(&server::handle_stop, this));
+    namespace server3 {
+        server::server(const std::string &address, const std::string &port,
+                       std::size_t thread_pool_size)
+                : thread_pool_size_(thread_pool_size),
+                  signals_(io_context_),
+                  acceptor_(io_context_),
+                  new_connection_() {
+            // Register to handle the signals that indicate when the server should exit.
+            signals_.add(SIGINT);   // остановка процесса с терминала
+            signals_.add(SIGTERM);  // сигнал от kill
+            signals_.async_wait(boost::bind(&server::handle_stop, this));
 
-    request_router.addHandler("convert_playlist", HandlerConvertPlaylist);
-    request_router.addHandler("echo", HandlerEcho);
-    request_router.addHandler("test", HandlerTest);
+            request_router.addHandler("convert_playlist", HandlerConvertPlaylist);
+            request_router.addHandler("echo", HandlerEcho);
+            request_router.addHandler("test", HandlerTest);
 
-    // Open the acceptor with the option to reuse the address (i.e. SO_REUSEADDR).
-    boost::asio::ip::tcp::resolver resolver(io_context_);
-    boost::asio::ip::tcp::endpoint endpoint = *resolver.resolve(address, port).begin();
-    acceptor_.open(endpoint.protocol());
-    acceptor_.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
-    acceptor_.bind(endpoint);
-    acceptor_.listen();
+            // Open the acceptor with the option to reuse the address (i.e. SO_REUSEADDR).
+            boost::asio::ip::tcp::resolver resolver(io_context_);
+            boost::asio::ip::tcp::endpoint endpoint = *resolver.resolve(address, port).begin();
+            acceptor_.open(endpoint.protocol());
+            acceptor_.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
+            acceptor_.bind(endpoint);
+            acceptor_.listen();
 
-    start_accept();
-}
+            start_accept();
+        }
 
-void server::run() {
-    std::cout << "Server is running with " << thread_pool_size_ << " threads" << std::endl;
-    // Create a pool of threads to run all of the io_contexts.
-    std::vector<boost::shared_ptr<std::thread> > threads;
+        void server::run() {
+            std::cout << "Server is running with " << thread_pool_size_ << " threads" << std::endl;
+            // Create a pool of threads to run all of the io_contexts.
+            std::vector<boost::shared_ptr<std::thread> > threads;
 
-    for (std::size_t i = 0; i < thread_pool_size_; ++i) {
-        boost::shared_ptr<std::thread> thread(new std::thread(
-                [ObjectPtr = &io_context_] { ObjectPtr->run(); }));
-        threads.push_back(thread);
-    }
+            for (std::size_t i = 0; i < thread_pool_size_; ++i) {
+                boost::shared_ptr<std::thread> thread(new std::thread(
+                        [ObjectPtr = &io_context_] { ObjectPtr->run(); }));
+                threads.push_back(thread);
+            }
 
-    // Wait for all threads in the pool to exit.
-    for (auto &thread : threads)
-        thread->join();
-}
+            // Wait for all threads in the pool to exit.
+            for (auto &thread: threads)
+                thread->join();
+        }
 
-void server::start_accept() {
-    new_connection_.reset(new Connection(io_context_, request_router));
-    acceptor_.async_accept(new_connection_->socket(),
-                           boost::bind(&server::handle_accept, this,
-                                       boost::asio::placeholders::error));
-}
+        void server::start_accept() {
+            new_connection_.reset(new Connection(io_context_, request_router));
+            acceptor_.async_accept(new_connection_->socket(),
+                                   boost::bind(&server::handle_accept, this,
+                                               boost::asio::placeholders::error));
+        }
 
-void server::handle_accept(const boost::system::error_code &e) {
-    if (!e) {
-        new_connection_->start();
-    }
+        void server::handle_accept(const boost::system::error_code &e) {
+            if (!e) {
+                new_connection_->start();
+            }
 
-    start_accept();
-}
+            start_accept();
+        }
 
-void server::handle_stop() {
-    io_context_.stop();
-}
+        void server::handle_stop() {
+            io_context_.stop();
+        }
 
-}  // namespace server3
+    }  // namespace server3
 }  // namespace http
 
 struct Token {
@@ -161,7 +161,7 @@ struct Token {
 };
 
 class platformAccess {
- public:
+public:
     bool addToken(sharedLib::Platform p, const Token &t) {
         auto res = tokens.insert({p, t});
         return !res.second;
@@ -184,6 +184,6 @@ class platformAccess {
         }
     }
 
- private:
+private:
     std::map<sharedLib::Platform, Token> tokens;
 };

@@ -9,7 +9,7 @@
 namespace sharedLib {
 
     enum Platform {
-        YouTube, Spotify
+        None, YouTube, Spotify
     };
 
     struct Database {
@@ -19,22 +19,23 @@ namespace sharedLib {
         URL() = default;
 
         explicit URL(std::string _link) : link(std::move(_link)) {};
-        std::string link;
+        std::string link = "-";
     };
 
     struct Playlist {
         Playlist() = default;
 
         Playlist(URL _url, Platform _platform) : ref(std::move(_url)), platform(_platform) {};
-        URL ref;
-        Platform platform;
+        URL ref = {};
+        Platform platform = None;
     };
 
     struct Song {
         Song() = default;
+
         Song(URL _url, Platform _platform) : ref(std::move(_url)), platform(_platform) {};
-        URL ref;
-        Platform platform;
+        URL ref = {};
+        Platform platform = None;
     };
 
     struct User {
@@ -51,10 +52,12 @@ namespace sharedLib {
         uint64_t ownerID = 0;
         uint64_t chatID = 0;
         std::string text = "-";
-        std::vector<Playlist> playlists;
+        std::vector<Playlist> playlists = {};
         uint64_t playlistNumber = 0;
-        std::vector<Song> songs;
+        std::vector<Song> songs = {};
         uint64_t songsNumber = 0;
+        std::vector<Platform> toPlatform = {};
+        uint64_t toPlatformNumber = 0;
     };
 
 }

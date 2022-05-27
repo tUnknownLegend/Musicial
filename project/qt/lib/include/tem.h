@@ -1,7 +1,7 @@
 
 #ifndef LIB_TEM_H
 #define LIB_TEM_H
-
+/*
 #include <iostream>
 
 namespace templib {
@@ -55,6 +55,7 @@ namespace templib {
         std::string text;
         playlistPlatformsRefs playlists;
     };
-*/
+
 }
+*/
 #endif //LIB_TEM_H

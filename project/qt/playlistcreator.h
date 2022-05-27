@@ -10,6 +10,8 @@
 //#include "CustomWidgets.h"
 #include "MainWindow.h"
 #include <QGroupBox>
+#include <QCheckBox>
+#include <QRadioButton>
 //#include <QLabel>
 
 class PlaylistCreator : public QWidget {
@@ -26,7 +28,10 @@ public:
     QLineEdit* text;
     QWidget* FieldsWidget;
     QVBoxLayout *Layout;
-    QList<QLineEdit*>* TextFields;
+    QList<QLineEdit*>* PlaylistFields;
+    QList<QLineEdit*>* SongFields;
+    QList<QRadioButton*>* fromPlatformList;
+    QList<QCheckBox*>* toPlatformList;
 
 private
     slots:
@@ -35,15 +40,17 @@ private
             void AddSong();
 private:
 
-     QGroupBox *createFirstExclusiveGroup();
+     QGroupBox *createExclusiveGroup(QList<QRadioButton*>& list);
            // QGroupBox *createSecondExclusiveGroup();
-     QGroupBox *createNonExclusiveGroup();
+     QGroupBox *createNonExclusiveGroup(QList<QCheckBox*>& list);
           //  QGroupBox *createPushButtonGroup();
      QLabel *createLable(QString name);
 
      QLineEdit* createLinedEdit(QString placeHolder);
 
      unsigned int rawCounter = 0;
+
+     bool ShowErrorMessage(bool error, QString errorBody);
 };
 
 #endif // PLAYLISTCREATOR_H

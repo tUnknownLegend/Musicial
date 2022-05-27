@@ -2,21 +2,17 @@
 #include <QApplication>
 #include <QLabel>
 #include <QList>
-#include "CustomWidgets.h"
-#include "lib/include/mainlib.h"
-#include "lib/src/mainlib.cpp"
-#include "playlistcreator.h"
 #include <QMessageBox>
 #include <QAbstractScrollArea>
 #include <QScrollBar>
 #include <QScrollArea>
-#include "CustomWidgets.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
-//#include <libserverLib>
-//#include "net_tools.h"
-//#include "../web/project/server/include/net_tools.h"
-
+#include "CustomWidgets.h"
+//#include "lib/include/mainlib.h"
+#include "lib/src/mainlib.cpp"
+#include "playlistcreator.h"
+#include "CustomWidgets.h"
 
 MainWindow::MainWindow(QWidget *parent) :
         QWidget(parent) {
@@ -37,7 +33,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ChatLayout->setSpacing(0);
     ChatLayout->setContentsMargins(1,1,1,1);
 
-    RightSectorWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    RightSectorWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     scrollArea = new QScrollArea(RightSectorWidget);
 
@@ -53,16 +49,15 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ChatListWidget = new QGroupBox(scrollArea);
     scrollArea->setWidget(ChatListWidget);
-    //ChatListWidget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
     ChatList = new QVBoxLayout(ChatListWidget);
     ChatList->setSizeConstraint(QLayout::SetMinimumSize);
-    //ChatList->setAlignment(Qt::AlignRight);
     ChatListWidget->setLayout(ChatList);
 
     sendBox = new MessageSendBox(RightSectorWidget);
     SendMessage = new QPushButton("M", RightSectorWidget);
     SendPlaylist = new QPushButton("P", RightSectorWidget);
 
+    //fix
     connect(SendMessage, SIGNAL(clicked()), this, SLOT(SendMessageClicked()));
     connect(SendMessage, SIGNAL(released()), this, SLOT(SendMessageReleased()));
     connect(SendPlaylist, SIGNAL(clicked()), this, SLOT(SendPlaylistClicked()));
@@ -70,6 +65,8 @@ MainWindow::MainWindow(QWidget *parent) :
     SendPlaylist->setGeometry(0, 25, 45, 50);
     sendBox->Text->setGeometry(0, 25, 450, 50);
     this->resize(MainSectorWidget->geometry().width(), MainSectorWidget->geometry().height());
+
+    TextMessanges = new QList<Message*>;
     //this->resize(MainSectorWidget->geometry().width(), MainSectorWidget->geometry().height());
 }
 
@@ -83,31 +80,25 @@ void MainWindow::resizeEvent(QResizeEvent*) {
    SendPlaylist->setGeometry(RightSectorWidget->x(), RightSectorWidget->height() - SendPlaylist->height(), SendPlaylist->width(), SendPlaylist->height());
    sendBox->Text->setGeometry(SendPlaylist->width(), RightSectorWidget->height() - sendBox->Text->height(), SendMessage->x() - SendPlaylist->width(), sendBox->Text->height());
    scrollArea->resize(RightSectorWidget->width(), SendMessage->y());
+   //scrollArea->resize(RightSectorWidget->width(), scrollArea->height());
 }
 
 void MainWindow::SendMessageClicked() {
     if (sendBox->Text->displayText() == "")
         return;
-
     QString text = sendBox->Text->displayText();
 
-    client::MessageGroup messages(text.toStdString(), 0, false);
+    client::MessageGroup messages(text.toStdString(), USER_ID, sharedLib::None);
     messages.send([this](const std::vector<sharedLib::Message>::iterator & mBegin, const std::vector<sharedLib::Message>::iterator & mEnd){
 
         for (auto i = mBegin; i != mEnd; ++i) {
             // recive
-            Message *message = new Message(i->ownerID, QString::fromStdString(i->text), true, *ChatList);
-            message->mainText->setWordWrap(true);
+            Message *message = new Message(i->ownerID, QString::fromStdString(i->text), i->ownerID == USER_ID, *ChatList);
+            TextMessanges->push_back(message);
             ChatList->addWidget(message->mainText);
         }
     }
     );
-
-    //messages.Messages
-
-    //quit();
-
-    //SendMessage(text.toStdString(), UserID);
 }
 
 void MainWindow::SendPlaylistClicked() {
@@ -115,19 +106,34 @@ void MainWindow::SendPlaylistClicked() {
     playlistCreator->show();
 }
 
-void MainWindow::SumbitPlaylist(QString text) {
+void MainWindow::SumbitPlaylist(client::MessageGroup& messages) {
 
     //if (sendBox->Text->displayText() == "")
     //    return;
 
-    client::MessageGroup messages(text.toStdString(), 0, false);
+    //client::MessageGroup messages(text.toStdString(), 0, false);
+
     messages.send([this](const std::vector<sharedLib::Message>::iterator & mBegin, const std::vector<sharedLib::Message>::iterator & mEnd){
 
         for (auto i = mBegin; i != mEnd; ++i) {
             // recive
-            Message *message = new Message(i->ownerID, QString::fromStdString(i->text), true, *ChatList);
-            message->mainText->setWordWrap(true);
-            ChatList->addWidget(message->mainText);
+            if (i->text != "") {
+                Message *message = new Message(i->ownerID, QString::fromStdString(i->text), i->ownerID == USER_ID, *ChatList);
+                TextMessanges->push_back(message);
+                ChatList->addWidget(message->mainText);
+            }
+
+            for (auto& j : i->playlists) {
+                Message *message = new Message(i->ownerID, QString::fromStdString(j.ref.link), i->ownerID == USER_ID, *ChatList);
+                message->mainText->setWordWrap(true);
+                QString platformName = QString::fromStdString(client::getPlatform(j.platform));
+                message->mainText->setText(platformName + " <a href=\"" + QString::fromStdString(j.ref.link) + "\">" + QString::fromStdString(j.ref.link) + "</a>");
+                //message->mainText->setText("Google: <a href=\"https://www.google.com/\">Click Here!</a>");
+                message->mainText->setTextInteractionFlags(Qt::TextBrowserInteraction);
+                message->mainText->setOpenExternalLinks(true);
+                TextMessanges->push_back(message);
+                ChatList->addWidget(message->mainText);
+            }
         }
     }
     );
