@@ -116,21 +116,24 @@ void MainWindow::SumbitPlaylist(client::MessageGroup& messages) {
     messages.send([this](const std::vector<sharedLib::Message>::iterator & mBegin, const std::vector<sharedLib::Message>::iterator & mEnd){
 
         for (auto i = mBegin; i != mEnd; ++i) {
-            // recive
-            if (i->text != "") {
-                Message *message = new Message(i->ownerID, QString::fromStdString(i->text), i->ownerID == USER_ID, *ChatList);
-                TextMessanges->push_back(message);
-                ChatList->addWidget(message->mainText);
-            }
+
+            Message *message = new Message(i->ownerID, QString::fromStdString(i->text), i->ownerID == USER_ID, *ChatList);
+            TextMessanges->push_back(message);
+            ChatList->addWidget(message->mainText);
 
             for (auto& j : i->playlists) {
                 Message *message = new Message(i->ownerID, QString::fromStdString(j.ref.link), i->ownerID == USER_ID, *ChatList);
                 message->mainText->setWordWrap(true);
                 QString platformName = QString::fromStdString(client::getPlatform(j.platform));
-                message->mainText->setText(platformName + " <a href=\"" + QString::fromStdString(j.ref.link) + "\">" + QString::fromStdString(j.ref.link) + "</a>");
+                message->mainText->setText(platformName + " <a href=\"" +
+                                                           QString::fromStdString(j.ref.link) + "\">" +
+                                                           QString::fromStdString(j.ref.link) + "</a>");
+                //message->mainText->setText(platformName + " <a href=\"" +
+                //                           QString::fromStdString(j.ref.link.erase(j.ref.link.size() - 1)) + "\">" +
+                //                           QString::fromStdString(j.ref.link) + "</a>");
                 //message->mainText->setText("Google: <a href=\"https://www.google.com/\">Click Here!</a>");
                 message->mainText->setTextInteractionFlags(Qt::TextBrowserInteraction);
-                message->mainText->setOpenExternalLinks(true);
+                message->mainText->setOpenExternalLinks(true);                               
                 TextMessanges->push_back(message);
                 ChatList->addWidget(message->mainText);
             }

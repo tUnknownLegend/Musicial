@@ -11,7 +11,7 @@ using json = nlohmann::json;
 using std::string;
 using std::vector;
 
-const string OAuthTokenSpotify = "BQBTQRJVGb-iV0Q-3hEAjkWUiHtwvQYonZLv3Pca9PLn13E8g_rq6Y9JHHqubCpuJyq8vNiwZP_DyE_Od5USQ4JrvQ74Xsm_C4NbiQqODYummzxEc5GKSW1KzaYfZBvpxXU4AdNYdCx4XaWdGUrFBSAlK6h9Tg2tsxY69MNILui3X67EIDUzI1qX2ovC6sD1maBTqvaC0yvaSwPLBXKK5-sbLn4H0jI";
+const string OAuthTokenSpotify = "BQCOfWlq_1Q2rUd9xCEPBJg8_1WNNnbh5cUiAJHJCeVBIbIVPSgg-HP-q64wuZrlr5zE9tQ-spXJL5yCdOlELvDGHBA3FKsAHbk2VyUKVJgh2mm2tEIs7G_VAuw1ONf9q704np3P_l73wOmbQ-VDO9X8rLWrf9YJeMgIDqLzAVtc--xncHo74tkIymaOrcPP8BkyEwhIoyOhLWQHVVwlw1WgR5Gav7U";
 const string usedIdSpotify = "8sseequ1nh63lrksvl8pqyxta";
 
 

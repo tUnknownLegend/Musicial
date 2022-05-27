@@ -73,7 +73,7 @@ void ParseResponseSpotifyGetPlaylistItems(string &readBuffer, Playlist &playlist
         }
         return;
     } catch (...) {
-        std::cout << "Parsing error" << std::endl;
+        std::cout << "Parsing error // ParseResponseSpotifyGetPlaylistItems" << std::endl;
         return;
     }
 }
@@ -88,7 +88,7 @@ string ParseResponseSpotifyGetSongId(string &readBuffer) {
         //std::cout << href << std::endl;
         return songId;
     } catch (...) {
-        std::cout << "Parsing error" << std::endl;
+        std::cout << "Parsing error // ParseResponseSpotifyGetSongId" << std::endl;
         return "-1";
     }
 }
@@ -103,7 +103,7 @@ string ParseResponseSpotifyCreateEmptyPlaylist(string &readBuffer) {
         //std::cout << href << std::endl;
         return playlistId;
     } catch (...) {
-        std::cout << "Parsing error" << std::endl;
+        std::cout << "Parsing error // ParseResponseSpotifyCreateEmptyPlaylist" << std::endl;
         return "";
     }
 }
@@ -172,32 +172,34 @@ bool addSongSpotify(Song &song, string &playlistId) {
     return true;
 }
 
-// template<typename ForwardIterator>
-// string createSpotifyPlaylistFromSonglist(ForwardIterator begin, ForwardIterator end, const string &userId){
-//     string playlistId = createEmptyPlaylistSpotify(usedIdSpotify);
-//     string URL = URLSpotifyCreatePlaylistFromSonglist(playlistId);
-//     string readBuffer;
-//     vector<string> headers;
-//     SetHeadersSpotify(headers);
-//     json postParametersJson;
-//     postParametersJson["uris"] = json::array();    
-//     int missedSongsCount = 0;
-//     for(ForwardIterator it = begin; it != end; it++){
-//         string songId = searchSongSpotify(*it);
-//         if(songId == "-1"){
-//             missedSongsCount++;
-//         }
-//         else{
-//             postParametersJson["uris"].push_back("spotify:track:"+ songId);
-//             //std::cout <<  (*it).songName << " - " <<(*it).artist << std::endl; 
-//         } 
-//     }
-//     string postParameters = postParametersJson.dump();
-//     std::cout << postParameters << std::endl;
-//     int res = requestAPI(URL, headers, readBuffer, "post", postParameters);
-//     if (res == -1){
-//         std::cout << "error" << std::endl;
-//         return "";
-//     }
-//     return "https://open.spotify.com/playlist/" + playlistId;
-// }
+/*
+ template<typename ForwardIterator>
+ string createSpotifyPlaylistFromSonglist(ForwardIterator begin, ForwardIterator end, const string &userId){
+     string playlistId = createEmptyPlaylistSpotify(usedIdSpotify);
+     string URL = URLSpotifyCreatePlaylistFromSonglist(playlistId);
+     string readBuffer;
+     vector<string> headers;
+     SetHeadersSpotify(headers);
+     json postParametersJson;
+     postParametersJson["uris"] = json::array();
+     int missedSongsCount = 0;
+     for(ForwardIterator it = begin; it != end; it++){
+         string songId = searchSongSpotify(*it);
+         if(songId == "-1"){
+             missedSongsCount++;
+         }
+         else{
+             postParametersJson["uris"].push_back("spotify:track:"+ songId);
+             //std::cout <<  (*it).songName << " - " <<(*it).artist << std::endl;
+         }
+     }
+     string postParameters = postParametersJson.dump();
+     std::cout << postParameters << std::endl;
+     int res = requestAPI(URL, headers, readBuffer, "post", postParameters);
+     if (res == -1){
+         std::cout << "error" << std::endl;
+         return "";
+     }
+     return "https://open.spotify.com/playlist/" + playlistId;
+ }
+ */

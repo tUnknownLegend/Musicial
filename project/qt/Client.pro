@@ -21,8 +21,6 @@ HEADERS += \
 
 DISTFILES += \
 
-
-
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../builtLibs/release/ -lserverLib
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../builtLibs/debug/ -lserverLib
 else:unix: LIBS += -L$$PWD/../builtLibs/ -lserverLib

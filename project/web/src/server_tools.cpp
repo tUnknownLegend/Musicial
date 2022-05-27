@@ -32,11 +32,10 @@ namespace server_tools {
 }  // namespace server_tools
 
 Response HandlerConvertPlaylist(const Request &request) {
-    sharedLib::Message ans = net_tools::getAnswer(request.body);
+    //sharedLib::Message ans = net_tools::getAnswer(request.body);
 
     Response response;
-
-
+/*
     RefsForURL playlistRefs = {"https://www.googleapis.com/youtube/v3/playlistItems",
                                "AIzaSyC3-MWvfyHVPjEVn8XYZd-HMVpc_mlxNHE",
                                "PL6AVWk5NUegUV-FWNYbCG_ykC13vevU_6", ""};
@@ -49,14 +48,18 @@ Response HandlerConvertPlaylist(const Request &request) {
     B.songs.push_back(A);
 
     std::string ref = createSpotifyPlaylistFromSonglist(B.songs.begin(), B.songs.end(), usedIdSpotify);
+*/
+    std::string ref = "https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB?si=4eb76190d17d479c";
+    response.body.text = "Playlist:";
 
-
-    response.body.text = ref;
+    //for (auto &i : request)
+    response.body.playlists.emplace_back(sharedLib::URL(ref), sharedLib::Platform::Spotify);
+    response.body.playlistNumber = response.body.playlists.size();
     response.status_code = 200;
     response.status_message = "OK";
     response.http_version = "HTTP/1.1";
 
-    response.body = ans;
+    //response.body = ans;
     return response;
 }
 

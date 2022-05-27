@@ -43,7 +43,7 @@ namespace net_tools {
             std::cin >> str;
             auto p = static_cast<sharedLib::Platform>(std::stoi(str));
 
-            message.playlists.push_back({ref, p});
+            message.playlists.emplace_back(ref, p);
         }
 
         std::cout << "Number of songs: ";
@@ -58,7 +58,7 @@ namespace net_tools {
             std::cin >> str;
             auto p = static_cast<sharedLib::Platform>(std::stoi(str));
 
-            message.songs.push_back({ref, p});
+            message.songs.emplace_back(ref, p);
         }
 
         return message;
@@ -97,6 +97,13 @@ namespace net_tools {
             result += i.ref.link;
             result += "\r\n";
             result += std::to_string(i.platform);
+            result += "\r\n";
+        }
+
+        result += std::to_string(message.toPlatformNumber);
+        result += "\r\n";
+        for (auto &i: message.toPlatform) {
+            result += std::to_string(i);
             result += "\r\n";
         }
 
@@ -139,6 +146,13 @@ namespace net_tools {
                 sharedLib::Song s = sharedLib::Song(sharedLib::URL(blocks[i + 5 + result.playlistNumber * 2]), p);
                 result.songs.push_back(s);
             }
+        }
+
+        result.toPlatformNumber = (uint64_t) std::stoi(blocks[4 + result.playlistNumber * 2 + result.songsNumber * 2]);
+        for (uint64_t i = 0; i < result.toPlatformNumber; ++i) {
+            auto p = static_cast<sharedLib::Platform>(std::stoi(blocks[i + 5 + result.playlistNumber * 2 + result.songsNumber * 2]));
+            result.toPlatform.push_back(p);
+
         }
 
         return result;

@@ -6,6 +6,10 @@
 #include <utility>
 #include <vector>
 
+#ifndef DEFAULT_STRING_INIT
+#define DEFAULT_STRING_INIT "-"
+#endif
+
 namespace sharedLib {
 
     enum Platform {
@@ -19,7 +23,7 @@ namespace sharedLib {
         URL() = default;
 
         explicit URL(std::string _link) : link(std::move(_link)) {};
-        std::string link = "-";
+        std::string link = DEFAULT_STRING_INIT;
     };
 
     struct Playlist {
@@ -35,23 +39,25 @@ namespace sharedLib {
 
         Song(URL _url, Platform _platform) : ref(std::move(_url)), platform(_platform) {};
         URL ref = {};
+        //author
+        //std::string name = DEFAULT_STRING_INIT;
         Platform platform = None;
     };
 
     struct User {
         uint64_t id;
-        std::string email;
-        std::string nickname;
-        std::string firstName;
-        std::string secondName;
-        std::string phoneNumber;
-        std::string avatarRef;
+        std::string email = DEFAULT_STRING_INIT;
+        std::string nickname = DEFAULT_STRING_INIT;
+        std::string firstName = DEFAULT_STRING_INIT;
+        std::string secondName = DEFAULT_STRING_INIT;
+        std::string phoneNumber = DEFAULT_STRING_INIT;
+        std::string avatarRef = DEFAULT_STRING_INIT;
     };
 
     struct Message {
         uint64_t ownerID = 0;
         uint64_t chatID = 0;
-        std::string text = "-";
+        std::string text = DEFAULT_STRING_INIT;
         std::vector<Playlist> playlists = {};
         uint64_t playlistNumber = 0;
         std::vector<Song> songs = {};
@@ -59,6 +65,5 @@ namespace sharedLib {
         std::vector<Platform> toPlatform = {};
         uint64_t toPlatformNumber = 0;
     };
-
 }
 #endif  // PROJECT_WEB_INCLUDE_SHARED_LIB_H_

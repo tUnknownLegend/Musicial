@@ -66,36 +66,22 @@ bool client::MessageGroup::send(const std::function<void(const std::vector<share
 }
 
 bool client::MessageGroup::sendNet() {
-
     QtDraw(Messages.begin(), Messages.end());
 
-    //call function to send
-
-    //clear vector
-
-    //
-
-
+    // * handlers *
+    //echo
+    //test
+    //convert_playlist
     for (auto &i: Messages) {
-        // fix struct Message
         i.ownerID = BOT_ID; // fix
-        i.text = "";
-        //i.text = "[server]: " + i.text;
-        //i.playlists.ytRef = "[playlist]: " + i.playlists.ytRef;
 
-
-        //echo
-        //test
-
-        webClient::sendMessage("0.0.0.0", "8000", "echo", i,
-                               [this](const sharedLib::Message &Message) { receiveNet(Message); }); // fix!
+        if (i.playlistNumber != 0 || i.songsNumber != 0)
+            webClient::sendMessage("0.0.0.0", "8000", "convert_playlist", i,
+                                   [this](const sharedLib::Message &Message) { receiveNet(Message); });
+        else
+            webClient::sendMessage("0.0.0.0", "8000", "echo", i,
+                                   [this](const sharedLib::Message &Message) { receiveNet(Message); });
     }
-
-    //testing
-    //receiveNet(Messages[0]);
-    //webClient::sendMessage("0.0.0.0", "8000", "/test", );
-    //Messages.clear();
-
     return false;
 }
 
