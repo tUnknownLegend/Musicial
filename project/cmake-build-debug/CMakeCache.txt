@@ -296,7 +296,7 @@ QT_LIB_BINARY_DIR:STATIC=/home/aint/park/Musicial/project/cmake-build-debug/qt/l
 QT_LIB_IS_TOP_LEVEL:STATIC=OFF
 
 //Dependencies for the target
-QT_LIB_LIB_DEPENDS:STATIC=general;GTest::gmock;general;/home/aint/park/Musicial/project/../../builtLibs/libserverLib.a;
+QT_LIB_LIB_DEPENDS:STATIC=general;/home/aint/park/Musicial/project/../../builtLibs/libserverLib.a;
 
 //Value Computed by CMake
 QT_LIB_SOURCE_DIR:STATIC=/home/aint/park/Musicial/project/qt/lib

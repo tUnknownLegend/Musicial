@@ -155,6 +155,10 @@ namespace net_tools {
 
         }
 
+        std::cout << "To Platfrom: ";
+        for (auto &i : result.toPlatform) {
+            std::cout << i << " ";
+        }
         return result;
     }
 

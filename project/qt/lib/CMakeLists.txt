@@ -17,8 +17,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 add_library(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
-target_link_libraries(${PROJECT_NAME}  GTest::Main GTest::gmock ${CMAKE_SOURCE_DIR}/../../builtLibs/libserverLib.a)
+target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/../../builtLibs/libserverLib.a)
 
-
-#add_executable(run_tests_QT test/test.cpp ${SOURCES} ${HEADERS})
-#target_link_libraries(run_tests_QT GTest::GTest)
+add_executable(run_tests_QT test/test.cpp ${SOURCES} ${HEADERS})
+target_link_libraries(run_tests_QT GTest::GTest GTest::gmock)

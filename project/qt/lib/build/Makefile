@@ -129,12 +129,26 @@ QT_LIB/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_LIB.dir/build.make CMakeFiles/QT_LIB.dir/build
 .PHONY : QT_LIB/fast
 
+#=============================================================================
+# Target rules for targets named run_tests_QT
+
+# Build rule for target.
+run_tests_QT: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_tests_QT
+.PHONY : run_tests_QT
+
+# fast build rule for target.
+run_tests_QT/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests_QT.dir/build.make CMakeFiles/run_tests_QT.dir/build
+.PHONY : run_tests_QT/fast
+
 src/mainlib.o: src/mainlib.cpp.o
 .PHONY : src/mainlib.o
 
 # target to build an object file
 src/mainlib.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_LIB.dir/build.make CMakeFiles/QT_LIB.dir/src/mainlib.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests_QT.dir/build.make CMakeFiles/run_tests_QT.dir/src/mainlib.cpp.o
 .PHONY : src/mainlib.cpp.o
 
 src/mainlib.i: src/mainlib.cpp.i
@@ -143,6 +157,7 @@ src/mainlib.i: src/mainlib.cpp.i
 # target to preprocess a source file
 src/mainlib.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_LIB.dir/build.make CMakeFiles/QT_LIB.dir/src/mainlib.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests_QT.dir/build.make CMakeFiles/run_tests_QT.dir/src/mainlib.cpp.i
 .PHONY : src/mainlib.cpp.i
 
 src/mainlib.s: src/mainlib.cpp.s
@@ -151,7 +166,32 @@ src/mainlib.s: src/mainlib.cpp.s
 # target to generate assembly for a file
 src/mainlib.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_LIB.dir/build.make CMakeFiles/QT_LIB.dir/src/mainlib.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests_QT.dir/build.make CMakeFiles/run_tests_QT.dir/src/mainlib.cpp.s
 .PHONY : src/mainlib.cpp.s
+
+test/test.o: test/test.cpp.o
+.PHONY : test/test.o
+
+# target to build an object file
+test/test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests_QT.dir/build.make CMakeFiles/run_tests_QT.dir/test/test.cpp.o
+.PHONY : test/test.cpp.o
+
+test/test.i: test/test.cpp.i
+.PHONY : test/test.i
+
+# target to preprocess a source file
+test/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests_QT.dir/build.make CMakeFiles/run_tests_QT.dir/test/test.cpp.i
+.PHONY : test/test.cpp.i
+
+test/test.s: test/test.cpp.s
+.PHONY : test/test.s
+
+# target to generate assembly for a file
+test/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests_QT.dir/build.make CMakeFiles/run_tests_QT.dir/test/test.cpp.s
+.PHONY : test/test.cpp.s
 
 # Help Target
 help:
@@ -162,9 +202,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... QT_LIB"
+	@echo "... run_tests_QT"
 	@echo "... src/mainlib.o"
 	@echo "... src/mainlib.i"
 	@echo "... src/mainlib.s"
+	@echo "... test/test.o"
+	@echo "... test/test.i"
+	@echo "... test/test.s"
 .PHONY : help
 
 

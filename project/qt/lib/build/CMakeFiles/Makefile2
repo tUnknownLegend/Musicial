@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/aint/park/Musicial/project/qt/lib/build
 
 # The main recursive "all" target.
 all: CMakeFiles/QT_LIB.dir/all
+all: CMakeFiles/run_tests_QT.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,6 +73,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/QT_LIB.dir/clean
+clean: CMakeFiles/run_tests_QT.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -99,6 +101,32 @@ QT_LIB: CMakeFiles/QT_LIB.dir/rule
 CMakeFiles/QT_LIB.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_LIB.dir/build.make CMakeFiles/QT_LIB.dir/clean
 .PHONY : CMakeFiles/QT_LIB.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/run_tests_QT.dir
+
+# All Build rule for target.
+CMakeFiles/run_tests_QT.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests_QT.dir/build.make CMakeFiles/run_tests_QT.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests_QT.dir/build.make CMakeFiles/run_tests_QT.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aint/park/Musicial/project/qt/lib/build/CMakeFiles --progress-num=3,4,5 "Built target run_tests_QT"
+.PHONY : CMakeFiles/run_tests_QT.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/run_tests_QT.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/qt/lib/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run_tests_QT.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aint/park/Musicial/project/qt/lib/build/CMakeFiles 0
+.PHONY : CMakeFiles/run_tests_QT.dir/rule
+
+# Convenience name for target.
+run_tests_QT: CMakeFiles/run_tests_QT.dir/rule
+.PHONY : run_tests_QT
+
+# clean rule for target.
+CMakeFiles/run_tests_QT.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests_QT.dir/build.make CMakeFiles/run_tests_QT.dir/clean
+.PHONY : CMakeFiles/run_tests_QT.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

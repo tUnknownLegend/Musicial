@@ -38,13 +38,14 @@ Response HandlerConvertPlaylist(const Request &request) {
     Settings S;
     PlaylistManagerSpotify B(S.getOAuthTokenSpotify(), S.getUserIdSpotify());
 
-    std::vector<std::string> playlists;
     // remove
     //std::string ref = "https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB?si=4eb76190d17d479c";
     //playlists.push_back(ref);
     //playlists.push_back(sharedLib::URL(ref), sharedLib::Platform::Spotify);
     response.body.text = "Playlist:";
 
+    /*
+    std::vector<std::string> playlists;
     for (const auto& i : request.body.playlists) {
         playlists.push_back(i.ref.link);
     }
@@ -53,35 +54,47 @@ Response HandlerConvertPlaylist(const Request &request) {
     for (const auto& i : request.body.songs) {
         songs.push_back(i.ref.link);
     }
+*/
+
+    std::vector<std::string> playlists;
+    std::vector<std::string> songs;
+    playlists.emplace_back("https://open.spotify.com/playlist/6mQNMb22J9Rp5QPALHUeFr");
+    playlists.emplace_back("https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB");
+    songs.emplace_back("https://open.spotify.com/track/11dFghVXANMlKmJXsNCbNl");
 
     sharedLib::URL convertedPlaylist;
     sharedLib::Platform platform;
-    for (auto i : request.body.toPlatform) {
+    vector<sharedLib::Platform> temp;
+    temp.push_back(sharedLib::YouTube);
+    temp.push_back(sharedLib::Spotify);
+    //request.body.toPlatform;
+    for (auto& i : temp) {
         switch(i) {
             case sharedLib::YouTube:
                 // convertedPlaylist.link = метод для YT
                 convertedPlaylist.link = "https://www.youtube.com/playlist?list=PLcidtVPGDsUWcrT65QjefzB8syuGpgDoN";
                 platform = sharedLib::YouTube;
+                response.body.playlists.emplace_back(convertedPlaylist, platform);
                 break;
             case sharedLib::Spotify:
-                convertedPlaylist.link = "https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB";
-                        //B.createSpotifyPlaylistFromPlatformRefsAndSongsLists(playlists.begin(), playlists.end(), songs.begin(), songs.end(), S.getUserIdSpotify());
+                convertedPlaylist.link = B.createSpotifyPlaylistFromPlatformRefsAndSongsLists(playlists.begin(), playlists.end(), songs.begin(), songs.end(), S.getUserIdSpotify());
+                //"https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB";
                 // convertedPlaylist.link = метод для Spotify
                 platform = sharedLib::Spotify;
+                response.body.playlists.emplace_back(convertedPlaylist, platform);
                 break;
             default:
                 break;
         }
     }
 
-    response.body.playlists.emplace_back(convertedPlaylist, platform); // correct
+    //response.body.playlists.emplace_back(convertedPlaylist, platform); // correct
     response.body.playlistNumber = response.body.playlists.size();
     response.body.songsNumber = 0;
     response.body.toPlatformNumber = 0;
     response.status_code = 200;
     response.status_message = "OK";
     response.http_version = "HTTP/1.1";
-
 
     return response;
 }

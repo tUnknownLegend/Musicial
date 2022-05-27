@@ -17,7 +17,7 @@ public:
     const string getOAuthTokenSpotify(){return OAuthTokenSpotify;}
     const string getUserIdSpotify(){return userIdSpotify;}
 private:
-    const string OAuthTokenSpotify = "BQClQBkv-oUj_IbZNgl1ug4m-hiQzWcPUpdTe0YNDZqZfgNSPNMtgFEOf4ORqlnwmlvHc5-7lfjPRyQqhE-YCbHle-WTN5mY9jLBX1jAZl4wLHohAcVEyEv7x8DQEOIBXG9H7psBSjZBTYZsNSEnxtHjBLtUnahQki7zqjsIgDIO4dKNKC6FYfnDFObyBjz0lEK0Yp8vCebyQZspBnTANPIVWcgHUyc";
+    const string OAuthTokenSpotify = "BQBA3DrzQL29F9qwkuG6mniTxTgNI_xPONAgDLCQwirZyREsgQh5zlks6rccIU5Z8OrCy0yHwY_6aBYiFKja3Fs3IVqhEfTH4RUziBE62OYYTp_d9wq0tNEsBnCdd_iO2gwBRSWoBqYlwhC5w0kIN23OWiINs7hpdi8SsNeEEAjljonMud22ySEazgX0g-CKwaKQumuRFZWiq4rfTV5y9r1PzJF13Gg";
     const string userIdSpotify = "8sseequ1nh63lrksvl8pqyxta";
     string ApiKey;
 };

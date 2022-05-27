@@ -6,6 +6,7 @@
 /home/aint/park/Musicial/project/cmake-build-debug/web/CMakeFiles/serverLib.dir
 /home/aint/park/Musicial/project/cmake-build-debug/web/CMakeFiles/edit_cache.dir
 /home/aint/park/Musicial/project/cmake-build-debug/qt/lib/CMakeFiles/rebuild_cache.dir
+/home/aint/park/Musicial/project/cmake-build-debug/qt/lib/CMakeFiles/run_tests_QT.dir
 /home/aint/park/Musicial/project/cmake-build-debug/qt/lib/CMakeFiles/edit_cache.dir
 /home/aint/park/Musicial/project/cmake-build-debug/qt/lib/CMakeFiles/QT_LIB.dir
 /home/aint/park/Musicial/project/cmake-build-debug/api/CMakeFiles/rebuild_cache.dir

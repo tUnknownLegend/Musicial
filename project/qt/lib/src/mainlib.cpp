@@ -70,7 +70,7 @@ bool client::MessageGroup::sendNet() {
         i.ownerID = BOT_ID;
 
         if (i.playlistNumber != 0 || i.songsNumber != 0)
-            webClient::sendMessage("0.0.0.0", "8000", "echo", i,
+            webClient::sendMessage("0.0.0.0", "8000", "convert_playlist", i,
                                    [this](const sharedLib::Message &Message) { receiveNet(Message); });
         else
             webClient::sendMessage("0.0.0.0", "8000", "echo", i,

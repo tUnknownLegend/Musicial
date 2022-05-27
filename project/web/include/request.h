@@ -40,6 +40,7 @@ inline std::string Request2String(const Request &request) {
         ss << net_tools::Message2String(request.body) << "\r\n\r\n";
     }
 
+    std::cout << "STRING: " << ss.str() << "\n";
     return ss.str();
 }
 

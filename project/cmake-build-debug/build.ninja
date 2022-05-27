@@ -254,6 +254,47 @@ build qt/lib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build qt/lib/rebuild_cache: phony qt/lib/CMakeFiles/rebuild_cache.util
 
+# =============================================================================
+# Object build statements for EXECUTABLE target run_tests_QT
+
+
+#############################################
+# Order-only phony target for run_tests_QT
+
+build cmake_object_order_depends_target_run_tests_QT: phony || qt/lib/CMakeFiles/run_tests_QT.dir
+
+build qt/lib/CMakeFiles/run_tests_QT.dir/test/test.cpp.o: CXX_COMPILER__run_tests_QT_Debug /home/aint/park/Musicial/project/qt/lib/test/test.cpp || cmake_object_order_depends_target_run_tests_QT
+  DEP_FILE = qt/lib/CMakeFiles/run_tests_QT.dir/test/test.cpp.o.d
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g -std=gnu++11
+  INCLUDES = -I/home/aint/park/Musicial/project/qt/lib/include -I/home/aint/park/Musicial/project/qt/lib/src -I/home/aint/park/Musicial/project/qt/lib/tests
+  OBJECT_DIR = qt/lib/CMakeFiles/run_tests_QT.dir
+  OBJECT_FILE_DIR = qt/lib/CMakeFiles/run_tests_QT.dir/test
+
+build qt/lib/CMakeFiles/run_tests_QT.dir/src/mainlib.cpp.o: CXX_COMPILER__run_tests_QT_Debug /home/aint/park/Musicial/project/qt/lib/src/mainlib.cpp || cmake_object_order_depends_target_run_tests_QT
+  DEP_FILE = qt/lib/CMakeFiles/run_tests_QT.dir/src/mainlib.cpp.o.d
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g -std=gnu++11
+  INCLUDES = -I/home/aint/park/Musicial/project/qt/lib/include -I/home/aint/park/Musicial/project/qt/lib/src -I/home/aint/park/Musicial/project/qt/lib/tests
+  OBJECT_DIR = qt/lib/CMakeFiles/run_tests_QT.dir
+  OBJECT_FILE_DIR = qt/lib/CMakeFiles/run_tests_QT.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target run_tests_QT
+
+
+#############################################
+# Link the executable qt/lib/run_tests_QT
+
+build qt/lib/run_tests_QT: CXX_EXECUTABLE_LINKER__run_tests_QT_Debug qt/lib/CMakeFiles/run_tests_QT.dir/test/test.cpp.o qt/lib/CMakeFiles/run_tests_QT.dir/src/mainlib.cpp.o | /usr/local/lib/libgmock.a /usr/local/lib/libgtest.a
+  FLAGS = -std=c++14 -Wall -ggdb3 -pthread -lcurl  -std=c++14 -Wall -g
+  LINK_FLAGS = -coverage -lgcov
+  LINK_LIBRARIES = /usr/local/lib/libgmock.a  /usr/local/lib/libgtest.a
+  OBJECT_DIR = qt/lib/CMakeFiles/run_tests_QT.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = qt/lib/run_tests_QT
+  TARGET_PDB = run_tests_QT.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -448,6 +489,8 @@ build musicial: phony db/musicial
 
 build run_tests: phony web/run_tests
 
+build run_tests_QT: phony qt/lib/run_tests_QT
+
 build server: phony web/server
 
 build serverLib: phony web/libserverLib.a
@@ -481,7 +524,7 @@ build db/all: phony db/musicial
 #############################################
 # Folder: /home/aint/park/Musicial/project/cmake-build-debug/qt/lib
 
-build qt/lib/all: phony qt/lib/libQT_LIB.a
+build qt/lib/all: phony qt/lib/run_tests_QT qt/lib/libQT_LIB.a
 
 # =============================================================================
 

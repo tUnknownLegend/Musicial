@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++14 -Wall  -coverage -lgcov CMakeFiles/run_tests_QT.dir/test/test.cpp.o CMakeFiles/run_tests_QT.dir/src/mainlib.cpp.o -o run_tests_QT  /usr/local/lib/libgmock.a /usr/local/lib/libgtest.a -lpthread 
