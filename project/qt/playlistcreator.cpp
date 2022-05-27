@@ -6,10 +6,32 @@
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QMessageBox>
+//#include "lib/include/mainlib.h"
+//#include "lib/src/mainlib.cpp"
 //#include <QLabel>
+/*
+template<class T>
+bool checkURL(std::vector<T> vec) {
+    bool isValid = true;
+    for (auto i = vecBegin, i != vecEnd, ++i) {
 
+    }
+    //if (std::is_same<T, typename sharedLib::Playlist>::value || std::is_same<T, typename sharedLib::Song>::value) {
+//        std::for_each(vecBegin, vecEnd, [isValid](T& i) mutable {
+//            if (i.ref.link.find("spotify") || i.ref.link.find("youtube")) {
+//                isValid = false;
+//                return;
+//            }
+//        });
+//        return isValid;
+//    } else {
+//        std::cout << "Wrong Type";
+//        return true;
+//    }
+}
+*/
 PlaylistCreator::PlaylistCreator(MainWindow *_parent) : parent(_parent) {
-
+    setWindowTitle("Generat Playlist");
     Layout = new QVBoxLayout;
     setLayout(Layout);
 
@@ -94,9 +116,15 @@ void PlaylistCreator::SubmitPlaylist() {
         songs.emplace_back(sharedLib::Song(sharedLib::URL(i->text().toStdString()), fromPlatform));
     }
 
-    if (!ShowErrorMessage(playlists.size() == 0 && songs.size() == 0, tr("Insert at least one link to playlist or song")))
-        return;
+    //if (!ShowErrorMessage(playlists.size() == 0 && songs.size() == 0, tr("Insert at least one link to playlist or song")))
+    //    return;
 
+
+    //if (!ShowErrorMessage(checkURL<sharedLib::Playlist>(playlists.begin(), playlists.end()), tr("Wrong playlist URL format")))
+    //    return;
+
+    //if (!ShowErrorMessage(checkURL<sharedLib::Song>(songs.begin(), songs.end()), tr("Wrong song URL format")))
+    //    return;
     /*
      * std::for_each(SongFields->begin(), SongFields->end(),
                   [playlists, fromPlatform] (QLineEdit* i) mutable {

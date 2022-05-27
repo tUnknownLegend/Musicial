@@ -17,6 +17,7 @@
 MainWindow::MainWindow(QWidget *parent) :
         QWidget(parent) {
     this->setMinimumSize(500, 500);
+    setWindowTitle("Musicial");
 
     MainSectorLayout = new QHBoxLayout(this);
     MainSectorLayout->setAlignment(Qt::AlignTop | Qt::AlignLeft);
@@ -57,7 +58,6 @@ MainWindow::MainWindow(QWidget *parent) :
     SendMessage = new QPushButton("M", RightSectorWidget);
     SendPlaylist = new QPushButton("P", RightSectorWidget);
 
-    //fix
     connect(SendMessage, SIGNAL(clicked()), this, SLOT(SendMessageClicked()));
     connect(SendMessage, SIGNAL(released()), this, SLOT(SendMessageReleased()));
     connect(SendPlaylist, SIGNAL(clicked()), this, SLOT(SendPlaylistClicked()));
@@ -67,6 +67,13 @@ MainWindow::MainWindow(QWidget *parent) :
     this->resize(MainSectorWidget->geometry().width(), MainSectorWidget->geometry().height());
 
     TextMessanges = new QList<Message*>;
+
+    //SendMessage->setStyleSheet("qproperty-icon: url(:/resources/sendIcon.png);");
+    //QPixmap sendIcon(":/resources/sendIcon.png");
+    //QIcon SendMessageButtonIcon(":/resources/sendIcon.png");
+    //SendMessage->setIcon(SendMessageButtonIcon);
+    //SendMessage->show();
+    //SendMessage->setIconSize(sendIcon.rect().size());
     //this->resize(MainSectorWidget->geometry().width(), MainSectorWidget->geometry().height());
 }
 

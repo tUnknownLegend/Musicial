@@ -3,7 +3,25 @@
 #include "../include/mainlib.h"
 #include "../../../web/include/client.h"
 //#include "../../../api/include/api.h"
-
+/*
+template<class T>
+bool client::checkURLs(typename std::vector<T>::iterator vecBegin, typename std::vector<T>::iterator vecEnd) {
+    bool isValid = true;
+    if ((typeid(vecBegin).name() == typeid(std::vector<sharedLib::Platform>::iterator).name()) ||
+        (typeid(vecBegin).name() == typeid(std::vector<sharedLib::Song>::iterator).name())) {
+        std::for_each(vecBegin, vecEnd, [isValid](T *i) mutable {
+            if (i->ref.link.find("spotify") || i->ref.link.find("youtube")) {
+                isValid = false;
+                return;
+            }
+        });
+        return isValid;
+    } else {
+        std::cout << "Wrong Type";
+        return false;
+    }
+}
+*/
 bool client::MessageGroup::receive(const sharedLib::Message &message) {
 
     receiveNet(message);
@@ -118,7 +136,7 @@ client::LocalData::LocalData(const std::function<void(const std::vector<sharedLi
                              const std::function<void(const std::vector<sharedLib::Message>::iterator &,
                                                       const std::vector<sharedLib::Message>::iterator &)> &_saveData) {
     file = fopen(FILE_PATH, "rb");
-    
+
     saveData = _saveData;
 }
 

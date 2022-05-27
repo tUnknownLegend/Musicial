@@ -132,5 +132,10 @@ namespace client {
         std::function<void(const std::vector<sharedLib::Message>::iterator &,
                            const std::vector<sharedLib::Message>::iterator &)> saveData;
     };
+
+    //template<class T>
+    //bool checkURLs(typename std::vector<T>::iterator vecBegin, typename std::vector<T>::iterator vecEnd);
+
 }
+
 #endif //MUSICIAL_BUILD_H
