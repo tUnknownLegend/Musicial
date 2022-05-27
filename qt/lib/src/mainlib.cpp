@@ -1,7 +1,7 @@
 #include <string>
 #include <utility>
 #include "../include/mainlib.h"
-#include "../../../web/include/client.h"
+//#include "../../../web/include/client.h"
 //#include "../../../api/include/api.h"
 /*
 template<class T>
@@ -37,32 +37,9 @@ bool client::MessageGroup::receiveMessage(const sharedLib::Message &message) {
 }
 
 bool client::MessageGroup::receiveNet(const sharedLib::Message &message) {
-
-    //message.text = "[Server]: " + message.text;
     Messages.clear();
     Messages.push_back(message);
     QtDraw(Messages.begin(), Messages.end());
-
-    /*
-    for (auto &i: Messages) {
-        i.text = "[server]: " + i.text;
-        i.playlists.ytRef = "[playlist]: " + i.playlists.ytRef;
-    }
-     */
-/*
-    PlaylistManager<YoutubePlaylist> YPManager;
-    RefsForURL playlistRefs = {"https://www.googleapis.com/youtube/v3/playlistItems",
-                               "AIzaSyC3-MWvfyHVPjEVn8XYZd-HMVpc_mlxNHE",
-                               "PL6AVWk5NUegUV-FWNYbCG_ykC13vevU_6", ""};
-    string URL1 = GetPlaylistItemsURLYoutube(playlistRefs);
-    vector<string> headers1;
-    GetPlaylistItemsHeadersYoutube(headers1);
-    YoutubePlaylist B = YPManager.createExistingPlaylist(URL1, headers1);
-
-    for(int i = 0; i < B.songs.size(); i++){
-        std::cout <<  B.songs[i].songName << "-" << B.songs[i].artist << std::endl;
-    }
-*/
 
     return false;
 }
@@ -94,11 +71,13 @@ bool client::MessageGroup::sendNet() {
         i.ownerID = BOT_ID; // fix
 
         if (i.playlistNumber != 0 || i.songsNumber != 0)
-            webClient::sendMessage("0.0.0.0", "8000", "convert_playlist", i,
-                                   [this](const sharedLib::Message &Message) { receiveNet(Message); });
+            // send to server
+            //webClient::sendMessage("0.0.0.0", "8000", "convert_playlist", i,
+            //                       [this](const sharedLib::Message &Message) { receiveNet(Message); });
         else
-            webClient::sendMessage("0.0.0.0", "8000", "echo", i,
-                                   [this](const sharedLib::Message &Message) { receiveNet(Message); });
+            // send to server
+            //webClient::sendMessage("0.0.0.0", "8000", "echo", i,
+            //                       [this](const sharedLib::Message &Message) { receiveNet(Message); });
     }
     return false;
 }
@@ -131,6 +110,7 @@ client::MessageGroup::MessageGroup(const std::string &text, uint64_t ownerID, co
     Messages.push_back(message);
 }
 
+/*
 client::LocalData::LocalData(const std::function<void(const std::vector<sharedLib::Message>::iterator &,
                                                       const std::vector<sharedLib::Message>::iterator &)> &qtDraw,
                              const std::function<void(const std::vector<sharedLib::Message>::iterator &,
@@ -144,6 +124,8 @@ bool client::LocalData::save() {
 
 }
 
+*/
+
 std::string client::getPlatform(const sharedLib::Platform &platform) {
     switch (platform) {
         case sharedLib::YouTube:
@@ -156,22 +138,3 @@ std::string client::getPlatform(const sharedLib::Platform &platform) {
             return "None";
     }
 }
-
-/*
-bool client::ButtonGetDialog::action() {
-    // getData()
-    //creating fake data
-    std::vector<sharedLib::Message> fakeMessages;
-    int n = 35;
-    fakeMessages.reserve(n);
-    for (int i = 0; i < n; ++i) {
-        //fakeMessages.push_back({i % 2, 0, "MSG" + std::to_string(i), "PLAY" + std::to_string(i)});
-    }
-
-
-    Messages = std::move(fakeMessages);  // move fix?
-
-    // sendDataToQT()
-    return false;
-};
-*/

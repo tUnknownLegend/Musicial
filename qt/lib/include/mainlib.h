@@ -2,7 +2,7 @@
 #include <vector>
 #include <functional>
 //#include "../../../web/include/net_tools.h"
-#include "../../../web/include/shared_lib.h"
+#include "shared_lib.h"
 
 #ifndef MUSICIAL_BUILD_H
 #define MUSICIAL_BUILD_H
