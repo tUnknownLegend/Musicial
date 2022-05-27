@@ -34,33 +34,16 @@ namespace server_tools {
 Response HandlerConvertPlaylist(const Request &request) {
     //sharedLib::Message ans = net_tools::getAnswer(request.body);
     Response response;
-/*
-    RefsForURL playlistRefs = {"https://www.googleapis.com/youtube/v3/playlistItems",
-                               "AIzaSyC3-MWvfyHVPjEVn8XYZd-HMVpc_mlxNHE",
-                               "PL6AVWk5NUegUV-FWNYbCG_ykC13vevU_6", ""};
-    string URL1 = GetPlaylistItemsURLYoutube(playlistRefs);
-    vector<string> headers1;
-    SetPlaylistItemsHeadersYoutube(headers1);
-    Playlist B = createPlaylistFromExistingYoutubePlaylist(URL1, headers1);
 
-    Song A = {"Before I Forget", "Slipknot"};
-    B.songs.push_back(A);
-
-    std::string ref = createSpotifyPlaylistFromSonglist(B.songs.begin(), B.songs.end(), usedIdSpotify);
-*/
-
+    Settings S;
+    PlaylistManagerSpotify B(S.getOAuthTokenSpotify(), S.getUserIdSpotify());
 
     std::vector<std::string> playlists;
-
     // remove
-    std::string ref = "https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB?si=4eb76190d17d479c";
-    playlists.push_back(ref);
+    //std::string ref = "https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB?si=4eb76190d17d479c";
+    //playlists.push_back(ref);
     //playlists.push_back(sharedLib::URL(ref), sharedLib::Platform::Spotify);
     response.body.text = "Playlist:";
-
-    // for (auto &i : request)
-    //response.body.playlists.emplace_back(sharedLib::URL(ref), sharedLib::Platform::Spotify);
-    //
 
     for (const auto& i : request.body.playlists) {
         playlists.push_back(i.ref.link);
@@ -68,19 +51,21 @@ Response HandlerConvertPlaylist(const Request &request) {
 
     std::vector<std::string> songs;
     for (const auto& i : request.body.songs) {
-        playlists.push_back(i.ref.link);
+        songs.push_back(i.ref.link);
     }
-
 
     sharedLib::URL convertedPlaylist;
     sharedLib::Platform platform;
     for (auto i : request.body.toPlatform) {
         switch(i) {
-            case 1:
+            case sharedLib::YouTube:
                 // convertedPlaylist.link = метод для YT
+                convertedPlaylist.link = "https://www.youtube.com/playlist?list=PLcidtVPGDsUWcrT65QjefzB8syuGpgDoN";
                 platform = sharedLib::YouTube;
                 break;
-            case 2:
+            case sharedLib::Spotify:
+                convertedPlaylist.link = "https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB";
+                        //B.createSpotifyPlaylistFromPlatformRefsAndSongsLists(playlists.begin(), playlists.end(), songs.begin(), songs.end(), S.getUserIdSpotify());
                 // convertedPlaylist.link = метод для Spotify
                 platform = sharedLib::Spotify;
                 break;
@@ -96,6 +81,7 @@ Response HandlerConvertPlaylist(const Request &request) {
     response.status_code = 200;
     response.status_message = "OK";
     response.http_version = "HTTP/1.1";
+
 
     return response;
 }

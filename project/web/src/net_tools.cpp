@@ -183,5 +183,10 @@ std::ostream &operator<<(std::ostream &os, const sharedLib::Message &message) {
         ++counter;
     }
 
+    os << "enum: ";
+    for (auto& i : message.toPlatform) {
+        os << i << " ";
+    }
+
     return os;
 }
