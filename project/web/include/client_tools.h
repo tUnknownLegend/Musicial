@@ -162,9 +162,9 @@ namespace client_tools {
         return 0;
     }
 
-    void pushResponse(const sharedLib::Message &message) {
-        // do something on client side
-    }
+    //void pushResponse(const sharedLib::Message &message) {
+    //    // do something on client side
+    //}
 
 }  // namespace client_tools
 

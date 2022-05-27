@@ -1,5 +1,4 @@
 /home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/aint/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/ninja/linux/ninja -G Ninja /home/aint/park/Musicial/project
-/home/aint/park/Musicial/project/qt/lib/src/../include
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/aint/park/Musicial/project/cmake-build-debug

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libQT_LIB.a CMakeFiles/QT_LIB.dir/src/mainlib.cpp.o
+/usr/bin/ranlib libQT_LIB.a

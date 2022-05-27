@@ -1,0 +1,3 @@
+/home/aint/park/Musicial/project/qt/lib/build/CMakeFiles/QT_LIB.dir
+/home/aint/park/Musicial/project/qt/lib/build/CMakeFiles/edit_cache.dir
+/home/aint/park/Musicial/project/qt/lib/build/CMakeFiles/rebuild_cache.dir

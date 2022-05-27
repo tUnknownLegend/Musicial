@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "gmock/gmock.h"
-#include "Client.h"
+/*
+#include "../include/mainlib.h"
 #include <string.h>
 
 //Text text = {{"black", "white"}, "123ABC!"}
@@ -136,3 +137,4 @@ TEST(ButtonGetDialog, Mock) {
 
     EXPECT_EQ(btn.action(messages), true);
 }
+*/

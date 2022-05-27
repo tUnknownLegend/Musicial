@@ -1,5 +1,6 @@
 #include "client.h"
 
+/*
 int main() {
     std::string ip, port, path;
     std::cout << "Enter IP: ";
@@ -21,3 +22,4 @@ int main() {
         std::cout << "Exception: " << e.what() << "\n";
     }
 }
+*/

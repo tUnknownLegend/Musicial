@@ -6,32 +6,10 @@
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QMessageBox>
-//#include "lib/include/mainlib.h"
-//#include "lib/src/mainlib.cpp"
-//#include <QLabel>
-/*
-template<class T>
-bool checkURL(std::vector<T> vec) {
-    bool isValid = true;
-    for (auto i = vecBegin, i != vecEnd, ++i) {
+#include "lib/src/mainlib.cpp"
 
-    }
-    //if (std::is_same<T, typename sharedLib::Playlist>::value || std::is_same<T, typename sharedLib::Song>::value) {
-//        std::for_each(vecBegin, vecEnd, [isValid](T& i) mutable {
-//            if (i.ref.link.find("spotify") || i.ref.link.find("youtube")) {
-//                isValid = false;
-//                return;
-//            }
-//        });
-//        return isValid;
-//    } else {
-//        std::cout << "Wrong Type";
-//        return true;
-//    }
-}
-*/
 PlaylistCreator::PlaylistCreator(MainWindow *_parent) : parent(_parent) {
-    setWindowTitle("Generat Playlist");
+    setWindowTitle("Generate Playlist");
     Layout = new QVBoxLayout;
     setLayout(Layout);
 
@@ -40,9 +18,7 @@ PlaylistCreator::PlaylistCreator(MainWindow *_parent) : parent(_parent) {
     fromPlatformList = new QList<QRadioButton*>;
     toPlatformList = new QList<QCheckBox*>;
 
-    //FieldsWidget = new QWidget();
     grid = new QGridLayout;
-    //Layout = new QVBoxLayout(this);
     submitBtn = new QPushButton("Submit");
     AddPlaylistBtn = new QPushButton("Add Playlist");
     AddSongBtn = new QPushButton("Add Song");
@@ -57,10 +33,6 @@ PlaylistCreator::PlaylistCreator(MainWindow *_parent) : parent(_parent) {
         gridButtons->addWidget(AddSongBtn, 0, 1);
     Layout->addLayout(gridButtons);
     Layout->addWidget(submitBtn);
-    //FieldsWidget->setLayout(grid);
-    //Layout->addWidget(Text);
-
-    //Layout->addWidget(submitBtn);
 
     connect(submitBtn, SIGNAL(clicked()), this, SLOT(SubmitPlaylist()));
     connect(AddPlaylistBtn, SIGNAL(clicked()), this, SLOT(AddPlaylist()));
@@ -116,21 +88,14 @@ void PlaylistCreator::SubmitPlaylist() {
         songs.emplace_back(sharedLib::Song(sharedLib::URL(i->text().toStdString()), fromPlatform));
     }
 
-    //if (!ShowErrorMessage(playlists.size() == 0 && songs.size() == 0, tr("Insert at least one link to playlist or song")))
-    //    return;
+    if (!ShowErrorMessage(playlists.size() == 0 && songs.size() == 0, tr("Insert at least one link to playlist or song")))
+        return;
 
+    if (playlists.size() != 0 && !ShowErrorMessage(!client::checkURLs<sharedLib::Playlist>(playlists.begin(), playlists.end()), tr("Wrong playlist URL format")))
+            return;
 
-    //if (!ShowErrorMessage(checkURL<sharedLib::Playlist>(playlists.begin(), playlists.end()), tr("Wrong playlist URL format")))
-    //    return;
-
-    //if (!ShowErrorMessage(checkURL<sharedLib::Song>(songs.begin(), songs.end()), tr("Wrong song URL format")))
-    //    return;
-    /*
-     * std::for_each(SongFields->begin(), SongFields->end(),
-                  [playlists, fromPlatform] (QLineEdit* i) mutable {
-        playlists.emplace_back(sharedLib::Playlist(sharedLib::URL(i->text().toStdString()), fromPlatform));
-    });
-    */
+    if (songs.size() != 0 && !ShowErrorMessage(!client::checkURLs<sharedLib::Song>(songs.begin(), songs.end()), tr("Wrong song URL format")))
+            return;
 
     client::MessageGroup messages(std::to_string(rawCounter) + " field(s) was sent", USER_ID, fromPlatform,
                                   playlists, songs, toPlatform);
@@ -149,7 +114,6 @@ QGroupBox *PlaylistCreator::createExclusiveGroup(QList<QRadioButton*>& list)
     list.append(radioYT);
     list.append(radioSpoty);
 
-    //radioYT->setChecked(true);
     QVBoxLayout *vbox = new QVBoxLayout;
     vbox->addWidget(radioYT);
     vbox->addWidget(radioSpoty);
@@ -178,7 +142,6 @@ QGroupBox *PlaylistCreator::createNonExclusiveGroup(QList<QCheckBox*>& list) {
     QCheckBox *checkBoxSpoty = new QCheckBox(tr("Spotify"));
     list.append(checkBoxYT);
     list.append(checkBoxSpoty);
-    //checkBoxSpoty->setChecked(true);
     QVBoxLayout *vbox = new QVBoxLayout;
     vbox->addWidget(checkBoxYT);
     vbox->addWidget(checkBoxSpoty);

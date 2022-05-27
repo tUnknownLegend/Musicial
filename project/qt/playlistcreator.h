@@ -7,12 +7,10 @@
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QButtonGroup>
-//#include "CustomWidgets.h"
 #include "MainWindow.h"
 #include <QGroupBox>
 #include <QCheckBox>
 #include <QRadioButton>
-//#include <QLabel>
 
 class PlaylistCreator : public QWidget {
     Q_OBJECT

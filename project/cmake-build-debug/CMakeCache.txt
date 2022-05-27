@@ -290,6 +290,18 @@ PostgreSQL_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libpq.so
 PostgreSQL_TYPE_INCLUDE_DIR:PATH=/usr/include/postgresql/12/server
 
 //Value Computed by CMake
+QT_LIB_BINARY_DIR:STATIC=/home/aint/park/Musicial/project/cmake-build-debug/qt/lib
+
+//Value Computed by CMake
+QT_LIB_IS_TOP_LEVEL:STATIC=OFF
+
+//Dependencies for the target
+QT_LIB_LIB_DEPENDS:STATIC=general;GTest::gmock;general;/home/aint/park/Musicial/project/../../builtLibs/libserverLib.a;
+
+//Value Computed by CMake
+QT_LIB_SOURCE_DIR:STATIC=/home/aint/park/Musicial/project/qt/lib
+
+//Value Computed by CMake
 QT_SRC_BINARY_DIR:STATIC=/home/aint/park/Musicial/project/cmake-build-debug/qt/lib/src
 
 //Value Computed by CMake
@@ -306,6 +318,9 @@ QT_test_BINARY_DIR:STATIC=/home/aint/park/Musicial/project/cmake-build-debug/qt/
 
 //Value Computed by CMake
 QT_test_IS_TOP_LEVEL:STATIC=OFF
+
+//Dependencies for the target
+QT_test_LIB_DEPENDS:STATIC=general;GTest::gmock;general;/home/aint/park/Musicial/project/../../builtLibs/libserverLib.a;
 
 //Value Computed by CMake
 QT_test_SOURCE_DIR:STATIC=/home/aint/park/Musicial/project/qt/lib
@@ -438,7 +453,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

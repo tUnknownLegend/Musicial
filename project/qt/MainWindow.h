@@ -16,6 +16,8 @@ public:
 
     void SumbitPlaylist(client::MessageGroup& messages);
 
+    ~MainWindow();
+
 private:
 
     QWidget *MainSectorWidget;
@@ -37,14 +39,16 @@ private:
 
     QList<Message*>* TextMessanges;
 
+    void SendMessageF(const std::vector<sharedLib::Message>::iterator & mBegin,
+                      const std::vector<sharedLib::Message>::iterator & mEnd);
+    void SendPlaylistF(const std::vector<sharedLib::Message>::iterator & mBegin,
+                       const std::vector<sharedLib::Message>::iterator & mEnd);
 private
     slots:
 
     void SendMessageClicked();
 
     void SendPlaylistClicked();
-
-    void UpdateChatList();
 
     void SendMessageReleased();
 };

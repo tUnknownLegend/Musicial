@@ -33,7 +33,6 @@ namespace server_tools {
 
 Response HandlerConvertPlaylist(const Request &request) {
     //sharedLib::Message ans = net_tools::getAnswer(request.body);
-
     Response response;
 /*
     RefsForURL playlistRefs = {"https://www.googleapis.com/youtube/v3/playlistItems",
@@ -49,17 +48,55 @@ Response HandlerConvertPlaylist(const Request &request) {
 
     std::string ref = createSpotifyPlaylistFromSonglist(B.songs.begin(), B.songs.end(), usedIdSpotify);
 */
+
+
+    std::vector<std::string> playlists;
+
+    // remove
     std::string ref = "https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB?si=4eb76190d17d479c";
+    playlists.push_back(ref);
+    //playlists.push_back(sharedLib::URL(ref), sharedLib::Platform::Spotify);
     response.body.text = "Playlist:";
 
-    //for (auto &i : request)
-    response.body.playlists.emplace_back(sharedLib::URL(ref), sharedLib::Platform::Spotify);
+    // for (auto &i : request)
+    //response.body.playlists.emplace_back(sharedLib::URL(ref), sharedLib::Platform::Spotify);
+    //
+
+    for (const auto& i : request.body.playlists) {
+        playlists.push_back(i.ref.link);
+    }
+
+    std::vector<std::string> songs;
+    for (const auto& i : request.body.songs) {
+        playlists.push_back(i.ref.link);
+    }
+
+
+    sharedLib::URL convertedPlaylist;
+    sharedLib::Platform platform;
+    for (auto i : request.body.toPlatform) {
+        switch(i) {
+            case 1:
+                // convertedPlaylist.link = метод для YT
+                platform = sharedLib::YouTube;
+                break;
+            case 2:
+                // convertedPlaylist.link = метод для Spotify
+                platform = sharedLib::Spotify;
+                break;
+            default:
+                break;
+        }
+    }
+
+    response.body.playlists.emplace_back(convertedPlaylist, platform); // correct
     response.body.playlistNumber = response.body.playlists.size();
+    response.body.songsNumber = 0;
+    response.body.toPlatformNumber = 0;
     response.status_code = 200;
     response.status_message = "OK";
     response.http_version = "HTTP/1.1";
 
-    //response.body = ans;
     return response;
 }
 

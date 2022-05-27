@@ -12,7 +12,6 @@
 #include <QWidget>
 #include <QLayoutItem>
 #include <QLayout>
-//#include "../web/project/server/include/net_tools.h"
 
 class ChatSelectorButton : public QPushButton {
     Q_OBJECT
@@ -20,26 +19,19 @@ public:
     ChatSelectorButton() = delete;
 
     ChatSelectorButton(QButtonGroup *_parent = nullptr, const QString &_name = "");
-    //QWidget *parent;
 };
 
 class Message {
 public:
     Message() = delete;
 
-    Message(const unsigned int& _UserID, const QString &text, const bool isUserOwner, QVBoxLayout& _layout);
+    Message(const unsigned int& _UserID, const QString &text, const bool isUserOwner);
 
     ~Message();
 
-    //net_tools::Message
-
-    //bool IsUserOwner;
     unsigned int UserID;
-    //QGroupBox *container;
     QLabel *mainText;
     QVBoxLayout* Layout;
-    //QLabel *avatar;
-    //QScrollArea *scrollArea;
 };
 
 

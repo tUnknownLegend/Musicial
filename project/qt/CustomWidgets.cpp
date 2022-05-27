@@ -10,13 +10,14 @@ ChatSelectorButton::ChatSelectorButton(QButtonGroup *_parent, const QString &_na
     setText(_name);
 }
 
-Message::Message(const unsigned int& _UserID, const QString &text, const bool isUserOwner, QVBoxLayout& _layout) : UserID(_UserID) {
+Message::Message(const unsigned int& _UserID, const QString &text, const bool isUserOwner) : UserID(_UserID) {
     mainText = new QLabel();
     mainText->setText(text);
     mainText->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     mainText->setMargin(5);
     mainText->setTextFormat(Qt::RichText);
     mainText->setWordWrap(true);
+    mainText->setTextInteractionFlags(Qt::TextBrowserInteraction);
 
     if (!isUserOwner) {
         mainText->setStyleSheet(

@@ -1,15 +1,13 @@
 #include <string>
 #include <vector>
 #include <functional>
-//#include "../../../web/include/net_tools.h"
+#include <algorithm>
 #include "../../../web/include/shared_lib.h"
-
 #ifndef MUSICIAL_BUILD_H
 #define MUSICIAL_BUILD_H
 
 #define BOT_ID 0
 #define USER_ID 1
-#define FILE_PATH "data.bin"
 
 namespace client {
     struct Size {
@@ -112,29 +110,8 @@ namespace client {
         bool receiveMessage(const sharedLib::Message &message);
     };
 
-    class LocalData {
-    public:
-
-        LocalData() = delete;
-
-        explicit LocalData(const std::function<void(const std::vector<sharedLib::Message>::iterator &,
-                                                    const std::vector<sharedLib::Message>::iterator &)> &qtDraw,
-                           const std::function<void(const std::vector<sharedLib::Message>::iterator &,
-                                                    const std::vector<sharedLib::Message>::iterator &)> &_saveData);
-
-        ~LocalData() { fclose(file); };
-
-        bool save();
-
-    private:
-
-        FILE *file;
-        std::function<void(const std::vector<sharedLib::Message>::iterator &,
-                           const std::vector<sharedLib::Message>::iterator &)> saveData;
-    };
-
-    //template<class T>
-    //bool checkURLs(typename std::vector<T>::iterator vecBegin, typename std::vector<T>::iterator vecEnd);
+    template<class T>
+    bool checkURLs(typename std::vector<T>::iterator vecBegin, typename std::vector<T>::iterator vecEnd);
 
 }
 
