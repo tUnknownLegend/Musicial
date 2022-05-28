@@ -57,7 +57,6 @@ string createSpotifyPlaylistFromPlatformRefsAndSongsLists(ForwardIterator1 Platf
     PlaylistManagerSpotify ManagerSpotify(S.getOAuthTokenSpotify(), S.getUserIdSpotify());
     for(ForwardIterator1 it = PlatformRefsBegin; it != PlatformRefsEnd; it++){
         string playlistRef = (*it);
-
         if(playlistRef.find("spotify") < playlistRef.size()){
             string playlistId = getIdFromURL(playlistRef);
             Playlist helpPlaylist = ManagerSpotify.createPlaylistFromExistingSpotifyPlaylist(playlistId);
@@ -74,7 +73,6 @@ string createSpotifyPlaylistFromPlatformRefsAndSongsLists(ForwardIterator1 Platf
     }
     for(ForwardIterator2 it = songListBegin; it != songListEnd; it++){
         string songRef = (*it);
-
         if(songRef.find("spotify") < songRef.size()){
             string songId = getIdFromURL(songRef);
             Song song =  ManagerSpotify.getSongByIdSpotify(songId);

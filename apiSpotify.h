@@ -1,4 +1,4 @@
-#pragma once
+//#pragma once
 #include "api.h"
 
 class URLsSetterSpotify{
@@ -23,7 +23,6 @@ private:
 
 class PlaylistManagerSpotify : private URLsSetterSpotify, ResponseParserSpotify{
 public:
-    
     PlaylistManagerSpotify(const string &_OAuthTokenSpotify, const string &_userIdSpotify):OAuthTokenSpotify(_OAuthTokenSpotify), userIdSpotify(_userIdSpotify){}
     ~PlaylistManagerSpotify(){};
     template<typename ForwardIterator>
@@ -58,7 +57,6 @@ string PlaylistManagerSpotify::createSpotifyPlaylistFromSonglist(ForwardIterator
         }
         else{
             postParametersJson["uris"].push_back("spotify:track:"+ songId);
-            //std::cout <<  (*it).songName << " - " <<(*it).artist << std::endl; 
         } 
     }
     string postParameters = postParametersJson.dump();

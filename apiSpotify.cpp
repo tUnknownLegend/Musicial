@@ -66,7 +66,6 @@ void PlaylistManagerSpotify::SetHeadersSpotify(vector<string> &headers){
 }
 
 void ResponseParserSpotify::ParseResponseSpotifyGetPlaylistItems(string &readBuffer, Playlist &playlist){
-    //std::cout << readBuffer << std::endl;
     try{
         json responseJson = json::parse(readBuffer);
         json responseJsonItems = responseJson["tracks"]["items"];
@@ -84,7 +83,6 @@ void ResponseParserSpotify::ParseResponseSpotifyGetPlaylistItems(string &readBuf
 }
 
 string ResponseParserSpotify::ParseResponseSpotifyGetSongId(string &readBuffer){
-    //std::cout << readBuffer << std::endl;
     try{
         json responseJson = json::parse(readBuffer);
         string songId = responseJson["tracks"]["items"][0]["id"];
@@ -97,7 +95,6 @@ string ResponseParserSpotify::ParseResponseSpotifyGetSongId(string &readBuffer){
 }
 
 string ResponseParserSpotify::ParseResponseSpotifyCreateEmptyPlaylist(string &readBuffer){
-    //std::cout << readBuffer << std::endl;
     try{
         json responseJson = json::parse(readBuffer);
         string playlistId = responseJson["id"];
@@ -109,7 +106,6 @@ string ResponseParserSpotify::ParseResponseSpotifyCreateEmptyPlaylist(string &re
     }
 }
 Song ResponseParserSpotify::ParseResponseSpotifyGetSongById(string &readBuffer){
-    //std::cout << readBuffer << std::endl;
     Song song = {"",""};
     try{
         json responseJson = json::parse(readBuffer);

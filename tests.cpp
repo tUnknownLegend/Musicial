@@ -1,79 +1,46 @@
-// #include <gtest/gtest.h>
+ #include <gtest/gtest.h>
 // #include "api.h"
+#include "apiConvertHandlers.h"
 
+TEST(Playlist, TestBasics) {
+    Song b1 = {"one","two"};
+    Song b2 = {"three","four"};
+    Playlist A;
+    A.addSong(b1);
+    A.addSong(b2);
+    EXPECT_EQ(2, A.songs.size());
+}
 
-// TEST(Playlist, TestBasics) {
-//     Song b1 = {"one","two"};
-//     Song b2 = {"three","four"};
-//     Playlist A;
-//     A.addSong(b1);
-//     EXPECT_EQ(A.playlistSize, A.songs.size());
-//     A.swapSongs(0,1);
-//     EXPECT_EQ(A.songs[0].songName, b2.songName);
-//     EXPECT_EQ(A.songs[0].artist, b2.artist);
-//     A.removeSong(1);
-//     EXPECT_EQ(A.playlistSize, A.songs.size());
-//     //EXPECT_EQ(A.send(1), 1);
-// }
+TEST(createYoutubePlaylistFromPlatformRefs, TestBasics) {
+    Settings S;
+    PlaylistManagerYoutube A(S.getApiKeyYoutube(), S.getOAuthTokenYoutube());
+    string plref1 = "https://youtube.com/playlist?list=PL6AVWk5NUegW4wPkPtFE5FXXvoeyBEZYI";
+    string songref1 = "https://www.youtube.com/watch?v=bESGLojNYSo";
+    vector<string> songs;
+    vector<string> play;
+    songs.push_back(songref1);
+    play.push_back(plref1);
+    string ref = createYoutubePlaylistFromPlatformRefsAndSongsLists(play.begin(), play.end(), songs.begin(), songs.end());
+    Playlist P = createPlaylistFromExistingYoutubePlaylist(ref);
+    EXPECT_EQ(2, A.songs.size());
+}
 
-// TEST(YoutubePlaylist, TestBasics) {
-//     Song b1 = {"one","two"};
-//     Song b2 = {"three","four"};
-//     YoutubePlaylist A;
-//     A.addSong(b1);
-//     EXPECT_EQ(A.playlistSize, A.songs.size());
-//     A.swapSongs(0,1);
-//     EXPECT_EQ(A.songs[0].songName, b2.songName);
-//     EXPECT_EQ(A.songs[0].artist, b2.artist);
-//     A.removeSong(1);
-//     EXPECT_EQ(A.playlistSize, A.songs.size());
-//     //EXPECT_EQ(A.send(1), 1);
-// }
+TEST(createYoutubePlaylistFromPlatformRefs, TestBasics) {
+    Settings S;
+    PlaylistManagerSpotify A(S.getApiKeyYoutube(), S.getOAuthTokenYoutube());
+    string plref1 = "https://youtube.com/playlist?list=PL6AVWk5NUegW4wPkPtFE5FXXvoeyBEZYI";
+    string songref1 = "https://www.youtube.com/watch?v=bESGLojNYSo";
+    vector<string> songs;
+    vector<string> play;
+    songs.push_back(songref1);
+    play.push_back(plref1);
+    string ref = createSpotifyPlaylistFromPlatformRefsAndSongsLists(play.begin(), play.end(), songs.begin(), songs.end());
+    Playlist P = createPlaylistFromExistingSpotifyPlaylist(ref);
+    EXPECT_EQ(2, A.songs.size());
+}
 
-// TEST(SpotifyPlaylist, TestBasics) {
-//     Song b1 = {"one","two"};
-//     Song b2 = {"three","four"};
-//     SpotifyPlaylist A;
-//     A.addSong(b1);
-//     EXPECT_EQ(A.playlistSize, A.songs.size());
-//     A.swapSongs(0,1);
-//     EXPECT_EQ(A.songs[0].songName, b2.songName);
-//     EXPECT_EQ(A.songs[0].artist, b2.artist);
-//     A.removeSong(1);
-//     EXPECT_EQ(A.playlistSize, A.songs.size());
-//     //EXPECT_EQ(A.send(1), 1);
-// }
-
-// TEST(createEmptyPlaylist, TestFunc) {
-//     PlaylistManager<Playlist> PManager;
-//     Playlist A = PManager.createEmptyPlaylist();
-//     PlaylistManager<YoutubePlaylist> YPManager;
-//     YoutubePlaylist B = YPManager.createEmptyPlaylist();
-//     PlaylistManager<SpotifyPlaylist> SPManager;
-//     SpotifyPlaylist C = SPManager.createEmptyPlaylist();
-//     EXPECT_EQ(A.playlistSize, 0);
-//     EXPECT_EQ(B.playlistSize, 0);
-//     EXPECT_EQ(C.playlistSize, 0);
-// }
-
-// TEST(createExistingPlaylist, TestFunc) {
-//     PlaylistManager<YoutubePlaylist> YPManager;
-//     RefsForURL playlistRefs = {"","","",""};
-//     string URL1 = GetPlaylistItemsURLYoutube(playlistRefs);
-//     vector<string> headers1;
-//     GetPlaylistItemsHeadersYoutube(headers1);
-//     YoutubePlaylist B = YPManager.createExistingPlaylist(URL1, headers1);
-
-//     PlaylistManager<SpotifyPlaylist> SPManager;
-//     RefsForURL playlistRefs2 = {"","","",""};
-//     string URL2 = GetPlaylistItemsURLSpotify(playlistRefs2);
-//     vector<string> headers2;
-//     GetPlaylistItemsHeadersSpotify(headers2, playlistRefs2.OAuthToken);
-//     SpotifyPlaylist C = SPManager.createExistingPlaylist(URL2, headers2);
-//     EXPECT_EQ(B.playlistSize, C.playlistSize);
-//     if(B.playlistSize > 0 && C.playlistSize > 0){
-//         EXPECT_EQ(B.songs[0].songName, C.songs[0].songName);
-//         EXPECT_EQ(B.songs[0].artist, C.songs[0].artist);
-//     }
-// }
+TEST(createEmptyPlaylist, TestFunc) {
+    string ref = "https://www.youtube.com/watch?v=bESGLojNYSo";
+    Song s1 = A.getSongByIdYoutube(ref);
+}
 

@@ -1,9 +1,8 @@
-#pragma once
+//#pragma once
 #include "api.h"
 
  class URLsSetterYoutube{
 public:
-    
     URLsSetterYoutube(const string &_ApiKeyYoutube, const string &_OAuthTokenYoutube):ApiKeyYoutube(_ApiKeyYoutube),OAuthTokenYoutube(_OAuthTokenYoutube){}
     ~URLsSetterYoutube(){};
     friend class PlaylistManagerYoutube;
@@ -62,7 +61,6 @@ string PlaylistManagerYoutube::createYoutubePlaylistFromSonglist(ForwardIterator
     SetHeadersYoutube(headers);
     int missedSongsCount = 0;
     for(ForwardIterator it = begin; it != end; it++){
-        //string songId = searchSongYoutube(*it);
         if(addSongYoutube(*it, playlistId) == false){
             missedSongsCount++;
         }

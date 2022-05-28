@@ -1,6 +1,5 @@
 #pragma once
-//#ifdef X_H
-//#define X_H
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -13,7 +12,6 @@ using std::vector;
 
 class Settings{
 public:
-
     const string getOAuthTokenSpotify(){return OAuthTokenSpotify;}
     const string getUserIdSpotify(){return userIdSpotify;}
     const string getApiKeyYoutube(){return ApiKeyYoutube;}
@@ -23,7 +21,6 @@ private:
     const string userIdSpotify = "8sseequ1nh63lrksvl8pqyxta";
     const string ApiKeyYoutube = "AIzaSyC3-MWvfyHVPjEVn8XYZd-HMVpc_mlxNHE";
     const string OAuthTokenYoutube = "ya29.a0ARrdaM8ORK_a9u7KTOjo5qi23HT6Ptu6yxqQ-D01wMo9zbpn41NKrQNZUVH3zHr1Z8Q9wXQVWoGcBPZT21lgNSpAS40KIoX5dPsBKSYSMIFirADejjgT9a7I4KWp1s948xXkl5cYHpONv_2fnqaVMqFiOI1T_w";
-
 };
 
 struct Song{

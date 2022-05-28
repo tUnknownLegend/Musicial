@@ -62,7 +62,6 @@ void PlaylistManagerYoutube::SetHeadersYoutube(vector<string> &headers){
 }
 
 void ResponseParserYoutube::ParseResponseYoutubeGetPlaylistItems(string &readBuffer, Playlist &playlist){
-    //std::cout << readBuffer << std::endl;
     try{
         json responseJson = json::parse(readBuffer);
         json responseJsonItems = responseJson["items"];
@@ -85,11 +84,9 @@ void ResponseParserYoutube::ParseResponseYoutubeGetPlaylistItems(string &readBuf
 }
 
 string ResponseParserYoutube::ParseResponseYoutubeGetSongId(string &readBuffer){
-    //std::cout << readBuffer << std::endl;
     try{
         json responseJson = json::parse(readBuffer);
         string songId = responseJson["items"][0]["id"]["videoId"];
-        //string href = responseJson["tracks"]["items"][0]["href"];
         return songId;
     } catch(...){
         std::cout << "Parsing error ParseResponseYoutubeGetSongId" << std::endl;
@@ -98,7 +95,6 @@ string ResponseParserYoutube::ParseResponseYoutubeGetSongId(string &readBuffer){
 }
 
 string ResponseParserYoutube::ParseResponseYoutubeCreateEmptyPlaylist(string &readBuffer){
-    //std::cout << readBuffer << std::endl;
     try{
         json responseJson = json::parse(readBuffer);
         string playlistId = responseJson["id"];
@@ -110,7 +106,6 @@ string ResponseParserYoutube::ParseResponseYoutubeCreateEmptyPlaylist(string &re
 }
 
 Song ResponseParserYoutube::ParseResponseYoutubeGetSongById(string &readBuffer){
-    //std::cout << readBuffer << std::endl;
     Song song = {"",""};
     try{
         json responseJson = json::parse(readBuffer);
@@ -147,7 +142,6 @@ Playlist PlaylistManagerYoutube::createPlaylistFromExistingYoutubePlaylist(strin
 
 string PlaylistManagerYoutube::searchSongYoutube(Song &song) {
     string URL = URLsSetter.URLYoutubeSearchSong(song);
-    //std::cout << URL << std::endl;
     string readBuffer;
     vector<string> headers;
     SetHeadersYoutube(headers);
@@ -205,7 +199,6 @@ bool PlaylistManagerYoutube::addSongYoutube(Song &song, string &playlistId) {
     postParametersJson["snippet"]["resourceId"]["kind"]="youtube#video";
     string postParameters = postParametersJson.dump();
     int res = APIrequest(URL, headers, readBuffer, "post", postParameters);
-    //std::cout << readBuffer << std::endl;
     if (res == -1){
         std::cout << "error addSongYoutube" << std::endl;
         return false;

@@ -22,7 +22,6 @@ int APIrequest(const string &URL, const vector<string> &EHeaders, string &readBu
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
         if(type == "post"){
-            //std::cout << postParameters <<std::endl;
             const char *constpostParameters = postParameters.c_str();
             curl_easy_setopt(curl, CURLOPT_POSTFIELDS, constpostParameters);
         }
