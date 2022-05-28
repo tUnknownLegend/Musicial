@@ -44,7 +44,6 @@ PlaylistManagerSpotify B(S.getOAuthTokenSpotify(), S.getUserIdSpotify());
 // playlists.push_back(sharedLib::URL(ref), sharedLib::Platform::Spotify);
 response.body.text = "Playlist:";
 
-/*
 std::vector<std::string> playlists;
 for (const auto& i : request.body.playlists) {
 playlists.push_back(i.ref.link);
@@ -54,31 +53,20 @@ std::vector<std::string> songs;
 for (const auto& i : request.body.songs) {
 songs.push_back(i.ref.link);
 }
-*/
 
-std::vector<std::string> playlists;
-std::vector<std::string> songs;
-playlists.emplace_back("https://open.spotify.com/playlist/6mQNMb22J9Rp5QPALHUeFr");
-playlists.emplace_back("https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB");
-songs.emplace_back("https://open.spotify.com/track/11dFghVXANMlKmJXsNCbNl");
 
 sharedLib::URL convertedPlaylist;
 sharedLib::Platform platform;
-vector<sharedLib::Platform> temp;
-temp.push_back(sharedLib::YouTube);
-temp.push_back(sharedLib::Spotify);
-// request.body.toPlatform;
-for (auto& i : temp) {
+for (auto& i : request.body.toPlatform) {
 switch (i) {
     case sharedLib::YouTube:
         // convertedPlaylist.link = метод для YT
-        convertedPlaylist.link = "https://www.youtube.com/playlist?list=PLcidtVPGDsUWcrT65QjefzB8syuGpgDoN";
+        //convertedPlaylist.link = "https://www.youtube.com/playlist?list=PLcidtVPGDsUWcrT65QjefzB8syuGpgDoN";
         platform = sharedLib::YouTube;
         response.body.playlists.emplace_back(convertedPlaylist, platform);
         break;
     case sharedLib::Spotify:
         convertedPlaylist.link = B.createSpotifyPlaylistFromPlatformRefsAndSongsLists(playlists.begin(), playlists.end(), songs.begin(), songs.end(), S.getUserIdSpotify());
-        // "https://open.spotify.com/playlist/1hBbNxTjcitTZfu51dB7RB";
         // convertedPlaylist.link = метод для Spotify
         platform = sharedLib::Spotify;
         response.body.playlists.emplace_back(convertedPlaylist, platform);
@@ -190,41 +178,3 @@ void server::handle_stop() {
 
 }  // namespace server3
 }  // namespace http
-
-/*
-struct Token {
-    explicit Token(std::string t) :
-            token(std::move(t)) {
-    }
-
-    std::string token;
-};
-
-class platformAccess {
-public:
-    bool addToken(sharedLib::Platform p, const Token &t) {
-        auto res = tokens.insert({p, t});
-        return !res.second;
-    }
-
-    bool updateToken(sharedLib::Platform p, const Token &t) {
-        if (tokens.contains(p)) {
-            tokens.at(p) = t;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    Token getPlatformToken(sharedLib::Platform p) {
-        if (tokens.contains(p)) {
-            return tokens.at(p);
-        } else {
-            return Token("");
-        }
-    }
-
-private:
-    std::map<sharedLib::Platform, Token> tokens;
-};
-*/
