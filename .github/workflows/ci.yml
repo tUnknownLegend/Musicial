@@ -50,10 +50,10 @@ jobs:
         run: cd qt/lib/linters && bash run.sh
 
       - name: linters QT
-        run: sudo apt-get install lcov && sudo apt-get install genhtml && cd qt/linters && bash run.sh
+        run: cd qt/linters && bash run.sh
 
       - name: pre Coveralls
-        run: cd qt/lib/build && lcov -t "Musicial_test" -o coverage.info -c -d ./ #&& cd build && genhtml -o report coverage.info   
+        run: sudo apt-get install lcov && cd qt/lib/build && lcov -t "Musicial_test" -o coverage.info -c -d ./ #&& cd build && genhtml -o report coverage.info   
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
