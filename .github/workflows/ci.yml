@@ -18,6 +18,12 @@ jobs:
 
       - name: Install Scan-build  
         run: sudo apt-get install -y clang-tools
+
+      - name: Install json
+        run: sudo apt-get install - y nlohmann-json3-dev
+        
+      - name: Install Curl 
+        run: sudo apt-get install -y libcurl3  
         
       - name: scan-build api
         run: cd ./project/api/ && bash st.bash
