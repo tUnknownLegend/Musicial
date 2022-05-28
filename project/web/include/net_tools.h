@@ -15,15 +15,15 @@
 std::ostream &operator<<(std::ostream &os, const sharedLib::Message &message);
 
 namespace net_tools {
-    sharedLib::Message getAnswer(const sharedLib::Message &mes);
+sharedLib::Message getAnswer(const sharedLib::Message &mes);
 
-    sharedLib::Message getMessage();
+sharedLib::Message getMessage();
 
-    std::string Message2String(const sharedLib::Message &message);
+std::string Message2String(const sharedLib::Message &message);
 
-    std::vector<std::string> parseMessage(const std::string &s, char delim);
+std::vector<std::string> parseMessage(const std::string &s, char delim);
 
-    sharedLib::Message String2Message(const std::string &str);
+sharedLib::Message String2Message(const std::string &str);
 
 }  // namespace net_tools
 

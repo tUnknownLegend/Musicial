@@ -35,11 +35,11 @@ add_executable(server
 #../builtLibs/libMusicial_API_LIB.a
 target_link_libraries(server ${Boost_LIBRARIES} CURL::libcurl GTest::Main curl nlohmann_json::nlohmann_json ${CMAKE_SOURCE_DIR}/../builtLibs/libMusicial_API_LIB.a CURL::libcurl )
 
-set(SOURCES tests/run_tests.cpp tests/network_tests.cpp include/shared_lib.h)
-add_executable(run_tests include/net_tools.h ${SOURCES})
-target_link_libraries(run_tests GTest::GTest
-        ${Boost_LIBRARIES}
-        )
+#set(SOURCES tests/run_tests.cpp tests/network_tests.cpp include/shared_lib.h)
+#add_executable(run_tests include/net_tools.h ${SOURCES})
+#target_link_libraries(run_tests GTest::GTest
+#        ${Boost_LIBRARIES}
+#        )
 
 add_library(serverLib
         src/connection.cpp

@@ -1,5 +1,7 @@
-rm -r ./build/*
+mkdir build
 cd build
-cmake ..
-make
+scan-build cmake ..
+scan-build make
 mv libMusicial_API_LIB.a ../../builtLibs
+cd ../
+rm -r ./build

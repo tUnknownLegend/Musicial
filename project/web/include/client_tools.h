@@ -147,24 +147,20 @@ class Client {
 };
 
 namespace client_tools {
-    int send(const std::string &ip, const std::string &port, const std::string &path,
-             const sharedLib::Message &message, std::function<void(const sharedLib::Message &Message)> a) {
-        try {
-            boost::asio::io_context io_context;
-            std::cout << "client is working" << std::endl;
-            Client c(io_context, ip, port, path, message, std::move(a));
-            io_context.run();
-        }
-        catch (std::exception &e) {
-            std::cout << "Exception: " << e.what() << "\n";
-        }
-
-        return 0;
+int send(const std::string &ip, const std::string &port, const std::string &path,
+         const sharedLib::Message &message, std::function<void(const sharedLib::Message &Message)> a) {
+    try {
+        boost::asio::io_context io_context;
+        std::cout << "client is working" << std::endl;
+        Client c(io_context, ip, port, path, message, std::move(a));
+        io_context.run();
+    }
+    catch (std::exception &e) {
+        std::cout << "Exception: " << e.what() << "\n";
     }
 
-    //void pushResponse(const sharedLib::Message &message) {
-    //    // do something on client side
-    //}
+    return 0;
+}
 
 }  // namespace client_tools
 

@@ -1,5 +1,7 @@
-rm -r ./build/*
+mkdir build
 cd build
-cmake ..
-make
+scan-build cmake ..
+scan-build make
 mv libserverLib.a ../../builtLibs/
+cd ../
+rm -r ./build

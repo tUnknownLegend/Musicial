@@ -19,5 +19,5 @@ add_library(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/../../builtLibs/libserverLib.a)
 
-add_executable(run_tests_QT test/test.cpp ${SOURCES} ${HEADERS})
-target_link_libraries(run_tests_QT GTest::GTest GTest::gmock)
+#add_executable(run_tests_QT test/test.cpp ${SOURCES} ${HEADERS})
+#target_link_libraries(run_tests_QT GTest::GTest GTest::gmock)
