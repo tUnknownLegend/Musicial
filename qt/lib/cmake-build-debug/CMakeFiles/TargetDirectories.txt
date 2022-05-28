@@ -1,3 +1,0 @@
-/home/aint/park/tempMusicial/Musicial/qt/lib/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/aint/park/tempMusicial/Musicial/qt/lib/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/aint/park/tempMusicial/Musicial/qt/lib/cmake-build-debug/CMakeFiles/Musicial_test.dir
