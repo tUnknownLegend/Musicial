@@ -24,7 +24,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     MainSectorWidget = new QWidget();
     MainSectorLayout->addWidget(MainSectorWidget);
-    MainSectorWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    MainSectorWidget->setSizePolicy(
+        QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     RightSectorWidget = new QGroupBox("RightSectorWidget");
     ChatLayout = new QVBoxLayout(MainSectorWidget);
@@ -32,7 +33,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ChatLayout->setSpacing(0);
     ChatLayout->setContentsMargins(1, 1, 1, 1);
 
-    RightSectorWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    RightSectorWidget->setSizePolicy(
+        QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     scrollArea = new QScrollArea(RightSectorWidget);
 
@@ -52,29 +54,43 @@ MainWindow::MainWindow(QWidget *parent) :
     SendMessage = new QPushButton("M", RightSectorWidget);
     SendPlaylist = new QPushButton("P", RightSectorWidget);
 
-    connect(SendMessage, SIGNAL(clicked()), this, SLOT(SendMessageClicked()));
-    connect(SendMessage, SIGNAL(released()), this, SLOT(SendMessageReleased()));
-    connect(SendPlaylist, SIGNAL(clicked()), this, SLOT(SendPlaylistClicked()));
+    connect(SendMessage, SIGNAL(
+        clicked()), this, SLOT(SendMessageClicked()));
+    connect(SendMessage, SIGNAL(
+        released()), this, SLOT(SendMessageReleased()));
+    connect(SendPlaylist, SIGNAL(
+        clicked()), this, SLOT(SendPlaylistClicked()));
 
     SendMessage->setGeometry(0, 25, 45, 50);
     SendPlaylist->setGeometry(0, 25, 45, 50);
     sendBox->Text->setGeometry(0, 25, 450, 50);
-    this->resize(MainSectorWidget->geometry().width(), MainSectorWidget->geometry().height());
+    this->resize(
+        MainSectorWidget->geometry().width(),
+        MainSectorWidget->geometry().height());
     TextMessanges = new QList<Message *>;
 }
 
 void MainWindow::SendMessageReleased() {
-    scrollArea->verticalScrollBar()->setSliderPosition(scrollArea->verticalScrollBar()->maximum());
+    scrollArea->verticalScrollBar()->setSliderPosition(
+        scrollArea->verticalScrollBar()->maximum());
 }
 
 void MainWindow::resizeEvent(QResizeEvent *) {
-    SendMessage->setGeometry(RightSectorWidget->width() - SendMessage->width(),
-                             RightSectorWidget->height() - SendMessage->height(), SendMessage->width(),
-                             SendMessage->height());
-    SendPlaylist->setGeometry(RightSectorWidget->x(), RightSectorWidget->height() - SendPlaylist->height(),
-                              SendPlaylist->width(), SendPlaylist->height());
-    sendBox->Text->setGeometry(SendPlaylist->width(), RightSectorWidget->height() - sendBox->Text->height(),
-                               SendMessage->x() - SendPlaylist->width(), sendBox->Text->height());
+    SendMessage->setGeometry(
+        RightSectorWidget->width() - SendMessage->width(),
+        RightSectorWidget->height() - SendMessage->height(),
+        SendMessage->width(),
+        SendMessage->height());
+    SendPlaylist->setGeometry(
+        RightSectorWidget->x(),
+        RightSectorWidget->height() - SendPlaylist->height(),
+        SendPlaylist->width(),
+        SendPlaylist->height());
+    sendBox->Text->setGeometry(
+        SendPlaylist->width(),
+        RightSectorWidget->height() - sendBox->Text->height(),
+        SendMessage->x() - SendPlaylist->width(),
+        sendBox->Text->height());
     scrollArea->resize(RightSectorWidget->width(), SendMessage->y());
 }
 
@@ -84,11 +100,11 @@ void MainWindow::SendMessageClicked() {
     QString text = sendBox->Text->displayText();
 
     client::MessageGroup messages(text.toStdString(), USER_ID, sharedLib::None);
-    messages.send([this](const std::vector<sharedLib::Message>::iterator &mBegin,
-                         const std::vector<sharedLib::Message>::iterator &mEnd) {
-                      SendMessageF(mBegin, mEnd);
-                  }
-    );
+    messages.send([this](
+        const std::vector<sharedLib::Message>::iterator &mBegin,
+        const std::vector<sharedLib::Message>::iterator &mEnd) {
+          SendMessageF(mBegin, mEnd);
+        });
 }
 
 void MainWindow::SendPlaylistClicked() {
@@ -97,41 +113,46 @@ void MainWindow::SendPlaylistClicked() {
 }
 
 void MainWindow::SumbitPlaylist(client::MessageGroup &messages) {
-    messages.send([this](const std::vector<sharedLib::Message>::iterator &mBegin,
-                         const std::vector<sharedLib::Message>::iterator &mEnd) {
-                      SendPlaylistF(mBegin, mEnd);
-                  }
-    );
+    messages.send([this](
+        const std::vector<sharedLib::Message>::iterator &mBegin,
+        const std::vector<sharedLib::Message>::iterator &mEnd) {
+            SendPlaylistF(mBegin, mEnd);
+        });
 }
 
-void MainWindow::SendMessageF(const std::vector<sharedLib::Message>::iterator &mBegin,
-                              const std::vector<sharedLib::Message>::iterator &mEnd) {
+void MainWindow::SendMessageF(
+    const std::vector<sharedLib::Message>::iterator &mBegin,
+    const std::vector<sharedLib::Message>::iterator &mEnd) {
     for (auto i = mBegin; i != mEnd; ++i) {
         // recive
-        Message *message = new Message(i->ownerID, QString::fromStdString(i->text), i->ownerID == USER_ID);
+        Message *message = new Message(
+            i->ownerID, QString::fromStdString(i->text), i->ownerID == USER_ID);
         TextMessanges->push_back(message);
         ChatList->addWidget(message->mainText);
     }
 }
 
-void MainWindow::SendPlaylistF(const std::vector<sharedLib::Message>::iterator &mBegin,
-                               const std::vector<sharedLib::Message>::iterator &mEnd) {
+void MainWindow::SendPlaylistF(
+        const std::vector<sharedLib::Message>::iterator &mBegin,
+        const std::vector<sharedLib::Message>::iterator &mEnd) {
     for (auto i = mBegin; i != mEnd; ++i) {
-        Message *message = new Message(i->ownerID, QString::fromStdString(i->text), i->ownerID == USER_ID);
+        Message *message = new Message(
+            i->ownerID, QString::fromStdString(i->text),
+            i->ownerID == USER_ID);
         TextMessanges->push_back(message);
         ChatList->addWidget(message->mainText);
 
-        for (auto &j: i->playlists) {
-            Message *message = new Message(i->ownerID, QString::fromStdString(j.ref.link), i->ownerID == USER_ID);
+        for (auto &j : i->playlists) {
+            Message *message = new Message(
+                i->ownerID, QString::fromStdString(
+                    j.ref.link), i->ownerID == USER_ID);
             message->mainText->setWordWrap(true);
-            QString platformName = QString::fromStdString(client::getPlatform(j.platform));
-            message->mainText->setText(platformName + " <a href=\"" +
-                                       QString::fromStdString(j.ref.link) + "\">" +
-                                       QString::fromStdString(j.ref.link) + "</a>");
-            //message->mainText->setText(platformName + " <a href=\"" +
-            //                           QString::fromStdString(j.ref.link.erase(j.ref.link.size() - 1)) + "\">" +
-            //                           QString::fromStdString(j.ref.link) + "</a>");
-            //message->mainText->setText("Google: <a href=\"https://www.google.com/\">Click Here!</a>");
+            QString platformName = QString::fromStdString(
+                client::getPlatform(j.platform));
+            message->mainText->setText(
+                platformName + " <a href=\"" +
+                QString::fromStdString(j.ref.link) + "\">" +
+                QString::fromStdString(j.ref.link) + "</a>");
             message->mainText->setOpenExternalLinks(true);
             TextMessanges->push_back(message);
             ChatList->addWidget(message->mainText);
@@ -140,7 +161,7 @@ void MainWindow::SendPlaylistF(const std::vector<sharedLib::Message>::iterator &
 }
 
 MainWindow::~MainWindow() {
-    for (auto &i: *TextMessanges) {
+    for (auto &i : *TextMessanges) {
         delete (i);
     }
     delete (TextMessanges);

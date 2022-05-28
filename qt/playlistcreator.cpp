@@ -1,4 +1,3 @@
-//#include "CustomWidgets.h"
 #include "MainWindow.h"
 #include "playlistcreator.h"
 #include <QGroupBox>
@@ -6,7 +5,6 @@
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QMessageBox>
-#include "lib/src/mainlib.cpp"
 
 PlaylistCreator::PlaylistCreator(MainWindow *_parent) : parent(_parent) {
     setWindowTitle("Generate Playlist");
@@ -54,38 +52,43 @@ void PlaylistCreator::AddSong() {
 }
 
 void PlaylistCreator::SubmitPlaylist() {
-
     sharedLib::Platform fromPlatform = sharedLib::None;
     unsigned int platformN = sharedLib::YouTube;
 
-    for (auto &i: *fromPlatformList) {
+    for (auto &i : *fromPlatformList) {
         if (i->isChecked())
             fromPlatform = (sharedLib::Platform) platformN;
         ++platformN;
     }
 
-    if (!ShowErrorMessage(fromPlatform == sharedLib::None, tr("Choose from which platform to transform")))
+    if (!ShowErrorMessage(fromPlatform == sharedLib::None,
+        tr("Choose from which platform to transform")))
         return;
 
     std::vector<sharedLib::Platform> toPlatform;
     platformN = sharedLib::YouTube;
-    for (auto &i: *toPlatformList) {
+    for (auto &i : *toPlatformList) {
         ++platformN;
         if (i->isChecked())
             toPlatform.emplace_back((sharedLib::Platform) platformN);
     }
 
-    if (!ShowErrorMessage(toPlatform.size() == 0, tr("Choose to which platform(s) to transform")))
+    if (!ShowErrorMessage(toPlatform.size() == 0,
+        tr("Choose to which platform(s) to transform")))
         return;
 
     std::vector<sharedLib::Playlist> playlists;
-    for (auto &i: *PlaylistFields) {
-        playlists.emplace_back(sharedLib::Playlist(sharedLib::URL(i->text().toStdString()), fromPlatform));
+    for (auto &i : *PlaylistFields) {
+        playlists.emplace_back(
+            sharedLib::Playlist(
+                sharedLib::URL(i->text().toStdString()), fromPlatform));
     }
 
     std::vector<sharedLib::Song> songs;
-    for (auto &i: *SongFields) {
-        songs.emplace_back(sharedLib::Song(sharedLib::URL(i->text().toStdString()), fromPlatform));
+    for (auto &i : *SongFields) {
+        songs.emplace_back(
+            sharedLib::Song(
+                sharedLib::URL(i->text().toStdString()), fromPlatform));
     }
 
     if (!ShowErrorMessage(playlists.size() == 0 && songs.size() == 0,
@@ -93,16 +96,21 @@ void PlaylistCreator::SubmitPlaylist() {
         return;
 
     if (playlists.size() != 0 &&
-        !ShowErrorMessage(!client::checkURLs<sharedLib::Playlist>(playlists.begin(), playlists.end()),
+        !ShowErrorMessage(
+            !client::checkURLs<sharedLib::Playlist>(
+                playlists.begin(), playlists.end()),
                           tr("Wrong playlist URL format")))
         return;
 
     if (songs.size() != 0 &&
-        !ShowErrorMessage(!client::checkURLs<sharedLib::Song>(songs.begin(), songs.end()), tr("Wrong song URL format")))
+        !ShowErrorMessage(
+            !client::checkURLs<sharedLib::Song>(songs.begin(), songs.end()),
+            tr("Wrong song URL format")))
         return;
 
-    client::MessageGroup messages(std::to_string(rawCounter) + " field(s) was sent", USER_ID, fromPlatform,
-                                  playlists, songs, toPlatform);
+    client::MessageGroup messages(
+        std::to_string(rawCounter) + " field(s) was sent",
+        USER_ID, fromPlatform, playlists, songs, toPlatform);
 
     parent->SumbitPlaylist(messages);
 
