@@ -41,7 +41,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y valgrind 
 
       - name: build
-        run: cd ./qt/lib && bash ./st.bash  
+        run: cd ./qt/lib && mkdir build && bash ./st.bash  
 
       - name: Valgrind 
         run: cd ./qt/lib/build && valgrind --tool=memcheck --leak-check=yes --error-exitcode=1 ./Musicial_test
