@@ -10,6 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Clone GTest
+        run:  git clone https://github.com/google/googletest.git -b release-1.10.0
+      - name: Install gtest manually
+        working-directory: ./googletest
+        run:  sudo apt install python3-pip &&
+              cmake . &&
+              make &&
+              sudo make install
+
       - name: Install GTest
         run: sudo apt-get install libgtest-dev -y 
         
