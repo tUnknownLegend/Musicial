@@ -50,7 +50,7 @@ jobs:
         run: cd qt/lib/linters && bash run.sh
 
       - name: linters QT
-        run: cd qt/linters && bash run.sh
+        run: sudo apt-get install lcov && sudo apt-get install genhtml && cd qt/linters && bash run.sh
 
       - name: pre Coveralls
         run: cd qt/lib/build && lcov -t "Musicial_test" -o coverage.info -c -d ./ && genhtml -o report coverage.info   
