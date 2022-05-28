@@ -21,6 +21,11 @@ class mockMessageGroup {
         std::cout << "mockMessageGroup init";
     }
 
+    explicit mockMessageGroup(const sharedLib::Message &_message) : Messages(_message) {
+        MockrmockMessageGroup();
+        std::cout << "mockMessageGroup init";
+    }
+
     bool receiveNett(const sharedLib::Message &message) {
         bool f = Messages.receiveNet(message);
         MockreceiveNet();
@@ -43,7 +48,7 @@ class mockMessageGroup {
     client::MessageGroup Messages;
 };
 
-TEST(mMessageGroup, MockmMessageGroup) {
+TEST(mMessageGroup, MockmMessageGroupAll) {
     std::string text = "Message";
     uint64_t ownerID = 0;
     sharedLib::Platform platform = sharedLib::Spotify;
@@ -61,7 +66,31 @@ TEST(mMessageGroup, MockmMessageGroup) {
     EXPECT_CALL(messageGr, MocksendNet()).Times(1);
     EXPECT_CALL(messageGr, Mocksend()).Times(1);
 
-    bool res = 0;
+    bool res = false;
+
+    res = messageGr.sendd([](const std::vector<sharedLib::Message>::iterator &a,
+                             const std::vector<sharedLib::Message>::iterator &b) {
+        std::cout << a->text;
+    });
+    EXPECT_EQ(res, true);
+    res = messageGr.sendNet();
+    EXPECT_EQ(res, true);
+    res = messageGr.receiveNett(messageGr.Messages.Messages[0]);
+    EXPECT_EQ(res, true);
+}
+
+TEST(mMessageGroup, MockmMessageGroupOnlyMessage) {
+    std::string text = "Message";
+    uint64_t ownerID = 0;
+    sharedLib::Message message;
+    message.text = text;
+    message.ownerID = ownerID;
+    mockMessageGroup messageGr(message);
+    EXPECT_CALL(messageGr, MockreceiveNet()).Times(1);
+    EXPECT_CALL(messageGr, MocksendNet()).Times(1);
+    EXPECT_CALL(messageGr, Mocksend()).Times(1);
+
+    bool res = false;
 
     res = messageGr.sendd([](const std::vector<sharedLib::Message>::iterator &a,
                              const std::vector<sharedLib::Message>::iterator &b) {
