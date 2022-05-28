@@ -29,18 +29,16 @@ public:
     template<typename ForwardIterator>
     string createSpotifyPlaylistFromSonglist(ForwardIterator begin, ForwardIterator end,const string &userId);
 
-    template<typename ForwardIterator1, typename ForwardIterator2>
-    string createSpotifyPlaylistFromPlatformRefsAndSongsLists(ForwardIterator1 PlatformRefsBegin, ForwardIterator1 PlatformRefsEnd, ForwardIterator2 songListBegin, ForwardIterator2 songListEnd,const string &userId);
-private:
-    const string OAuthTokenSpotify;
-    const string userIdSpotify;
-
-    void SetHeadersSpotify(vector<string> &headers);
     Playlist createPlaylistFromExistingSpotifyPlaylist(string &playlistSpotifyId);
     string searchSongSpotify(Song &song);
     string createEmptyPlaylistSpotify(const string &userId);
     Song getSongByIdSpotify(string &songId);
     bool addSongSpotify(Song &song, string &playlistId);
+private:
+    const string OAuthTokenSpotify;
+    const string userIdSpotify;
+
+    void SetHeadersSpotify(vector<string> &headers);
 };
 
 template<typename ForwardIterator>
@@ -71,48 +69,4 @@ string PlaylistManagerSpotify::createSpotifyPlaylistFromSonglist(ForwardIterator
         return "";
     }
     return "https://open.spotify.com/playlist/" + playlistId;
-}
-
-template<typename ForwardIterator1, typename ForwardIterator2>
-string PlaylistManagerSpotify::createSpotifyPlaylistFromPlatformRefsAndSongsLists(ForwardIterator1 PlatformRefsBegin, ForwardIterator1 PlatformRefsEnd, ForwardIterator2 songListBegin, ForwardIterator2 songListEnd,const string &userId){
-    vector<Song> finalSongList;
-    for(ForwardIterator1 it = PlatformRefsBegin; it != PlatformRefsEnd; it++){
-        string playlistRef = (*it);
-
-        if(playlistRef.find("spotify") < playlistRef.size()){
-            string playlistId = getIdFromURL(playlistRef);
-            Playlist helpPlaylist = createPlaylistFromExistingSpotifyPlaylist(playlistId);
-            for(int i = 0; i < helpPlaylist.songs.size(); i++)
-                finalSongList.push_back(helpPlaylist.songs[i]);
-        }
-
-        // if(playlistRef.find("youtube") < playlistRef.size()){
-        //     string playlistId = getIdFromURL(playlistRef);
-        //     Playlist helpPlaylist = createPlaylistFromExistingYoutubePlaylist(playlistId);
-        //     for(int i = 0; i < helpPlaylist.songs.size(); i++)
-        //         finalSongList.push_back(helpPlaylist.songs[i]);
-        // }
-    }
-    for(ForwardIterator2 it = songListBegin; it != songListEnd; it++){
-        string songRef = (*it);
-
-        if(songRef.find("spotify") < songRef.size()){
-            string songId = getIdFromURL(songRef);
-            Song song =  getSongByIdSpotify(songId);
-            if(song.artist.size()>0 || song.songName.size()>0)
-                finalSongList.push_back(song);
-        }
-
-        // if(playlistRef.find("youtube") < playlistRef.size()){
-        //     string playlistId = getPlaylistIdFromURL(playlistRef);
-        //     Playlist heplPlaylist = createPlaylistFromExistingYoutubePlaylist(playlistId);
-        //     for(int i = 0; i < heplPlaylist.songs.size(); i++)
-        //         finalSongList.push_back(heplPlaylist.songs[i]);
-        // }
-    }
-    if(finalSongList.size() > 99){
-        return "Too many songs";
-    }
-    string ref = createSpotifyPlaylistFromSonglist(finalSongList.begin(), finalSongList.end(), userId);
-    return ref;
 }

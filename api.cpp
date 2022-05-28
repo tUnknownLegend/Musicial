@@ -37,9 +37,9 @@ int APIrequest(const string &URL, const vector<string> &EHeaders, string &readBu
     return 1;
 }
 
-string getIdFromURL(string &playlistURL) {
-    char *helpString = new char[playlistURL.size() + 1];
-    strcpy(helpString, playlistURL.c_str());
+string getIdFromURL(string &curURL) {
+    char *helpString = new char[curURL.size() + 1];
+    strcpy(helpString, curURL.c_str());
     char *p = strtok(helpString, "/");
     string ansString;
     while(p != NULL){
@@ -47,5 +47,9 @@ string getIdFromURL(string &playlistURL) {
         p = strtok(NULL, "/");
     }
     delete [] helpString;
+    if(curURL.find("youtube") < curURL.size()){
+        const char separator = '=';
+        ansString.erase(0, ansString.find(separator) + 1);
+    }
     return ansString;
 }

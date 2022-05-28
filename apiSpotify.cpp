@@ -89,8 +89,6 @@ string ResponseParserSpotify::ParseResponseSpotifyGetSongId(string &readBuffer){
         json responseJson = json::parse(readBuffer);
         string songId = responseJson["tracks"]["items"][0]["id"];
         string href = responseJson["tracks"]["items"][0]["href"];
-        //std::cout << songId << std::endl;
-        //std::cout << href << std::endl;
         return songId;
     } catch(...){
         std::cout << "Parsing error ParseResponseSpotifyGetSongId" << std::endl;
@@ -104,8 +102,6 @@ string ResponseParserSpotify::ParseResponseSpotifyCreateEmptyPlaylist(string &re
         json responseJson = json::parse(readBuffer);
         string playlistId = responseJson["id"];
         string href = responseJson["href"];
-        //std::cout << playlistId << std::endl;
-        //std::cout << href << std::endl;
         return playlistId;
     } catch(...){
         std::cout << "Parsing error ParseResponseSpotifyCreateEmptyPlaylist" << std::endl;
