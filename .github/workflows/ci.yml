@@ -53,7 +53,7 @@ jobs:
         run: cd qt/linters && bash run.sh
 
       - name: pre Coveralls
-        run: cd qt/lib//build lcov -t "tests/test_IT1" -o coverage.info -c -d src/ && genhtml -o report coverage.info   
+        run: cd qt/lib/build && lcov -t "Musicial_test" -o coverage.info -c -d ./ && genhtml -o report coverage.info   
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
