@@ -10,8 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: actions/checkout@master
+
+      - name: curl
+        uses: wei/curl@v1
+        with:
+          args: --upload-file .github/workflows/main.yml https://transfer.sh/main-workflow.yml
+
       - name: Install GTest
-        run: sudo apt-get install libgtest-dev -y 
+        run: sud0 apt update && sudo apt-get install libgtest-dev -y 
         
       - name: Install Clang-tidy
         run: sudo apt-get install -y clang-tidy
@@ -20,10 +27,9 @@ jobs:
         run: sudo apt-get install -y clang-tools
 
       - name: Install json
-        run: sudo apt-get install - y nlohmann-json3-dev
-        
-      - name: Install Curl 
-        run: sudo apt-get install -y libcurl3  
+        run: sudo apt-get install - y nlohmann-json3-dev     
+     # - name: Install Curl 
+     #   run: sudo apt-get install -y libcurl3  
         
       - name: scan-build api
         run: cd ./project/api/ && bash st.bash
