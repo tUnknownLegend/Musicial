@@ -50,7 +50,7 @@ jobs:
         run: cd qt/lib/linters && bash run.sh
 
       - name: linters QT
-        run: cd qt/linters && bash run.sh
+        run: cd qt/linters && cpplint --extensions=cpp, ../*.cpp * ../*.h" && bash run.sh
 
       - name: pre Coveralls
         run: cd qt/lib//build lcov -t "tests/test_IT1" -o coverage.info -c -d src/ && genhtml -o report coverage.info   
