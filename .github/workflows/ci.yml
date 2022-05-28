@@ -10,6 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Clone GTest
+        run:  git clone https://github.com/google/googletest.git -b release-1.10.0
+      - name: Install gtest manually
+        working-directory: ./googletest
+        run:  sudo apt install python3-pip &&
+              cmake . &&
+              make &&
+              sudo make install
+
       - name: Install GTest
         run: sudo apt-get install libgtest-dev -y 
         
@@ -30,23 +39,24 @@ jobs:
         
       - name: Valgrind install
         run: sudo apt-get update && sudo apt-get install -y valgrind 
-        
-      - name: scan-build  clang-tidy
-        run: mkdir build && cd build && scan-build cmake .. && scan-build make
-        
-      - name: cppcheck
-        run: cppcheck src tests  --enable=all --error-exitcode=1 -I project/include --suppress=missingIncludeSystem
-        
-      - name: Cpplint
-        run: cpplint --extensions=c,h --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting project/src/* project/include/* && cpplint --extensions=cpp --filter=-runtime/references,-legal/copyright,-build/include_subdir,-whitespace/line_length,-readability/casting tests/*
 
-      - name: Tests
-        run: cd tests && cmake .. && make  && ./run_tests && cmake -Dparallel=ON .. && make && ./run_tests && cd .. && lcov -t "hw2" -o hw2.info -c -d . && lcov --remove hw2.info "/usr/include/*" "./include/*" "/usr/local/*" > coverage.info && genhtml -o report coverage.info
-
-
+      - name: build
+        run: cd ./qt/lib && mkdir build && bash ./st.bash  
 
       - name: Valgrind 
-        run: mkdir valgrind_tests && cd valgrind_tests && cmake .. && make && valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s -q ./run_tests &&  cmake -Dparallel=ON .. && make &&  valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s -q ./run_tests
+        run: cd ./qt/lib/build && valgrind --tool=memcheck --leak-check=yes --error-exitcode=1 ./Musicial_test
 
-      - name: run with fbinfer
-        run: mkdir infer_build && cd infer_build && cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .. && cd .. && infer run --compilation-database infer_build/compile_commands.json
+      - name: linters
+        run: cd qt/lib/linters && bash run.sh
+
+      - name: linters QT
+        run: cd qt/linters && bash run.sh
+
+      - name: pre Coveralls
+        run: sudo apt-get install lcov && cd qt/lib/build && lcov -t "Musicial_test" -o coverage.info -c -d ./ #&& cd build && genhtml -o report coverage.info   
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./qt/lib//build/coverage.info  
