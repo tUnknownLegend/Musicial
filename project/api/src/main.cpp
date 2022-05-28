@@ -1,4 +1,3 @@
-/*
 //#include "api.h"
 #include "apiYoutube.h"
 #include "apiSpotify.h"
@@ -51,4 +50,3 @@ int main()
     //3OIW9zDn6coCdVGMpBa6vC
     return 0;
 }
-*/

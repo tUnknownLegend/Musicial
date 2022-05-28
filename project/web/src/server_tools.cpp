@@ -1,8 +1,9 @@
 #include "server_tools.h"
 
 // #include "../../api/include/api.h"
-#include "../../api/include/apiSpotify.h"
-#include "../../api/include/apiYoutube.h"
+//#include "../../api/include/apiSpotify.h"
+//#include "../../api/include/apiYoutube.h"
+#include "../../api/include/apiConvertHandlers.h"
 
 namespace server_tools {
 int startServer() {
@@ -61,13 +62,13 @@ for (auto& i : request.body.toPlatform) {
 switch (i) {
     case sharedLib::YouTube:
         // convertedPlaylist.link = метод для YT
-        //convertedPlaylist.link = "https://www.youtube.com/playlist?list=PLcidtVPGDsUWcrT65QjefzB8syuGpgDoN";
+        convertedPlaylist.link = createYoutubePlaylistFromPlatformRefsAndSongsLists(playlists.begin(), playlists.end(), songs.begin(), songs.end());
         platform = sharedLib::YouTube;
         response.body.playlists.emplace_back(convertedPlaylist, platform);
         break;
     case sharedLib::Spotify:
-        convertedPlaylist.link = B.createSpotifyPlaylistFromPlatformRefsAndSongsLists(playlists.begin(), playlists.end(), songs.begin(), songs.end(), S.getUserIdSpotify());
         // convertedPlaylist.link = метод для Spotify
+        convertedPlaylist.link = createSpotifyPlaylistFromPlatformRefsAndSongsLists(playlists.begin(), playlists.end(), songs.begin(), songs.end(), S.getUserIdSpotify());
         platform = sharedLib::Spotify;
         response.body.playlists.emplace_back(convertedPlaylist, platform);
         break;

@@ -16,10 +16,14 @@ public:
 
     const string getOAuthTokenSpotify(){return OAuthTokenSpotify;}
     const string getUserIdSpotify(){return userIdSpotify;}
+    const string getApiKeyYoutube(){return ApiKeyYoutube;}
+    const string getOAuthTokenYoutube(){return OAuthTokenYoutube;}
 private:
-    const string OAuthTokenSpotify = "BQBA3DrzQL29F9qwkuG6mniTxTgNI_xPONAgDLCQwirZyREsgQh5zlks6rccIU5Z8OrCy0yHwY_6aBYiFKja3Fs3IVqhEfTH4RUziBE62OYYTp_d9wq0tNEsBnCdd_iO2gwBRSWoBqYlwhC5w0kIN23OWiINs7hpdi8SsNeEEAjljonMud22ySEazgX0g-CKwaKQumuRFZWiq4rfTV5y9r1PzJF13Gg";
+    const string OAuthTokenSpotify = "BQD85RvXDm89wibT3-kh5YYpKqjfeQRoGOtSfiBzINiDCG3gkxOowsQ9yB8tTEvUj1bGk_sm8BJqGlk5VxhzI9K-S60SYlXb6TDSEtk6zuRgYYp9xQzsxP3fx7h96V9P4HX0ZdGBuKOsmY3CM0egkRDoetsmNfmCKKuPtiwq9_GPoiuf_TRLxiG9cQ213QzZzsFDlwB0kFZIzbn2W2D9-sVhKncPvQM";
     const string userIdSpotify = "8sseequ1nh63lrksvl8pqyxta";
-    string ApiKey;
+    const string ApiKeyYoutube = "AIzaSyC3-MWvfyHVPjEVn8XYZd-HMVpc_mlxNHE";
+    const string OAuthTokenYoutube = "ya29.a0ARrdaM8ORK_a9u7KTOjo5qi23HT6Ptu6yxqQ-D01wMo9zbpn41NKrQNZUVH3zHr1Z8Q9wXQVWoGcBPZT21lgNSpAS40KIoX5dPsBKSYSMIFirADejjgT9a7I4KWp1s948xXkl5cYHpONv_2fnqaVMqFiOI1T_w";
+
 };
 
 struct Song{
